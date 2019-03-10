@@ -12,7 +12,7 @@
 
 <body>
 	<div id="info">This info will change soon</div>
-	<p>City</p>
+	<p>My city</p>
 	<input type="text" name="city" id="city">
 	<p>Age</p>
 	<input type="text" name="age" id="age">
