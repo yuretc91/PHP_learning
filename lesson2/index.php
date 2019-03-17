@@ -8,7 +8,19 @@
     <title>Document</title>
 </head>
 <body>
-<?php echo '"Khal Drogo\'s favourite word is "a+hjahakar""';?>
+
+<?php
+
+
+
+    $numberOne = 43;
+    $numberTwo = 65;
+    echo $numberOne * $numberTwo;
+
+    ?>
+
+
+
 </body>
 </html>
 
