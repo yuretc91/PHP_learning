@@ -55,6 +55,32 @@ if($a == 0 || $a == 2){
     echo ($a +=7);
 }else echo ($a /=10);*/
 
+
+
+
+
+/*13.  Дано число $num=1000. Делите его на 2 столько раз, пока результат деления не станет меньше 50. Какое число получится?
+    Посчитайте количество итераций, необходимых для этого (итерация - это проход цикла).
+Решите задачу сначала через цикл while, а потом через цикл for*/
+
+
+$num=1000;
+/*$iterationCount = 1;
+while($num >= 50){
+   $num /= 2;
+   $iterationCount++;
+}
+echo "iteration count " . $iterationCount . "<br>";*/
+
+
+for ($iterationCount = 1; $num >= 50; $iterationCount++){
+    $num /= 2;
+}
+echo "iteration count " . $iterationCount . "<br>";
+
+
+
+
     ?>
 
 
