@@ -6,6 +6,17 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            font-size: 2rem;
+            text-align: center;
+        }
+        td, th {
+            width: 50px;
+            border: 1px solid black;
+        }
+        </style>
 </head>
 <body>
 
@@ -64,7 +75,7 @@ if($a == 0 || $a == 2){
 Решите задачу сначала через цикл while, а потом через цикл for*/
 
 
-$num=1000;
+//$num=1000;
 /*$iterationCount = 1;
 while($num >= 50){
    $num /= 2;
@@ -73,15 +84,42 @@ while($num >= 50){
 echo "iteration count " . $iterationCount . "<br>";*/
 
 
-for ($iterationCount = 1; $num >= 50; $iterationCount++){
+/*for ($iterationCount = 1; $num >= 50; $iterationCount++){
     $num /= 2;
 }
-echo "iteration count " . $iterationCount . "<br>";
-
-
-
+echo "iteration count " . $iterationCount . "<br>";*/
 
     ?>
+
+
+<!--Отрисовать таблицу умножения-->
+
+<table>
+    <?php
+    $trNum = 1;
+    $tdNum = 1;
+    $tableCount = 5;
+    while($trNum <= $tableCount){?>
+        <tr>
+            <?php
+                while ($tdNum <= $tableCount){?>
+                    <td><?= $tdNum * $trNum . ""; ?></td>
+                <?php
+                    $tdNum++;
+                }
+            if($tdNum == 6){
+                $tdNum = 1;
+            }
+            ?>
+
+        </tr>
+
+    <?php
+        $trNum++;
+    }?>
+
+
+</table>
 
 
 
