@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        form{
+        #myForm{
             border: 1px solid black;
             width: 200px;
             padding: 0 20px 20px;
@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-<form action="serv.php">
+<form action="serv.php" id="myForm">
     <p>Name</p>
     <input type="text">
     <p>Age</p>
