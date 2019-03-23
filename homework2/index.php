@@ -45,15 +45,28 @@ while($categoryCount <= $numberOfCategory){
 
 
 //3. Написать скрипт, который выведет Заголовок, Дату и Имя автора, Картину поста (цикл while);
-$inst = [
+$socialNetworks = [
+    $inst = [
         "name" => "Instagram",
-        "avtor" => "Kevin Systrom",
+        "author" => "Kevin Systrom",
         "date" => "6/10/2010",
         "url" => "https://www.instagram.com/?hl=ru"
+    ],
+    $fb = [
+        "name" => "Facebook",
+        "author" => "Mark Elliot Zuckerberg",
+        "date" => "4/02/2004",
+        "url" => "https://www.facebook.com"
+    ],
+    $vk = [
+        "name" => "Vkontakte",
+        "author" => "Pavel Durov",
+        "date" => "10/10/2006",
+        "url" => "https://vk.com"
+    ]
 ];
-$fb = [
 
-];
+
 
 ?>
 
