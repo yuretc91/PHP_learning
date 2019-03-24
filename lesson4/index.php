@@ -124,12 +124,12 @@ foreach ($numbers as $number){
 
 //10. Составьте массив дней недели. С помощью цикла foreach выведите все дни недели, а выходные дни выведите жирным.
 
-$week = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+/*$week = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
 foreach ($week as $key => $value){
     if($key < 5){
         echo $value . "<br>";
     } else echo "<strong style=\"color:red\">" . $value . "</strong><br>";
-}
+}*/
 
 
 $en = [];
@@ -139,18 +139,25 @@ $arr = [
     "en" => ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
     "ru" => ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
 ];
-foreach ($arr as $key){
-    //echo $key;
-    foreach ($lang as $day){
-        echo $value;
+foreach ($arr as $key => $value){
+    //echo $value;
+    if ($key == "en"){
+        foreach ($value as $day){
+
+            $en[] =  $day;
+        }
+
+    }else {
+        foreach ($value as $day){
+
+            $ru[] = $day;
+        }
+
     }
-    /*if($key == "en"){
-       $en =
-    }*/
 
 }
-
-
+print_r($en);
+print_r($ru);
 
 ?>
 
