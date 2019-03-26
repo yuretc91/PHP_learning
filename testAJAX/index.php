@@ -50,7 +50,15 @@
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="js/script.js"></script>
+<script type="text/javascript">
+    function change() {
+
+        var res = document.getElementById("name").value;
+
+        document.getElementById("namePlace").innerHTML = res;
+
+    }
+</script>
 
 </body>
 </html>

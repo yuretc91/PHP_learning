@@ -133,31 +133,25 @@ foreach ($week as $key => $value){
 
 
 $en = [];
+
 $ru = [];
 
 $arr = [
-    "en" => ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    "ru" => ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
+    "Monday" => "Понедельник",
+    "Tuesday" => "Вторник",
+    "Wednesday" => "Среда",
+    "Thursday" => "Четверг",
+    "Friday" => "Пятница",
+    "Saturday" => "Суббота",
+    "Sunday" => "Воскресенье"
 ];
 foreach ($arr as $key => $value){
-    //echo $value;
-    if ($key == "en"){
-        foreach ($value as $day){
-
-            $en[] =  $day;
-        }
-
-    }else {
-        foreach ($value as $day){
-
-            $ru[] = $day;
-        }
-
-    }
-
+    $en[] = $key;
+    $ru[] = $value;
 }
-print_r($en);
-print_r($ru);
+var_dump($en);
+echo "<br>";
+var_dump($ru);
 
 ?>
 
