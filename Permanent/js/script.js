@@ -5,8 +5,8 @@ $(function () {
 
 
 	permanentBtn.click(function () {
-		$.ajax("serv.php", {data: "permanent"}, function (html) {
-			main.html(html);
+		$.post("serv.php", {someData: permanentBtn.val()}, function (data) {
+			main.html(data);
 		});
 	});
 
