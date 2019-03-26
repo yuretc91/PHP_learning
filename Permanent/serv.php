@@ -1,7 +1,8 @@
 <?php 
 
 $main = $_GET["someData1"];
-echo "You are living in  years old";
+print_r('<?php require_once "permanent.php"; ?>') ;
+//print_r("<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet at deserunt in minus nostrum odit repudiandae sed, similique voluptate.</div>") ;
 
 /*//$city = $_GET["someData1"];
 $city = $_POST["someData1"];
