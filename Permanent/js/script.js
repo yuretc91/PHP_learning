@@ -1,14 +1,13 @@
 $(function () {
 	var main = $("main");
 	var permanentBtn = $("#permanentBtn");
-	var perm = '<?php require_once "permanent.php"; ?>'
 
 
 
 
 	permanentBtn.click(function () {
         console.log(permanentBtn.text());
-		$.post("serv.php", {someData: permanentBtn.val()}, function (data) {
+		$.post("serv.php", {someData: permanentBtn.text()}, function (data) {
 			main.html(data);
 		});
 	});

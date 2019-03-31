@@ -1,26 +1,39 @@
 <?php 
 
 $main = $_GET["someData"];
-switch ($main) {
-    case 'main' :
-        require_once "permanent.php";
+echo $main;
+/*print_r("<div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    Ab alias corporis cupiditate deserunt distinctio, doloremque 
+    eaque eos ex hic laboriosam numquam quod repudiandae sed, tempore, 
+    unde velit voluptas voluptatum. Alias animi architecto cupiditate debitis 
+    deserunt ea error, facere facilis impedit molestiae nisi obcaecati optio praesentium r
+    eprehenderit vel veritatis voluptate. Ad aliquid amet, blanditiis deleniti e
+    rror eum facilis ipsa, nemo officiis optio recusandae rerum vitae voluptate!
+    Aperiam consequatur deserunt dicta expedita fugit inventore natus numquam pari
+    atur perferendis praesentium, quis sed. A architecto asperiores aspernatur bla
+    nditiis dolorum fugiat iure iusto magnam molestias neque nesciunt nisi, nobis o
+    bcaecati odio reprehenderit sequi sint unde.
+</div>") ;*/
+/*switch ($main) {
+    case 'Татуаж' :
+        print_r("<div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    Ab alias corporis cupiditate deserunt distinctio, doloremque 
+    eaque eos ex hic laboriosam numquam quod repudiandae sed, tempore, 
+    unde velit voluptas voluptatum. Alias animi architecto cupiditate debitis 
+    deserunt ea error, facere facilis impedit molestiae nisi obcaecati optio praesentium r
+    eprehenderit vel veritatis voluptate. Ad aliquid amet, blanditiis deleniti e
+    rror eum facilis ipsa, nemo officiis optio recusandae rerum vitae voluptate!
+    Aperiam consequatur deserunt dicta expedita fugit inventore natus numquam pari
+    atur perferendis praesentium, quis sed. A architecto asperiores aspernatur bla
+    nditiis dolorum fugiat iure iusto magnam molestias neque nesciunt nisi, nobis o
+    bcaecati odio reprehenderit sequi sint unde.
+</div>") ;
         break;
     case 'about' :
         require_once "about.php";
         break;
-}
-
-?>
-
-//print_r("<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet at deserunt in minus nostrum odit repudiandae sed, similique voluptate.</div>") ;
-
-/*//$city = $_GET["someData1"];
-$city = $_POST["someData1"];
-//$age = $_GET["someData2"];
-$age = $_POST["someData2"];
-echo "You are living in ".$city." and you are ".$age." years old";*/
-
-
-
+}*/
 
 ?>
