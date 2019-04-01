@@ -6,36 +6,29 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
-        body {
-            margin: 0;
-            background: #57a2f8;
-            font-family: "segoe ui light", sans-serif;
-            font-size: 32px;
-        }
-
-        #btnForm{
-            width: 200px;
-            height: 50px;
-            border: none;
-            border-radius: 20px;
-            background: crimson;
-            color: beige;
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 600;
-        }
+           .test{
+               height: 100px;
+               border: 1px solid black;
+           }
     </style>
 </head>
 <body>
 
-<div>
 
-    <p>My name is <span id="namePlace"></span></p>
-    <input type="text" id="name">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+    <form action="scriptOpen.php" method="post">
+        <input type="submit" id="btn" name="btn" class="btn btn-block btn-primary" placeholder="Click me! ">
+    </form>
+                <div class="test">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam delectus fuga labore nam repellat. Accusantium consectetur dolorum neque quia quis.
+                </div>
 
-
+</div>
+</div>
 </div>
 
 
@@ -49,16 +42,18 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script type="text/javascript">
-    function change() {
 
-        var res = document.getElementById("name").value;
 
-        document.getElementById("namePlace").innerHTML = res;
 
-    }
-</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
+
+
 
 </body>
 </html>
