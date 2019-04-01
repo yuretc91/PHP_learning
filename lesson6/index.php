@@ -31,7 +31,9 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias asperiores corporis deleniti eos nostrum! Earum est minima sequi voluptas.
             </div>-->
             <form action="serv.php" method="post">
-                <!--<input type="text" name="name" class="form-control mb-3" placeholder="name" required>-->
+                <!--<input type="text" name="name" class="form-control mb-3" placeholder="name" required>
+                <input type="text" name="age" class="form-control mb-3" placeholder="age" required>
+                <textarea name="message" id="message" class="form-control mb-3" placeholder="message"></textarea>-->
                 <!--<input type="checkbox" name="checkbox" value="check">Check me!-->
                 <!--Choose your skills<br>
                 <select name="skills[]" id="skills" multiple>
@@ -43,8 +45,10 @@
                 <!--Do you know PHP?<br>
                 <input type="radio" name="skills" value="yes">Yes
                 <input type="radio" name="skills" value="no" checked>No-->
-                <input type="checkbox" name="test" value="1"> Click me!
-                <input type="hidden" name="hiddenInput" value="0">
+                <!--<input type="checkbox" name="test" value="1"> Click me!-->
+                <!--<input type="hidden" name="hiddenInput" value="0">-->
+                <input type="text" name="login" class="form-control mb-3" placeholder="login 'admin'" required>
+                <input type="text" name="pass" class="form-control mb-3" placeholder="password 12345" required>
                 <input type="submit" name="submit" class="btn btn-block btn-primary">
             </form>
         </div>
@@ -55,14 +59,16 @@
 
 
 /*12.	Напишите функцию, которая создает чекбокс и сохраняет его значение после отправки.
-13.	Спросите город пользователя с помощью формы. Результат запишите в переменную $city. Выведите на экран фразу 'Ваш город: %Город%'.
+13.	Спросите город пользователя с помощью формы. Результат запишите в переменную $city.
+Выведите на экран фразу 'Ваш город: %Город%'.
 14.	Сделайте предыдущую задачу так, чтобы пользователь не мог вводить теги и сломать нам сайт.
-15.	Спросите у пользователя имя, возраст, а также попросите его ввести сообщение (его сделайте в textarea). Выведите эти данные на экран.
-Позаботьтесь о том, чтобы пользователь не мог вводить теги (просто удаляйте их) и таким образом сломать сайт.
+
 16.	Спросите возраст пользователя. Если форма была отправлена и введен возраст, то выведите его на экран, а форму уберите.
 Если же форма не была отправлена (это будет при первом заходе на страницу) - просто покажите ее
-17.	Спросите у пользователя логин и пароль (в браузере должен быть звездочками). Сравните их с логином $login и паролем $pass, хранящихся в файле.
-Если все верно - выведите 'Доступ разрешен!', в противном случае - 'Доступ запрещен!'. Сделайте так, чтобы скрипт обрезал концевые пробелы в строках, которые ввел пользователь.*/
+17.	Спросите у пользователя логин и пароль (в браузере должен быть звездочками).
+Сравните их с логином $login и паролем $pass, хранящихся в файле.
+Если все верно - выведите 'Доступ разрешен!', в противном случае - 'Доступ запрещен!'.
+Сделайте так, чтобы скрипт обрезал концевые пробелы в строках, которые ввел пользователь.*/
 
 
 
