@@ -21,6 +21,8 @@ $email = explode(" ", $_POST['loginPassEmail'])[2];*/
 
 $login = $_POST['name'];
 
+$tmp = include 'dddd.php';
+
 
 echo json_encode($login);
 ?>

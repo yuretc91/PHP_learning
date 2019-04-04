@@ -1,48 +1,37 @@
 $(function () {
-	var main = $("main");
-	var permanentBtn = $("#permanentBtn");
+    var main = $("main");
+    var btn = $('.btn');
+    var menu = $('.menu');
+
+
+    $('.btn').each(function (index, value){
+        $(this).on('click', function() {
+            //this.addClass("active");
+            console.log($(this).text());
+
+            $.ajax({
+                url: "serv.php",
+                type: "POST",
+                data: {
+                    btn : $(this).text()
+                }
+            }).done(function(response) {
+                console.log(response);
+                main.html(response);
+            });
+        });
+    });
 
 
 
 
-	permanentBtn.click(function () {
-        console.log(permanentBtn.text());
-		$.post("serv.php", {someData: permanentBtn.text()}, function (data) {
-			main.html(data);
-		});
-	});
+
+
+
+
+
+
 
 
 
 });
-
-
-
-
-
-
-
-
-/*
-
-
-var city = document.getElementById("city");
-	var age = document.getElementById("age");
-	var btn = document.getElementById("btn");
-	var info = document.getElementById("info");
-	var myXHR = new XMLHttpRequest();   //создаём запрос
-	btn.onclick = function(){
-		/!*myXHR.open("GET", "serv.php?someData1=" + city.value + "&someData2=" + age.value, true);*!/
-		
-		myXHR.open("POST", "serv.php", true);  //подготавливаем к отправке
-		myXHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");  // пометка для метода POST
-		//myXHR.send();
-		myXHR.send("someData1=" + city.value + "&someData2=" + age.value); //отправляем 
-	};
-
-
-myXHR.onreadystatechange = function(){    //что делать с ответом сервера
-	if(myXHR.readyState == 4 && myXHR.status == 200){  //проверка ответа от сервера
-	   info.textContent = myXHR.response;  //ответ от сервера
-	   }
-};*/

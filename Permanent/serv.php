@@ -1,39 +1,22 @@
-<?php 
+<?php
+/*$login = $_POST['name'];
 
-$main = $_GET["someData"];
-echo $main;
-/*print_r("<div>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-    Ab alias corporis cupiditate deserunt distinctio, doloremque 
-    eaque eos ex hic laboriosam numquam quod repudiandae sed, tempore, 
-    unde velit voluptas voluptatum. Alias animi architecto cupiditate debitis 
-    deserunt ea error, facere facilis impedit molestiae nisi obcaecati optio praesentium r
-    eprehenderit vel veritatis voluptate. Ad aliquid amet, blanditiis deleniti e
-    rror eum facilis ipsa, nemo officiis optio recusandae rerum vitae voluptate!
-    Aperiam consequatur deserunt dicta expedita fugit inventore natus numquam pari
-    atur perferendis praesentium, quis sed. A architecto asperiores aspernatur bla
-    nditiis dolorum fugiat iure iusto magnam molestias neque nesciunt nisi, nobis o
-    bcaecati odio reprehenderit sequi sint unde.
-</div>") ;*/
-/*switch ($main) {
-    case 'Татуаж' :
-        print_r("<div>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-    Ab alias corporis cupiditate deserunt distinctio, doloremque 
-    eaque eos ex hic laboriosam numquam quod repudiandae sed, tempore, 
-    unde velit voluptas voluptatum. Alias animi architecto cupiditate debitis 
-    deserunt ea error, facere facilis impedit molestiae nisi obcaecati optio praesentium r
-    eprehenderit vel veritatis voluptate. Ad aliquid amet, blanditiis deleniti e
-    rror eum facilis ipsa, nemo officiis optio recusandae rerum vitae voluptate!
-    Aperiam consequatur deserunt dicta expedita fugit inventore natus numquam pari
-    atur perferendis praesentium, quis sed. A architecto asperiores aspernatur bla
-    nditiis dolorum fugiat iure iusto magnam molestias neque nesciunt nisi, nobis o
-    bcaecati odio reprehenderit sequi sint unde.
-</div>") ;
-        break;
-    case 'about' :
-        require_once "about.php";
-        break;
-}*/
+$tmp = include 'dddd.php';
+
+
+echo json_encode($login);*/
+$btn = $_POST['btn'];
+$permanent = file_get_contents("permanent.php");
+
+$shugaring = file_get_contents("shugaring.php");
+if ($_POST['btn'] == "Татуаж"){
+    echo $permanent;
+}elseif ($_POST['btn'] == "Шугаринг"){
+    echo $shugaring;
+}elseif ($_POST['btn'] == "Прокол ушей"){
+    echo "news";
+}elseif ($_POST['btn'] == "Контакты"){
+    echo "blabla";
+}
 
 ?>
