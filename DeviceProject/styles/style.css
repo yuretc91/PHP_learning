@@ -1,0 +1,48 @@
+@font-face {
+    font-family: OpenSans Light;
+    src: url("../fonts/opensanslight.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Gilroy ExtraBold;
+    src: url("../fonts/gilroyextrabold.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+html{
+    /*width: 1440px;*/
+    padding: 0;
+    margin: 0;
+}
+header{
+    width: 1160px;
+    margin: 40px auto 0;
+    height: 299px;
+    background: #f7e296;
+    padding-top: 50px;
+}
+.topMiniMenu{
+    font-size: 15px;
+    font-family: OpenSans Light;
+    list-style-position: inside;
+}
+.search{
+    list-style-image: url(../icons/searchIcon.png);
+}
+.user{
+    list-style-image: url(../icons/userIcon.png);
+}
+.compare{
+    list-style-image: url(../icons/compareIcon.png);
+}
+.cart{
+    list-style-image: url(../icons/cartIcon.png);
+}
+.topSecondMenu{
+    font-size: 18px;
+    font-family: Gilroy ExtraBold;
+    letter-spacing: 4px;
+    list-style-type: none;
+    margin-top: 40px;
+}
