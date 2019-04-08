@@ -1,0 +1,7 @@
+Login:David,password:245364645,e-mail:davod@mail.ru
+Login:peter,password:4983e1231e9921605c57cc4d30090bad,e-mail:peter@gmail.com
+Login:кк,password:33e25ce2b801662e46a7b801301d5b94,e-mail:yuretc91@mail.ru
+Login:аа,password:0795fe0cc6fb16c6683c1410efb97dd6,e-mail:yuretc91@mail.ru
+Login:пп,password:f86fb1e1958d31a7425e1a3deb7ca439,e-mail:yuretc91@mail.ru
+Login:admin,password:f5bf145decfbe843f5892683f1e31228,e-mail:wfwwfw@mail.ru
+Login:admin ,password:4c4e9cf2b0dd70af11214a347634760a,e-mail:wfehee@tut.by
