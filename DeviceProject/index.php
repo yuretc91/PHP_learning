@@ -24,6 +24,34 @@
         </ul>
     </header>
     <main>
+        <!--<div class="slider container">
+            <div class="slide1 row">
+                <div class="slideImage col-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus accusantium, adipisci asperiores at, autem beatae blanditiis corporis cupiditate dolore ex explicabo fugit illo impedit ipsam itaque iure laborum magnam molestiae mollitia obcaecati perspiciatis quidem quo repellendus saepe veritatis voluptate.</div>
+                <div class="col-6">
+                    <div class="row"><div class="tagline col-6">Делай селфи, <br> как Бен Стиллер!</div></div>
+                    <div class="description row">Самая длинная палка для селфи доступна в нашем магазине. <br>
+                        Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</div>
+                    <div class="sliderButtons row">
+                        <div class="info col-5">Подробнее</div>
+                        <div class="col-auto">Картинки</div>
+                    </div>
+                    <div class="specifications row">
+                        <div class="col-2">8,5 метров</div>
+                        <div class="col-2">5 кг</div>
+                        <div class="col-2">Карбон</div>
+                    </div>
+                    <div class="legend row">
+                        <div class="col-2">Длина палки</div>
+                        <div class="col-2">Вес палки</div>
+                        <div class="col-2">Материал</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>-->
+        <div class="bla" >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eveniet minima molestias optio rem? Aliquid atque debitis deleniti earum explicabo facilis fugiat iste non officia praesentium provident quidem ratione, recusandae rem sapiente suscipit ullam unde velit. Accusamus, at beatae consequuntur dolor doloremque esse est ex incidunt iure labore minima, modi non numquam odit quas quos ratione sit tempora vero voluptatum! Alias consequatur doloremque earum est ex excepturi exercitationem fugiat illum iure labore molestias nemo nisi nulla officiis placeat possimus praesentium repellendus reprehenderit repudiandae saepe sapiente tempora unde voluptates voluptatibus, voluptatum. Corporis dolores ducimus harum, illum quae quisquam ratione sit veniam.
+        </div>
 
 
     </main>

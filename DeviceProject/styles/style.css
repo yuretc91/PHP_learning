@@ -10,6 +10,12 @@
     font-weight: normal;
     font-style: normal;
 }
+/*@font-face {
+    font-family: Gilroy Light;
+    src: url("../fonts/gilroylight.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}*/
 html{
     /*width: 1440px;*/
     padding: 0;
@@ -24,6 +30,7 @@ header{
 }
 .topMiniMenu{
     font-size: 15px;
+    color: red;
     font-family: OpenSans Light;
     list-style-position: inside;
 }
@@ -45,4 +52,31 @@ header{
     letter-spacing: 4px;
     list-style-type: none;
     margin-top: 40px;
+}
+/*.slideImage{
+
+}
+tagline{
+    font-size: 47px;
+    font-family: Gilroy ExtraBold;
+}
+.description{
+    font-size: 15px;
+    font-family: OpenSans Light;
+}
+.info{
+    font-size: 18px;
+    font-family: Gilroy ExtraBold;
+}
+.specifications{
+    font-size: 36px;
+    font-family: Gilroy Light;
+}
+.legend{
+    font-size: 13px;
+    font-family: OpenSans Light;
+}*/
+.bla{
+    font-size: 18px;
+
 }
