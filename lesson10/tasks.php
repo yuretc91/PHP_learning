@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -15,29 +18,21 @@
     }
 
 </style>
+
 <body>
+<ul>
+    <li><a href="rename.php">Rename file 'old.txt'</a></li>
+    <li><a href="replace.php">Replace file test.txt</a></li>
+    <li><a href="copy.php">Copy file</a></li>
+    <li><a href="newOrDelete.php">New file or delete old file</a></li>
+    <li><a href="fileSize.php">Size file 'index.php'</a></li>
+    <li><a href="newfilearr.php">new file from array</a></li>
+    <li><a href="newfiletxthtml.php">new file txt and html</a></li>
+</ul>
+
 <?php
 
-
-
-//file_put_contents('users.txt', ' Vovan:vovan@mail.ru'.PHP_EOL, FILE_APPEND);
-$handle = fopen("users.txt", "a+");
-//fseek($handle, 1);
-fwrite($handle, 'Vovan:vovan@mail.ru');
-fclose($handle);
-$usersList = file("users.txt");
-foreach ($usersList as $user){
-    echo "Login: " . explode(":", $user)[0] . "; e-mail: " . explode(":", $user)[1] . "<br>";
-}
 ?>
-
-
-
-
-
-
-
-
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
