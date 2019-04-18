@@ -17,36 +17,19 @@
 
 </style>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-12">
+<div>
 
-            <form action="serv.php" method="post" enctype="multipart/form-data">
-                <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" name="authentication" class="custom-control-input" id="registration" value="reg" onclick="disableInput(this)">
-                <label class="custom-control-label" for="registration">Registration</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" name="authentication" class="custom-control-input" id="signIn" value="sign" onclick="disableInput(this)" checked>
-                <label class="custom-control-label" for="signIn">Sign in</label>
-                </div>
-                <input type="text" name="login" class="form-control mb-3" placeholder="login">
-                <input type="password" name="password" class="form-control mb-3" placeholder="password" id="pass" >
-                <input type="email" name="email" class="form-control mb-3" placeholder="email" id="email">
-                <input type="file" name="avatar" class="form-control mb-3" id="avatar">
-                <input type="submit" name="submit" class="btn btn-block btn-primary" id="btn">
-            </form>
-
-        </div>
-    </div>
 </div>
 <?php
 
 
+$text = "";
 
 
-
-
+/*Создать переменную, записать в нее рандомный текст на 500-1000 символов.
+Сделать функцию, которая обрезает текст по словам.
+Результат, красивый обрезанный текст который заканчивается полностью словом, а не обрезанным текстом.
+В конце добавить многоточие*/
 
 ?>
 

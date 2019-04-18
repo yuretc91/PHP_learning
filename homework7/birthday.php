@@ -6,7 +6,7 @@ $birthday = $_SESSION["day"] . "." . $_SESSION["month"];
 if (isset($_SESSION["nowDate"])){
 
     echo $_SESSION["nowDate"] . "<br>";
-    echo (strtotime($_SESSION["nowDate"]) - strtotime($birthday))/(3600 * 24 / 30) . "<br>";
+    echo (strtotime($_SESSION["nowDate"]) - strtotime($birthday))/(3600 * 24) . "<br>";
 
 
 }

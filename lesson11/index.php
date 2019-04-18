@@ -16,43 +16,24 @@
 
 </style>
 <body>
-<!--
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <?php
-/*            //форма исчезает после отправки данных
-            if(isset($_POST['submit'])){
-                echo "Your name - " . $_POST["name"];
-            }else {*/?>
-            <form action="index.php" method="post">
-                <!--<select name="type" id="">
-                    <option value="text">Text</option>
-                    <option value="email">E-mail</option>
-                    <option value="password">Password</option>
-                </select>-->
+<?php
+include "dbOpen.php";  //подключаем БД
 
-                <!--<input type="text" name="name" class="form-control mb-3" placeholder="Enter name" required>
-                <input type="text" name="value" class="form-control mb-3" placeholder="Enter value" required>
-                <input type="submit" name="submit" class="btn btn-block btn-primary">-->
-            <!--</form>
-            <?php /*/*} */?>
-        </div>
-    </div>
-</div>-->
-<nav>
-    <ul>
-        <li><a href="serv.php?page=1">Main page</a></li>
-        <li><a href="serv.php?page=2">Contacts</a></li>
-        <li><a href="serv.php?page=3">News</a></li>
-    </ul>
-</nav>
+$query = "SELECT * FROM users";
 
+$rezult = mysqli_query($connection, $query);
 
+if (!$rezult){
+    die("Запрос не удался - " . mysqli_error());
+}
 
+foreach ($rezult as $user){
+    echo $user["name"] . "<br>";
+    echo $user["email"] . "<br>";
 
+}
 
-
+?>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

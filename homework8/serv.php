@@ -1,9 +1,4 @@
 <?php
-/*session_start();
-$_SESSION["login"] = $_POST["login"];
-$_SESSION["email"] = $_POST["email"];
-$_SESSION["avatar"] = "uploads/" . $_POST["login"] . ".jpg";*/
-
 
 function authorization($toggle){
     if ($toggle == "sign"){
@@ -69,12 +64,7 @@ function signIn($userLogin, $userPass){
 
         }
         echo "User with this login not found";
-        /*if ($isUserFind) {
-            echo "User with this name is already registered.";
-        } else {
-            file_put_contents('users.txt', "%" . $userLogin . "%" . md5($userPass) . "%" . $userEmail . "%uploads/" . $_FILES["avatar"]["name"] . PHP_EOL, FILE_APPEND);
-            echo "Your data has been successfully sent to the server<br>";
-        }*/
+
     }
 }
 

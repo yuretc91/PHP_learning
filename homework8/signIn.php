@@ -1,8 +1,5 @@
 <?php
-/*session_start();
-if (isset($_SESSION["login"])){
-    $usLogin = $_SESSION["login"];
-}*/
+
 ?>
 <!doctype html>
 <html lang="ru">
