@@ -1,26 +1,23 @@
 <?php
+/*session_start();
+$_SESSION["login"] = $_POST["login"];
+$_SESSION["email"] = $_POST["email"];
+$_SESSION["avatar"] = "uploads/" . $_POST["login"] . ".jpg";*/
 
-if (!file_exists("uploads")){
-    mkdir("uploads", 0777);
+
+function authorization($toggle){
+    if ($toggle == "sign"){
+        signIn($_POST["login"], $_POST["password"], $_POST["email"]);
+    }else registration($_POST["login"], $_POST["password"], $_POST["email"]);
 }
 
-
-move_uploaded_file($_FILES["avatar"]["tmp_name"], "uploads/" . $_FILES["avatar"]["name"]);
-
-
-
-function authorization($userLogin, $userPass, $userEmail){
+function registration($userLogin, $userPass, $userEmail){
     $usersList = file("users.txt");
-
-    function userSearch($userData, $servData){
-        if ($userData == $servData){
-            return true;
-        }
-    };
-
-    userSearch("wfw", "wfwfw");
-
-    if ($userLogin == "" || $userPass == "" || $userEmail == ""){
+    if (!file_exists("uploads")){            //создаём каталог с аватарами, если его нет
+        mkdir("uploads", 0777);
+    }
+    move_uploaded_file($_FILES["avatar"]["tmp_name"], "uploads/" . $_POST["login"] . ".jpg");              //загружаем аватар
+    if ($userLogin == "" || $userPass == "" || $userEmail == ""){                                                  //проверяем на пустые input
         header('Refresh: 5; url=index.php'); //перенаправление
         echo "Fill in all form fields. After 5 seconds you will be automatically redirected to re-enter data";
     }elseif (strlen($userLogin) < 3 || strlen($userLogin) > 30){
@@ -29,39 +26,58 @@ function authorization($userLogin, $userPass, $userEmail){
     }else {
 
         foreach ($usersList as $user) {
-            $usersName[] = array("login" => explode("%", $user)[1], "password" => explode("%", $user)[2], "email" => explode("%", $user)[3], "avatar" => explode("%", $user)[4]);
-
-            //echo explode("%", $user)[1] . "<br>";
-            //echo explode("%", $user)[2] . "<br>";
-            //echo explode("%", $user)[3] . "<br>";
-            //echo "<pre>";
-            //print_r($usersName);
-            //echo "</pre>";
+            $usersLogins[] = explode("%", $user)[1];
+            //$usersPasswords[] = explode("%", $user)[2];
         }
-        $toggle = function userSearch ($arrOfUsers, $userLog){
-                    foreach ($arrOfUsers as $key => $value){
-                        if ($key == "login" && $value == $userLog){
-                            echo "User with this name is already registered.";
-                            return true;
-                        }
-                    }
-                    file_put_contents('users.txt', "%" . $userLogin . "%" . md5($userPass) . "%" . $userEmail . "%uploads/" . $_FILES["avatar"]["name"] . PHP_EOL, FILE_APPEND);
-                    echo "Your data has been successfully sent to the server<br>";
-                    //return false;
-        };
-        //userSearch($usersName, $userLogin);
-        if ($toggle) {
+        if(in_array($userLogin, $usersLogins)){
+            header('Refresh: 5; url=index.php'); //перенаправление
+            echo "User with this name is already registered. After 5 seconds you will be automatically redirected to re-enter data";
+        }else {
+            file_put_contents('users.txt', "%" . $userLogin . "%" . md5($userPass) . "%" . $userEmail . "%uploads/" . $_POST["login"] . ".jpg" . PHP_EOL, FILE_APPEND);
+            echo "Your data has been successfully sent to the server<br>";
+        }
+    }
+}
+
+
+function signIn($userLogin, $userPass){
+    $usersList = file("users.txt");
+
+    if ($userLogin == "" || $userPass == ""){
+        header('Refresh: 5; url=index.php'); //перенаправление
+        echo "Fill in all form fields. After 5 seconds you will be automatically redirected to re-enter data";
+    }else {
+
+        foreach ($usersList as $user) {                                   //создаём массивы логинов и паролей
+            $usersLogins[] = explode("%", $user)[1];
+            $usersPasswords[] = explode("%", $user)[2];
+            $usersEmails[] = explode("%", $user)[3];
+        }
+
+        for ($i = 0; $i < count($usersLogins); $i++){                       //проверяем, есть ли введённый логин в базе
+            if ($usersLogins[$i] == $userLogin){
+                if ($usersPasswords[$i] == md5($userPass)){                 //если есть, проверяем правильность пароля
+                    include "signIn.php";
+                    die();
+                }else {
+                    header('Refresh: 5; url=index.php'); //перенаправление
+                    echo "Incorrect password. After 5 seconds you will be automatically redirected to re-enter data";
+                    die();
+                }
+
+            }
+
+        }
+        echo "User with this login not found";
+        /*if ($isUserFind) {
             echo "User with this name is already registered.";
         } else {
             file_put_contents('users.txt', "%" . $userLogin . "%" . md5($userPass) . "%" . $userEmail . "%uploads/" . $_FILES["avatar"]["name"] . PHP_EOL, FILE_APPEND);
             echo "Your data has been successfully sent to the server<br>";
-        }
-
-
-
+        }*/
     }
 }
 
-authorization($_POST["login"], $_POST["password"], $_POST["email"]);
 
+authorization($_POST["authentication"]);
 ?>

@@ -1,7 +1,4 @@
-﻿%admin%6dd9aa0b0606270d0875acb21546bedb%yuretc91@mail.ru%uploads/
-%admin%86eda3a7e7f11241792e32271c8597f8%yuretc91@mail.ru%uploads/
-%admin%86eda3a7e7f11241792e32271c8597f8%yuretc91@mail.ru%uploads/
-%wwfwfw%fc95a827080cdc859967c9afc564d138%yuretc91@mail.ru%uploads/
-%bill%5b31081e9331cac5ae8c18684cc39115%yuretc91@mail.ru%uploads/barash.jpg
-%yuretc91%bf0892618166b488734b05db82452cc6%yuretc91@mail.ru%uploads/panda.jpg
-%admin%ddf7ef548667e82671f30c0b08c20912%yuretc91@mail.ru%uploads/niusha.jpg
+﻿%Peter%827ccb0eea8a706c4c34a16891f84e7b%peter@gmail.com%uploads/Peter.jpg
+%David%01cfcd4f6b8770febfb40cb906715822%david@mail.ru%uploads/David.jpg
+%Pavel%96e79218965eb72c92a549dd5a330112%pavel@gmail.com%uploads/Pavel.jpg
+%Bob%3d2172418ce305c7d16d4b05597c6a59%bob@mail.ru%uploads/Bob.jpg

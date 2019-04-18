@@ -1,5 +1,8 @@
 <?php
-session_start();
+/*session_start();
+if (isset($_SESSION["login"])){
+    $usLogin = $_SESSION["login"];
+}*/
 ?>
 <!doctype html>
 <html lang="ru">
@@ -21,24 +24,11 @@ session_start();
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-12">
-
-            <form action="serv.php" method="post" enctype="multipart/form-data">
-                <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" name="authentication" class="custom-control-input" id="registration" value="reg" onclick="disableInput(this)">
-                <label class="custom-control-label" for="registration">Registration</label>
-                </div>
-                <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" name="authentication" class="custom-control-input" id="signIn" value="sign" onclick="disableInput(this)" checked>
-                <label class="custom-control-label" for="signIn">Sign in</label>
-                </div>
-                <input type="text" name="login" class="form-control mb-3" placeholder="login">
-                <input type="password" name="password" class="form-control mb-3" placeholder="password" id="pass" >
-                <input type="email" name="email" class="form-control mb-3" placeholder="email" id="email">
-                <input type="file" name="avatar" class="form-control mb-3" id="avatar">
-                <input type="submit" name="submit" class="btn btn-block btn-primary" id="btn">
-            </form>
-
+        <div class="col-6">
+            <img src="<?="uploads/" . $_POST["login"] . ".jpg"?>" alt="avatar">
+        </div>
+        <div class="col-6">
+            Welcome, <?=$userLogin?><br>Your email:<?=$usersEmails[$i]?>
         </div>
     </div>
 </div>
@@ -65,8 +55,8 @@ session_start();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript">
-    document.getElementById('email').disabled = true;
-    document.getElementById('avatar').disabled = true;
+    document.getElementById('email').disabled = false;
+    document.getElementById('avatar').disabled = false;
 
     function disableInput(currentRadio){
         if(currentRadio.value === 'sign'){
@@ -82,4 +72,3 @@ session_start();
 </script>
 </body>
 </html>
-
