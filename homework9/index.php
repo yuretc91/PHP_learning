@@ -21,10 +21,34 @@
 
 </div>
 <?php
+function textCut($sourceText, $textLength){
+    for ($i = $textLength;$i > 0;$i--){
+        if ($sourceText[$i] == " "){
+            break;
+        }
+    }
+    return substr($sourceText, 0, $i);
+}
 
 
-$text = "";
+$text = file_get_contents("text.txt");
 
+//обрезаем до 500 символов
+$text500 = textCut($text, 500);
+echo "<p>" . $text500 . "...</p>";
+
+//обрезаем до 300 символов
+$text300 = textCut($text, 300);
+echo "<p>" . $text300 . "...</p>";
+
+
+//обрезаем до 250 символов
+$text250 = textCut($text, 250);
+echo "<p>" . $text250 . "...</p>";
+
+//обрезаем до 100 символов
+$text100 = textCut($text, 100);
+echo "<p>" . $text100 . "...</p>";
 
 /*Создать переменную, записать в нее рандомный текст на 500-1000 символов.
 Сделать функцию, которая обрезает текст по словам.
