@@ -1,2 +1,2 @@
 https://github.com/yuretc91/PHP_learning.git
-catalog "homework5"
+catalog "homework8", "homework9"
