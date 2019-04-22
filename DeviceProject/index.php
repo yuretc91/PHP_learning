@@ -24,30 +24,59 @@
         </ul>
     </header>
     <main>
-        <section class="slider container">
-            <article class="slide1 row">
-                <div class="slideImage col-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus accusantium, adipisci asperiores at, autem beatae blanditiis corporis cupiditate dolore ex explicabo fugit illo impedit ipsam itaque iure laborum magnam molestiae mollitia obcaecati perspiciatis quidem quo repellendus saepe veritatis voluptate.</div>
-                <div class="col-6">
+        <section class="slider">
+
+                <div class="slideImage col-6"><img src="images/slider/slider1.png" alt="slider1"></div>
+                <div class="slideAside col-6">
                     <div class="tagline row">Делай селфи, <br> как Бен Стиллер!</div>
                     <div class="description row">Самая длинная палка для селфи доступна в нашем магазине. <br>
                         Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</div>
                     <div class="sliderButtons row">
-                        <div class="info col-5">Подробнее</div>
+                        <div class="info col-8">ПОДРОБНЕЕ</div>
                         <div class="col-auto">Картинки</div>
                     </div>
                     <div class="specifications row">
-                        <div class="col-2">8,5 метров</div>
-                        <div class="col-2">5 кг</div>
-                        <div class="col-2">Карбон</div>
+                        <div class="col-3">8,5 м</div>
+                        <div class="col-3">5 кг</div>
+                        <div class="col-4">Карбон</div>
                     </div>
                     <div class="legend row">
-                        <div class="col-2">Длина палки</div>
-                        <div class="col-2">Вес палки</div>
-                        <div class="col-2">Материал</div>
+                        <div class="col-3">Длина палки</div>
+                        <div class="col-3">Вес палки</div>
+                        <div class="col-4">Материал</div>
                     </div>
                 </div>
+        </section>
+        <section class="popular">
+            <div class="popularImg">
+                <div class=""><img src="images/popular/popular-1.png" alt="popular-1"></div>
+                <div class=""><img src="images/popular/popular-2.png" alt="popular-2"></div>
+                <div class=""><img src="images/popular/popular-3.png" alt="popular-3"></div>
+                <div class=""><img src="images/popular/popular-4.png" alt="popular-4"></div>
+                <div class=""><img src="images/popular/popular-5.png" alt="popular-5"></div>
+                <div class=""><img src="images/popular/popular-6.png" alt="popular-6"></div>
+            </div>
+            <div class="popularDescription">
+                <p>Виртуальная реальность</p>
+                <p>Моноподы для селфи</p>
+                <p>Экшн-камеры</p>
+                <p>Фитнес-браслеты</p>
+                <p>Умные часы</p>
+                <p>Квадрокоптеры</p>
+            </div>
+        </section>
+        <section class="services">
+            <div class="servicesMenu">
+                <p>ДОСТАВКА</p>
+                <p>ГАРАНТИЯ</p>
+                <p>КРЕДИТ</p>
+            </div>
+            <div class="servicesMain">
+                <p class="activeService">Доставка</p>
+                <p class="activeServiceDescription">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно!
+                    Ведь мы неплохо заработаем, поднимая его на ваш этаж</p>
 
-            </article>
+            </div>
         </section>
 
 

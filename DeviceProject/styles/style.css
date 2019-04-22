@@ -17,12 +17,11 @@
     font-style: normal;
 }
 html{
-    /*width: 1440px;*/
+    width: 1160px;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
 }
 header{
-    width: 1160px;
     margin: 40px auto 0;
     height: 299px;
     background: #f7e296;
@@ -53,7 +52,7 @@ header{
     margin-top: 40px;
 }
 .slideImage{
-
+    text-align: center;
 }
 .tagline{
     font-size: 47px;
@@ -62,10 +61,13 @@ header{
 .description{
     font-size: 15px;
     font-family: OpenSans Light;
+    margin: 30px auto;
+    line-height: 2rem;
 }
 .info{
     font-size: 18px;
     font-family: Gilroy ExtraBold;
+    letter-spacing: 4px;
 }
 .specifications{
     font-size: 36px;
@@ -73,5 +75,83 @@ header{
 }
 .legend{
     font-size: 13px;
+    font-family: OpenSans Light;
+}
+.specifications > div,
+.legend > div{
+    text-align: center;
+}
+.sliderButtons{
+    margin: 40px auto;
+}
+.slideAside{
+    margin-top: 50px;
+}
+.slider{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    transform: translateY(-20%);
+}
+.popularImg{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.popularImg > div{
+    width: 160px;
+    height: 160px;
+    background: #f7e296;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popularImg img{
+    display: block;
+}
+.popularDescription{
+    font-size: 18px;
+    font-family: Gilroy ExtraBold;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.popularDescription > p{
+    text-align: center;
+    width: 160px;
+}
+.services{
+    margin-top: 100px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.servicesMenu{
+    border-right: 7px solid black;
+    font-size: 18px;
+    font-family: Gilroy ExtraBold;
+    color: #f7e296;
+    letter-spacing: 3px;
+    padding-top: 75px;
+    flex-basis: 350px;
+}
+.servicesMenu > p{
+    background: black;
+    padding: 10px 20px;
+}
+.servicesMain{
+    padding-left: 50px;
+    flex-grow: 1;
+}
+.activeService{
+    font-size: 47px;
+    font-family: Gilroy ExtraBold;
+}
+.activeServiceDescription{
+    font-size: 15px;
     font-family: OpenSans Light;
 }
