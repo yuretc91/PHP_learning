@@ -75,8 +75,16 @@
                 <p class="activeService">Доставка</p>
                 <p class="activeServiceDescription">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно!
                     Ведь мы неплохо заработаем, поднимая его на ваш этаж</p>
-
             </div>
+            <div class="servicesLogo">
+                <img src="images/services/delivery.png" alt="">
+            </div>
+        </section>
+        <section class="logotypes">
+            <div class="logotype"><img src="images/logotypes/dji.png" alt=""></div>
+            <div class="logotype"><img src="images/logotypes/spgadgets.png" alt=""></div>
+            <div class="logotype"><img src="images/logotypes/gopro.png" alt=""></div>
+            <div class="logotype"><img src="images/logotypes/vive.png" alt=""></div>
         </section>
 
 
