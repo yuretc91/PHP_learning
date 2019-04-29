@@ -27,24 +27,35 @@ header{
     background: #f7e296;
     padding-top: 50px;
 }
-.topMiniMenu{
+.headerMiniMenu,
+.footerMiniMenu{
     font-size: 15px;
     font-family: OpenSans Light;
     list-style-position: inside;
 }
-.search{
-    list-style-image: url(../icons/searchIcon.png);
+.headerSearch{
+    list-style-image: url(../icons/header/search.png);
 }
-.user{
-    list-style-image: url(../icons/userIcon.png);
+.headerUser{
+    list-style-image: url(../icons/header/user.png);
 }
-.compare{
-    list-style-image: url(../icons/compareIcon.png);
+.footerUser{
+    list-style-image: url(../icons/footer/user.png);
 }
-.cart{
-    list-style-image: url(../icons/cartIcon.png);
+.headerCompare{
+    list-style-image: url(../icons/header/compare.png);
 }
-.topSecondMenu{
+.footerCompare{
+    list-style-image: url(../icons/footer/compare.png);
+}
+.headerCart{
+    list-style-image: url(../icons/header/cart.png);
+}
+.footerCart{
+    list-style-image: url(../icons/footer/cart.png);
+}
+.headerSecondMenu,
+.footerSecondMenu{
     font-size: 18px;
     font-family: Gilroy ExtraBold;
     letter-spacing: 4px;
@@ -64,7 +75,7 @@ header{
     margin: 30px auto;
     line-height: 2rem;
 }
-.info{
+.sliderInfo{
     font-size: 18px;
     font-family: Gilroy ExtraBold;
     letter-spacing: 4px;
@@ -170,10 +181,98 @@ header{
     text-align: center;
     padding-top: 50px;
 }
+.logotypes,
+.infoAndContacts{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
 .logotypes{
+    padding: 50px 0;
+}
+
+.info,
+.contacts{
+    flex-basis: 45%;
+    flex-grow: 1;
+}
+.line{
+    width: 80px;
+    height: 7px;
+    background: #000;
+    margin: 30px 0;
+}
+.infoName,
+.contactsName{
+    font-size: 47px;
+    font-family: Gilroy ExtraBold;
+    padding: 20px 0;
+}
+.infoDescription,
+.contactsDescription{
+    font-size: 15px;
+    font-family: OpenSans Light;
+    padding: 20px 0;
+}
+.infoDescription{
+    padding-right: 100px;
+}
+.map{
+    padding-top: 20px;
+}
+.partners{
+    font-family: Gilroy ExtraBold;
+    font-size: 15px;
+    list-style-type: none;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+.partners > li{
+    padding: 10px 0;
+}
+.infoAndContacts a,
+.infoAndContacts a:hover{
+    text-decoration: none;
+    color: black;
+}
+.infoAndContactsBtn{
+    font-family: Gilroy ExtraBold;
+    font-size: 18px;
+    padding: 50px;
+    letter-spacing: 0.3rem;
+}
+footer{
+    background: #464646;
+}
+.footerFirstRow{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.footerLogo{
+    justify-self: flex-start;
+    margin-right: auto;
+}
+.footerMiniMenu{
+    flex-basis: 35%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.footerMiniMenuItem,
+.footerSecondMenuItem{
+    flex-grow: 1;
+}
+.footerSecondRow{
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 0;
+}
+.footerSecondMenu{
+    flex-basis: 35%;
+    justify-self: center;
+    margin: 0 auto;
+    display: flex;
 }

@@ -5,34 +5,33 @@
     <meta charset="UTF-8">
     <title>Device</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
     <header class="container">
-        <ul class="topMiniMenu row">
-            <li class="topMiniMenuItem col-6 search">Поиск по сайту</li>
-            <li class="topMiniMenuItem col-3 user">Войти</li>
-            <li class="topMiniMenuItem col compare">Сравнить</li>
-            <li class="topMiniMenuItem col cart">Корзина</li>
+        <ul class="headerMiniMenu row">
+            <li class="headerMiniMenuItem col-6 headerSearch">Поиск по сайту</li>
+            <li class="headerMiniMenuItem col-3 headerUser">Войти</li>
+            <li class="headerMiniMenuItem col headerCompare">Сравнить</li>
+            <li class="headerMiniMenuItem col headerCart">Корзина</li>
         </ul>
-        <ul class="topSecondMenu row">
-            <li class="topSecondMenuItem col-6">КАТАЛОГ ТОВАРОВ <img src="icons/plusIcon.png" alt="plus"></li>
-            <li class="topSecondMenuItem col-2">ДОСТАВКА</li>
-            <li class="topSecondMenuItem col-2">ГАРАНТИЯ</li>
-            <li class="topSecondMenuItem col-2">КОНТАКТЫ</li>
+        <ul class="headerSecondMenu row">
+            <li class="headerSecondMenuItem col-6">КАТАЛОГ ТОВАРОВ <img src="icons/header/plusIcon.png" alt="plus"></li>
+            <li class="headerSecondMenuItem col-2">ДОСТАВКА</li>
+            <li class="headerSecondMenuItem col-2">ГАРАНТИЯ</li>
+            <li class="headerSecondMenuItem col-2">КОНТАКТЫ</li>
         </ul>
     </header>
     <main>
         <section class="slider">
 
-                <div class="slideImage col-6"><img src="images/slider/slider1.png" alt="slider1"></div>
+                <div class="slideImage col-6"><img src="images/slider/slider1.png" alt="slider"></div>
                 <div class="slideAside col-6">
                     <div class="tagline row">Делай селфи, <br> как Бен Стиллер!</div>
                     <div class="description row">Самая длинная палка для селфи доступна в нашем магазине. <br>
                         Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</div>
                     <div class="sliderButtons row">
-                        <div class="info col-8">ПОДРОБНЕЕ</div>
+                        <div class="sliderInfo col-8">ПОДРОБНЕЕ</div>
                         <div class="col-auto">Картинки</div>
                     </div>
                     <div class="specifications row">
@@ -86,14 +85,55 @@
             <div class="logotype"><img src="images/logotypes/gopro.png" alt=""></div>
             <div class="logotype"><img src="images/logotypes/vive.png" alt=""></div>
         </section>
+        <section class="infoAndContacts">
+            <div class="info">
+                <div class="line"></div>
+                <div class="infoName">О нас</div>
+                <div class="infoDescription">Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</div>
+                <div class="infoDescription">Мы можем доставить наш товар в самые отдалённые точки России! DEVICE работает со многими транспортными компаниями.</div>
+                <ul class="partners">
+                    <li><a href="#">Деловые Линии</a></li>
+                    <li><a href="#">Автотрейдинг</a></li>
+                    <li><a href="#">ЖелДорЭкспедиция</a></li>
+                </ul>
+                <div class="infoAndContactsBtn"><a href="#">ПОДРОБНЕЕ О НАС</a></div>
+
+            </div>
+            <div class="contacts">
+                <div class="line"></div>
+                <div class="contactsName">Контакты</div>
+                <div class="contactsDescription">Вы можете забрать товар сами, заехав в наш офис.
+                    Заодно, вы сможете проверить работоспособность покупки. Всякое бывает</div>
+                <div class="map"><img src="images/contacts/map.png" alt="map"></div>
+                <div class="infoAndContactsBtn"><a href="#">НАПИШИТЕ НАМ</a></div>
+            </div>
+        </section>
 
 
 
     </main>
+    <footer>
+        <div class="footerFirstRow">
+            <div class="footerLogo"><img src="images/footer/logo.png" alt="logo"></div>
+            <ul class="footerMiniMenu">
+                <li class="footerMiniMenuItem footerUser">Войти</li>
+                <li class="footerMiniMenuItem footerCompare">Сравнить</li>
+                <li class="footerMiniMenuItem footerCart">Корзина</li>
+            </ul>
+
+        </div>
+        <div class="footerSecondRow">
+            <div class="adress">г.Москва, ул.Строителей, 15</div>
+            <ul class="footerSecondMenu">
+                <li class="footerSecondMenuItem">ДОСТАВКА</li>
+                <li class="footerSecondMenuItem">ГАРАНТИЯ</li>
+                <li class="footerSecondMenuItem">КОНТАКТЫ</li>
+            </ul>
+            <div class="phone">+ 7(495)495-95-95</div>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 
 </body>
