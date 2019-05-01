@@ -11,9 +11,14 @@ include_once "head.php";
     <div id="wrapper">
         <?php
         include_once "nav.php";
-        include_once "wrapper.php";
+
+        if (isset($_GET["categories"])){
+            include_once "categories.php";
+        }
+
         ?>
     </div>
+
 
 
 

@@ -17,17 +17,11 @@ include "includes/nav.php";
             <?php
 if (isset($_GET["search"])){
     $searchRequest = $_GET["search"];
-    //echo $searchRequest;
     $getCategoriesFromSearch = "SELECT * FROM posts WHERE title LIKE '%$searchRequest%'";
     $searchPostsRezult = mysqli_query($connection, $getCategoriesFromSearch);
     if(!$searchPostsRezult) {
         echo "Запрос не удался";
     }
-    /*foreach ($searchCategoriesRezult as $searchCategory){
-        $idCategory = $searchCategory["id"];
-    }*/
-    /*$getPostsFromSearch = "SELECT * FROM posts WHERE cat_id = $idCategory";
-    $searchPostsRezult = mysqli_query($connection, $getPostsFromSearch);*/
 
 }
 foreach ($searchPostsRezult as $post) :

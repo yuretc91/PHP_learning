@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 25 2019 г., 21:11
--- Версия сервера: 5.6.38
--- Версия PHP: 7.2.0
+-- Время создания: Май 01 2019 г., 22:33
+-- Версия сервера: 5.6.41
+-- Версия PHP: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,7 +42,7 @@ INSERT INTO `categories` (`id`, `name`, `code`) VALUES
 (1, 'about', 'ab'),
 (2, 'services', 'serv'),
 (3, 'contact', 'con'),
-(4, 'Rewiews', 'rewiew');
+(5, 'rewiews', 'ebe gghghr rhrh');
 
 -- --------------------------------------------------------
 
@@ -93,7 +93,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT для таблицы `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `posts`
