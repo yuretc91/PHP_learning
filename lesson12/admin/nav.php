@@ -116,13 +116,13 @@
             </ul>
 
             <form action="index.php" method="get" class="collapse navbar-collapse navbar-ex1-collapse">
-                <input type="submit" name="categories">
+
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="index.php" name="categories" type="submit"><i class="fa fa-fw fa-dashboard"></i>Categories</a>
+                        <a href="index.php?page=categories" name="categories" type="submit"><i class="fa fa-fw fa-dashboard"></i>Categories</a>
                     </li>
                     <li>
-                        <a href="index.php" name="posts" type="submit"><i class="fa fa-fw fa-bar-chart-o"></i>Posts</a>
+                        <a href="index.php?page=posts" name="posts" type="submit"><i class="fa fa-fw fa-bar-chart-o"></i>Posts</a>
                     </li>
 
                 </ul>

@@ -1,6 +1,6 @@
 <?php
 
-    $sql = "SELECT * FROM categories LIMIT 3";
+    $sql = "SELECT * FROM categories";
     $result = mysqli_query($connection, $sql);
     if(!$result) {
         echo "Запрос не удался";
