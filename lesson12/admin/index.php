@@ -32,7 +32,7 @@ include_once "head.php";
             $delCategoriesRezult = mysqli_query($connection, $delCategories);
             if(!$delCategoriesRezult) {
                 echo "Запрос не удался";
-            }//else echo "Successfully deleted";
+            }
         }
     }
     if (isset($_POST["create"])){
@@ -43,7 +43,7 @@ include_once "head.php";
         $insCategoriesRezult = mysqli_query($connection, $insCategories);
         if(!$insCategoriesRezult) {
             echo "Запрос не удался";
-        } //else echo "Successfully created";
+        }
 
     }
     if (isset($_POST["update"])){
@@ -54,7 +54,7 @@ include_once "head.php";
         $insCategoriesRezult = mysqli_query($connection, $insCategories);
         if(!$insCategoriesRezult) {
             echo "Запрос не удался";
-        } //else echo "Successfully updated";
+        }
 
     }
     ?>
