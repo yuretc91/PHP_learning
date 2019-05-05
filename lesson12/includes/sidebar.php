@@ -8,7 +8,19 @@ if(!$categoriesRezult) {
 ?>
 <div class="col-md-4">
 
-    <!-- Blog Search Well -->
+    <div class="well">
+        <h4>Authorization</h4>
+        <form class="input-group" method="POST" action="includes/authorization.php">
+            <label for="login">Login
+                <input type="text" class="form-control" name="login" ></label>
+            <label for="password">Password
+                <input type="text" class="form-control" name="password" ></label>
+            <input class="btn btn-primary" type="submit" value="Sign In" name="signIn">
+
+        </form>
+
+    </div>
+
     <div class="well">
         <h4>Blog Search</h4>
         <form class="input-group" method="get" action="search.php">
@@ -19,7 +31,7 @@ if(!$categoriesRezult) {
                         </button>
                         </span>
         </form>
-        <!-- /.input-group -->
+
     </div>
 
 

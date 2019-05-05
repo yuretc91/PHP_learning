@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (!isset($_SESSION['userLogin']) || $_SESSION['isAdmin'] == false){
+    header("Location: ../welcome.php");
+}?>
 <!DOCTYPE html>
 <html lang="en">
 
