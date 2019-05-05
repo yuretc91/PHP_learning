@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 04 2019 г., 22:06
--- Версия сервера: 5.6.41
+-- Время создания: Май 05 2019 г., 21:05
+-- Версия сервера: 5.6.38
 -- Версия PHP: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -48,8 +48,8 @@ INSERT INTO `posts` (`id`, `title`, `author`, `created_at`, `content`, `image`, 
 (3, 'Blog Post Title 3', 'Start Bootstrap', '2019-04-25', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.', 'http://placehold.it/900x300', 3),
 (4, 'newPost', 'Admin', '2019-05-04', 'fwfwf gegeg gegegeg gergeger ggergerg egergerg e', '', 1),
 (5, 'Post12334', 'Me', '2019-05-04', 'ege ge trghetghtrgh tr ntyhjyhryhtr hnty htyhyh nbyh yhyrh bntyhr htrgrtklj hrtnjghtrjghjtr kohtj rj ighjeigjoiej gnbrj hitrj ghihtr hjguitrhjuih rbn ijtrithji ihj tijhuitjhguit ritruihjtrjhguitr hjhuitrhjhitrjihtrji ghitrihguithjt ihjtjhtrhjiu hitjruihtrji', '', 4),
-(6, '1234', '', '2019-05-04', '', '', 0),
-(7, '1234', '', '2019-05-04', '', '', 0);
+(6, 'eyeye', 'eyeye', '2019-05-05', 'eyeyeye', 'uploads/eyeye.jpg', 2),
+(7, '446464646', '4646464646', '2019-05-05', '4646464646464', 'uploads/446464646.jpg', 2);
 
 --
 -- Индексы сохранённых таблиц
@@ -69,7 +69,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT для таблицы `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

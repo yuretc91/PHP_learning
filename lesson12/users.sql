@@ -25,34 +25,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `categories`
+-- Структура таблицы `users`
 --
 
-CREATE TABLE `categories` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `name` varchar(60) NOT NULL,
-  `code` varchar(60) NOT NULL
+  `login` varchar(60) NOT NULL,
+  `password` varchar(250) NOT NULL,
+  `email` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `categories`
+-- Дамп данных таблицы `users`
 --
 
-INSERT INTO `categories` (`id`, `name`, `code`) VALUES
-(1, 'about', 'ab'),
-(2, 'services', 'serv'),
-(3, 'contact', 'con'),
-(5, 'rewiews', 'ebe gghghr rhrh'),
-(6, 'new', 'new');
+INSERT INTO `users` (`id`, `login`, `password`, `email`) VALUES
+(1, 'admin', 'admin', 'admin@gmail.com'),
+(2, 'user', 'user', 'user@gmail.com');
 
 --
 -- Индексы сохранённых таблиц
 --
 
 --
--- Индексы таблицы `categories`
+-- Индексы таблицы `users`
 --
-ALTER TABLE `categories`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -60,10 +58,10 @@ ALTER TABLE `categories`
 --
 
 --
--- AUTO_INCREMENT для таблицы `categories`
+-- AUTO_INCREMENT для таблицы `users`
 --
-ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
