@@ -1,26 +1,28 @@
 $(function () {
-    /*var main = $("main");
-    var btn = $('.btn');
-    var menu = $('.menu');
+    var leftArr = $(".slideImage slideActive");
+    var rightArr = $(".slideAside slideActive");
+    var imgs = document.querySelectorAll("#slider > img");
+    var opisanies = document.querySelectorAll("#opisanie > p");
+    var imgIndex = 0;
 
 
-    $('.btn').each(function (index, value){
-        $(this).on('click', function() {
-            //this.addClass("active");
-            console.log($(this).text());
+    rightArr.click(function () {
+        leftArr[imgIndex].removeClass("slideActive");
+        if (imgIndex == 3) {
+            imgIndex = 0;
+        } else imgIndex++;
+        leftArr[imgIndex].addClass("slideActive");
+        console.log(imgIndex);
 
-            $.ajax({
-                url: "serv.php",
-                type: "POST",
-                data: {
-                    btn : $(this).text()
-                }
-            }).done(function(response) {
-                console.log(response);
-                main.html(response);
-            });
-        });
-    });*/
+    });
+   /* leftArr.onclick = function () {
+        imgs[imgIndex].classList.remove("active");
+        if (imgIndex == 0) {
+            imgIndex = 6;
+        } else imgIndex--;
+        imgs[imgIndex].classList.add("active");
+    };*/
+
 
 
 

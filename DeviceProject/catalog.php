@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Device</title>
-    <link rel="stylesheet" href="styles/indexStyle.css">
+    <link rel="stylesheet" href="styles/catalogStyle.css">
     <link rel="stylesheet" href="styles/header.css">
 </head>
 
@@ -14,11 +14,8 @@ include_once "header.php";
 ?>
     <main>
         <?php
-        include_once "slider.php";
-        include_once "popular.php";
-        include_once "services.php";
-        include_once "logotypes.php";
-        include_once "infoAndContacts.php";
+        include_once "catalogMain.php";
+
         ?>
     </main>
 <?php
