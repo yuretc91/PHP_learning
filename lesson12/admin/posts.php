@@ -1,5 +1,6 @@
 <?php
-$getPosts = "SELECT * FROM posts";
+$getPosts = "SELECT posts.id AS postID, posts.title, posts.author, posts.created_at, ";
+$getPosts .= "posts.content, posts.image, posts.cat_id, categories.id, categories.name FROM posts LEFT JOIN categories ON posts.cat_id = categories.id";
 $postsRezult = mysqli_query($connection, $getPosts);
 if(!$postsRezult) {
     echo "Запрос не удался";
@@ -141,13 +142,13 @@ if(!$postsRezult) {
 
                                     ?>
                                     <tr>
-                                        <td><?= $onePost["id"]?></td>
+                                        <td><?= $onePost["postID"]?></td>
                                         <td class="col-lg-1"><?= $onePost["title"]?></td>
                                         <td><?= $onePost["author"]?></td>
                                         <td class="col-lg-1"><?= $onePost["created_at"]?></td>
                                         <td class="col-lg-4"><?= $onePost["content"]?></td>
                                         <td><?= $onePost["image"]?></td>
-                                        <td><?= $onePost["cat_id"]?></td>
+                                        <td><?= $onePost["name"]?></td>
                                         <td><a href="index.php?page=posts&active=update&id=<?=$onePost['id']?>" class="btn btn-primary">Redact</a><a href="index.php?page=posts&active=delete&id=<?=$onePost['id']?>" class="btn btn-danger">Delete</a></td>
                                     </tr>
                                     <?php
