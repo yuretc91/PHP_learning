@@ -8,15 +8,6 @@
 .logotypes{
     padding: 50px 0;
 }
-.logotype{
-    filter: gray;
-    -webkit-filter: grayscale(1);
-    filter: grayscale(1);
-}
-.logotype:hover{
-    filter: none;
-    -webkit-filter: grayscale(0);
-}
 
 .info,
 .contacts{
