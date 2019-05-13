@@ -1,9 +1,9 @@
 
         <section class="services">
             <div class="servicesMenu">
-                <p><a href="#">ДОСТАВКА</a></p>
-                <p><a href="#">ГАРАНТИЯ</a></p>
-                <p><a href="#">КРЕДИТ</a></p>
+                <p><a href="#" class="btn_orange-black">ДОСТАВКА</a></p>
+                <p><a href="#" class="btn_orange-black">ГАРАНТИЯ</a></p>
+                <p><a href="#" class="btn_orange-black">КРЕДИТ</a></p>
             </div>
             <div class="servicesMain">
                 <p class="activeService">Доставка</p>

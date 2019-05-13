@@ -1,0 +1,29 @@
+.popular__popularImg{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.popular__popularImg > div{
+    width: 160px;
+    height: 160px;
+    background: #f7e296;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popular__popularImg img{
+    display: block;
+}
+.popular__popularDescription{
+    font-size: 18px;
+    font-family: Gilroy ExtraBold;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.popular__popularDescription > p{
+    text-align: center;
+    width: 160px;
+}

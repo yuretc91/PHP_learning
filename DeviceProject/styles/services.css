@@ -1,0 +1,47 @@
+.services{
+    margin-top: 100px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: start;
+    background-image: url("../images/services/background.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 380px;
+}
+.servicesMenu{
+    border-right: 7px solid black;
+    padding-top: 67px;
+    flex-basis: 550px;
+    height: 80%;
+}
+.servicesMenu > p{
+    /*padding: 10px 20px;*/
+    color: black;
+}
+.servicesMenu > p > a{
+    width: 160px;
+}
+.servicesMenu > p:active{
+    background: black;
+    color: #f7e296;
+}
+.servicesMain{
+    padding-left: 150px;
+    flex-grow: 1;
+}
+.activeService{
+    font-size: 47px;
+    font-family: Gilroy ExtraBold;
+    padding-top: 50px;
+}
+.activeServiceDescription{
+    font-size: 15px;
+    font-family: OpenSans Light;
+    line-height: 2rem;
+}
+.servicesLogo{
+    flex-basis: 500px;
+    text-align: center;
+    padding-top: 50px;
+}
