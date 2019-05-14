@@ -3,4 +3,9 @@
 3. SELECT * FROM `posts` WHERE id BETWEEN 3 AND 6
 4. SELECT MIN(id) FROM `posts`
 5. SELECT posts.title, posts.author, posts.content, posts.cat_id, categories.id, categories.name FROM `posts` LEFT JOIN `categories` ON posts.cat_id = categories.id
-6. 
+6. SELECT posts.id, posts.title, posts.author, posts.content, posts.cat_id, sub_categories.id, sub_categories.sub_cat_name, sub_categories.category_id, categories.id, categories.name FROM `posts` INNER JOIN `sub_categories` ON posts.cat_id = sub_categories.id INNER JOIN `categories` ON sub_categories.category_id = categories.id
+7. SELECT * FROM posts WHERE created_at > NOW()
+
+2.1 SELECT posts.title, posts.author, posts.content, categories.name AS category FROM `posts` LEFT JOIN `categories` ON posts.cat_id = categories.id
+2.5 SELECT DISTINCT categories.name FROM `categories` INNER JOIN `posts` ON categories.id = posts.cat_id
+

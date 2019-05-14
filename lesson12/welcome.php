@@ -77,8 +77,53 @@ if (isset($_SESSION['userLogin'])){
 
 
 
+
+
+
+            <table class="table table-hover table-striped">
+                <thead>
+                <tr>
+                    <th>Author</th>
+                    <th>Comment</th>
+                    <th>Control</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+
+                $getComments = "SELECT * FROM users WHERE login = '{$user_login}'";
+                $rezult = mysqli_query($connection, $query);
+                if (!$rezult){
+                    die("Запрос не удался - " . mysqli_error());
+                }
+                $row = mysqli_fetch_assoc($rezult);
+                foreach ($postsRezult as $onePost) :
+
+                    ?>
+                    <tr>
+                        <td><?= $onePost["postID"]?></td>
+                        <td class="col-lg-1"><?= $onePost["title"]?></td>
+                        <td><?= $onePost["author"]?></td>
+                        <td class="col-lg-1"><?= $onePost["created_at"]?></td>
+                        <td class="col-lg-4"><?= $onePost["content"]?></td>
+                        <td><?= $onePost["image"]?></td>
+                        <td><?= $onePost["name"]?></td>
+                        <td><a href="index.php?page=posts&active=update&id=<?=$onePost['id']?>" class="btn btn-primary">Redact</a><a href="index.php?page=posts&active=delete&id=<?=$onePost['id']?>" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                <?php
+
+                endforeach;
+
+                ?>
+
+
+                </tbody>
+            </table>
+
+
+
     </div>
-    <!-- /.row -->
+
 <?php
 
 //include "includes/footer.php";
