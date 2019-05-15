@@ -1,0 +1,18 @@
+@font-face {
+    font-family: OpenSans Light;
+    src: url("../fonts/opensanslight.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Gilroy ExtraBold;
+    src: url("../fonts/gilroyextrabold.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Gilroy Light;
+    src: url("../fonts/gilroylight.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

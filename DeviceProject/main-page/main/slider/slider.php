@@ -1,5 +1,5 @@
 
-        <section class="slider">
+        <section class="slider slider-position">
 
                 <div class="slider__slideImage slideActive" id="slideImage"><img src="images/slider/slider1.png" alt="slider" ></div>
                 <div class="slider__slideImage"><img src="images/slider/slider2.png" alt="slider" ></div>

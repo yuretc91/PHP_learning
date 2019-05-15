@@ -1,0 +1,6 @@
+.slider-position{
+    padding: 0 50px;
+    position: relative;
+    transform: translateY(-20%);
+    height: 450px;
+}
