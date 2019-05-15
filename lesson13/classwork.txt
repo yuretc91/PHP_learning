@@ -9,3 +9,7 @@
 2.1 SELECT posts.title, posts.author, posts.content, categories.name AS category FROM `posts` LEFT JOIN `categories` ON posts.cat_id = categories.id
 2.5 SELECT DISTINCT categories.name FROM `categories` INNER JOIN `posts` ON categories.id = posts.cat_id
 
+Задание с обменом сообщениями:
+каталог 'lesson12'
+логин: 'user'
+пароль: 'user'

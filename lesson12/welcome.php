@@ -83,38 +83,59 @@ if (isset($_SESSION['userLogin'])){
             <table class="table table-hover table-striped">
                 <thead>
                 <tr>
-                    <th>Author</th>
+                    <th>Number</th>
                     <th>Comment</th>
+                    <th>Author</th>
+                    <th>Is readed</th>
                     <th>Control</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php
 
-                $getComments = "SELECT * FROM users WHERE login = '{$user_login}'";
-                $rezult = mysqli_query($connection, $query);
-                if (!$rezult){
+                $getComments = "SELECT messages.id AS message_id, messages.text, users.login, messages.is_it_read FROM messages INNER JOIN users ON messages.user_id = users.id";
+                $rezultComments = mysqli_query($connection, $getComments);
+                if (!$rezultComments){
                     die("Запрос не удался - " . mysqli_error());
                 }
-                $row = mysqli_fetch_assoc($rezult);
-                foreach ($postsRezult as $onePost) :
+                $row = mysqli_fetch_assoc($rezultComments);
+                foreach ($rezultComments as $oneComment) :
 
                     ?>
                     <tr>
-                        <td><?= $onePost["postID"]?></td>
-                        <td class="col-lg-1"><?= $onePost["title"]?></td>
-                        <td><?= $onePost["author"]?></td>
-                        <td class="col-lg-1"><?= $onePost["created_at"]?></td>
-                        <td class="col-lg-4"><?= $onePost["content"]?></td>
-                        <td><?= $onePost["image"]?></td>
-                        <td><?= $onePost["name"]?></td>
-                        <td><a href="index.php?page=posts&active=update&id=<?=$onePost['id']?>" class="btn btn-primary">Redact</a><a href="index.php?page=posts&active=delete&id=<?=$onePost['id']?>" class="btn btn-danger">Delete</a></td>
+                        <td class="col-lg-1"><?= $oneComment["message_id"]?></td>
+                        <td class="col-lg-7"><?= $oneComment["text"]?></td>
+                        <td class="col-lg-2"><?= $oneComment["login"]?></td>
+                        <td class="col-lg-3"><?= $oneComment["is_it_read"]?></td>
+                        <?php
+                        if ($oneComment["login"] == $user_login){?>
+                            <td><a href="#" class="btn btn-danger" disabled>It's my message</a></td>
+                            <?php
+                        }elseif($oneComment["is_it_read"] == 'true'){?>
+                            <td><a href="#" class="btn btn-success" disabled>Readed</a></td>
+
+                         <?php
+                        }else{?>
+                            <td><a href="welcome.php?message_id=<?=$oneComment['message_id']?>" class="btn btn-primary">Read</a></td>
+                        <?php
+                        }
+                        ?>
+
                     </tr>
                 <?php
 
                 endforeach;
+                if (isset($_GET['message_id'])){
+                    $updComment = "UPDATE messages SET is_it_read = 'true' WHERE id = '{$_GET['message_id']}'";
+                    $updCommentRezult = mysqli_query($connection, $updComment);
+                    if(!$updCommentRezult) {
+                        echo "Запрос не удался";
+                    }
+                }
 
                 ?>
+
+
 
 
                 </tbody>

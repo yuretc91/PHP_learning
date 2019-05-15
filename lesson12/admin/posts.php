@@ -57,7 +57,7 @@ if(!$postsRezult) {
                         <?php
 
 
-                            if (isset($_GET["active"]) && $_GET["active"] == "update") {                                            //РЕДАКТИРОВАНИЕ ПОСТА
+                            if (isset($_GET["active"]) && $_GET["active"] == "update") {                           //РЕДАКТИРОВАНИЕ ПОСТА
                                 $currentId = $_GET['id'];
                                 $getCurrentPost = "SELECT * FROM posts WHERE id = '{$currentId}'";
                                 $currentPostRezult = mysqli_query($connection, $getCurrentPost);
