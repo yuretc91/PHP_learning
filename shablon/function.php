@@ -1,7 +1,7 @@
 <?php
 
 function renderTemplate($name, $data = []) {
-    $name = "templates/" . $name; // templates/index.php
+    $name = 'templates/' . $name; // templates/index.php
 
     $result = "";
     // Определяет существование файла

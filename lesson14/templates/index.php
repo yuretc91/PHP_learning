@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Главная</title>
-    <link href="css/normalize.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-</head>
 <body>
 <div class="page-wrapper">
 
@@ -68,7 +60,7 @@
                     </div>
                     <div class="lot__info">
                         <span class="lot__category"><?= $lots['name']?></span>
-                        <h3 class="lot__title"><a class="text-link" href="pages/lot.html"><?= $lots['title']?></a></h3>
+                        <h3 class="lot__title"><a class="text-link" href="lot.php?lot=<?= $lots['id']?>"><?= $lots['title']?></a></h3>
                         <div class="lot__state">
                             <div class="lot__rate">
                                 <span class="lot__amount"><?= $lots['start_price']?></span>
@@ -151,9 +143,3 @@
     </div>
 </footer>
 
-
-
-<script src="flatpickr.js"></script>
-<script src="script.js"></script>
-</body>
-</html>
