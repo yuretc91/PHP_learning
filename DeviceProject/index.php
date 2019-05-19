@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Device</title>
-    <link rel="stylesheet" href="styles/indexStyle.css">
     <link rel="stylesheet" href="common/styles/fonts.css">
+    <link rel="stylesheet" href="styles/indexStyle.css">
     <link rel="stylesheet" href="main-page/header/header.css">
     <link rel="stylesheet" href="styles/slider.css">
     <link rel="stylesheet" href="styles/slider-position.css">
