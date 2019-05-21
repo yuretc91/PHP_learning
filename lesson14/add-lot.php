@@ -23,7 +23,12 @@ if (isset($_POST['submit'])){
 
 }
 
-
+//достаём категории
+$getCategories = "SELECT * FROM cathegory";
+$categoriesResult = mysqli_query($connection, $getCategories);
+if(!$categoriesResult) {
+    echo "Запрос не удался";
+}
 
 
 
@@ -31,7 +36,8 @@ if (isset($_POST['submit'])){
 $content = renderTemplate('add-lot.php', [
     'user_name' => $user_name,
     'categoriesResult' => $categoriesResult,
-    'lotsResult' => $lotsResult
+    'lotsResult' => $lotsResult,
+    'categoriesResult' => $categoriesResult
 ]);
 
 $layout = renderTemplate('layout.php', [

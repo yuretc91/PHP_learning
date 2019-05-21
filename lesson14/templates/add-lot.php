@@ -26,24 +26,19 @@
   <main>
     <nav class="nav">
       <ul class="nav__list container">
+          <?php
+
+          foreach ($categoriesResult as $cathegory) :
+
+          ?>
         <li class="nav__item">
-          <a href="all-lots.html">Доски и лыжи</a>
+          <a href="all-lots.php"><?= $cathegory['name']?></a>
         </li>
-        <li class="nav__item">
-          <a href="all-lots.html">Крепления</a>
-        </li>
-        <li class="nav__item">
-          <a href="all-lots.html">Ботинки</a>
-        </li>
-        <li class="nav__item">
-          <a href="all-lots.html">Одежда</a>
-        </li>
-        <li class="nav__item">
-          <a href="all-lots.html">Инструменты</a>
-        </li>
-        <li class="nav__item">
-          <a href="all-lots.html">Разное</a>
-        </li>
+          <?php
+
+          endforeach;
+
+          ?>
       </ul>
     </nav>
     <form class="form form--add-lot container form--invalid" action="add-lot.php" method="post" enctype="multipart/form-data"> <!-- form--invalid -->
@@ -109,24 +104,19 @@
 <footer class="main-footer">
   <nav class="nav">
     <ul class="nav__list container">
+        <?php
+
+        foreach ($categoriesResult as $cathegory) :
+
+        ?>
       <li class="nav__item">
-        <a href="all-lots.html">Доски и лыжи</a>
+        <a href="all-lots.php"><?= $cathegory['name']?></a>
       </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Крепления</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Ботинки</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Одежда</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Инструменты</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Разное</a>
-      </li>
+        <?php
+
+        endforeach;
+
+        ?>
     </ul>
   </nav>
   <div class="main-footer__bottom container">
@@ -170,6 +160,6 @@
     </div>
   </div>
 </footer>
-
+</body>
 <script src="flatpickr.js"></script>
 <script src="script.js"></script>
