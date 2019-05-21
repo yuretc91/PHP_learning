@@ -5,6 +5,7 @@
     <title><?= $title ?></title>
     <link href="css/normalize.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/flatpickr.min.css" rel="stylesheet">
 </head>
 
 
@@ -14,5 +15,6 @@
 
 
 
-
+<script src="flatpickr.js"></script>
+<script src="script.js"></script>
 </html>

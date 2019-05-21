@@ -34,7 +34,7 @@
 
                 ?>
                 <li class="promo__item promo__item--<?= $cathegory['code']?>">
-                    <a class="promo__link" href="all-lots.php"><?= $cathegory['name']?></a>
+                    <a class="promo__link" href="all-lots.php?category=<?= $cathegory['id']?>"><?= $cathegory['name']?></a>
                 </li>
                 <?php
 
@@ -92,7 +92,7 @@
 
             ?>
             <li class="nav__item">
-                <a href="all-lots.php"><?= $cathegory['name']?></a>
+                <a href="all-lots.php?category=<?= $cathegory['id']?>"><?= $cathegory['name']?></a>
             </li>
             <?php
 
@@ -144,5 +144,4 @@
 </footer>
 
 </body>
-<script src="flatpickr.js"></script>
-<script src="script.js"></script>
+

@@ -6,6 +6,7 @@ if (isset($_GET['lot'])){
     $lotId = $_GET['lot'];
 }
 
+
 $getCategories = "SELECT * FROM cathegory";
 $categoriesResult = mysqli_query($connection, $getCategories);
 if(!$categoriesResult) {

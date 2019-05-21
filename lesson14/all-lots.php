@@ -10,6 +10,17 @@ if(!$categoriesResult) {
     echo "Запрос не удался";
 }
 
+
+if (isset($_GET['category'])){
+    $categoryId = $_GET['category'];
+}
+
+$getOneCategory = "SELECT * FROM cathegory WHERE id = '{$categoryId}'";
+$oneCategoryResult = mysqli_fetch_assoc(mysqli_query($connection, $getOneCategory));
+if(!$oneCategoryResult) {
+    echo "Запрос не удался";
+}
+
 //достаём лоты
 $getLots = "SELECT lots.id, lots.title, lots.picture, cathegory.name, lots.start_price ";
 $getLots .= "FROM `lots` INNER JOIN `cathegory` ON lots.category_id = cathegory.id";
@@ -24,7 +35,8 @@ if(!$lotsResult) {
 $content = renderTemplate('all-lots.php', [
     'user_name' => $user_name,
     'categoriesResult' => $categoriesResult,
-    'lotsResult' => $lotsResult
+    'lotsResult' => $lotsResult,
+    'oneCategoryResult' => $oneCategoryResult
 ]);
 
 $layout = renderTemplate('layout.php', [
