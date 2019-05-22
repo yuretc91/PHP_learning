@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_SESSION['userName'])){
+    $user_name = $_SESSION['userName'];
+}
 include 'dbOpen.php';
 include "function.php";
 $is_auth = rand(0, 1);

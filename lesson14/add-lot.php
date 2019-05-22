@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (isset($_SESSION['userName'])){
+    $user_name = $_SESSION['userName'];
+}
 include 'dbOpen.php';
 include "function.php";
 $title = 'Add lot title';
