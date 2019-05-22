@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Вход</title>
-  <link href="../css/normalize.min.css" rel="stylesheet">
-  <link href="../css/style.css" rel="stylesheet">
-</head>
 <body>
 
 <div class="page-wrapper">
@@ -13,21 +5,21 @@
   <header class="main-header">
     <div class="main-header__container container">
       <h1 class="visually-hidden">YetiCave</h1>
-      <a class="main-header__logo" href="index.html">
-        <img src="../img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
+      <a class="main-header__logo" href="index.php">
+        <img src="img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
       </a>
       <form class="main-header__search" method="get" action="https://echo.htmlacademy.ru" autocomplete="off">
         <input type="search" name="search" placeholder="Поиск лота">
         <input class="main-header__search-btn" type="submit" name="find" value="Найти">
       </form>
-      <a class="main-header__add-lot button" href="add-lot.html">Добавить лот</a>
+      <a class="main-header__add-lot button" href="add-lot.php">Добавить лот</a>
       <nav class="user-menu">
         <ul class="user-menu__list">
           <li class="user-menu__item">
-            <a href="sign-up.html">Регистрация</a>
+            <a href="sign-up.php">Регистрация</a>
           </li>
           <li class="user-menu__item">
-            <a href="login.html">Вход</a>
+            <a href="login.php">Вход</a>
           </li>
         </ul>
       </nav>
@@ -37,39 +29,46 @@
   <main>
     <nav class="nav">
       <ul class="nav__list container">
-        <li class="nav__item">
-          <a href="all-lots.html">Доски и лыжи</a>
-        </li>
-        <li class="nav__item">
-          <a href="all-lots.html">Крепления</a>
-        </li>
-        <li class="nav__item">
-          <a href="all-lots.html">Ботинки</a>
-        </li>
-        <li class="nav__item">
-          <a href="all-lots.html">Одежда</a>
-        </li>
-        <li class="nav__item">
-          <a href="all-lots.html">Инструменты</a>
-        </li>
-        <li class="nav__item">
-          <a href="all-lots.html">Разное</a>
-        </li>
+          <?php
+
+          foreach ($categoriesResult as $cathegory) :
+
+              ?>
+              <li class="nav__item">
+                  <a href="all-lots.php?category=<?= $cathegory['id']?>"><?= $cathegory['name']?></a>
+              </li>
+          <?php
+
+          endforeach;
+
+          ?>
       </ul>
     </nav>
-    <form class="form container" action="https://echo.htmlacademy.ru" method="post"> <!-- form--invalid -->
-      <h2>Вход</h2>
+    <form class="form container" action="sign-up.php" method="post" autocomplete="off"> <!-- form--invalid -->
+      <h2>Регистрация нового аккаунта</h2>
       <div class="form__item"> <!-- form__item--invalid -->
         <label for="email">E-mail <sup>*</sup></label>
         <input id="email" type="text" name="email" placeholder="Введите e-mail">
         <span class="form__error">Введите e-mail</span>
       </div>
-      <div class="form__item form__item--last">
+      <div class="form__item">
         <label for="password">Пароль <sup>*</sup></label>
         <input id="password" type="password" name="password" placeholder="Введите пароль">
         <span class="form__error">Введите пароль</span>
       </div>
-      <button type="submit" class="button">Войти</button>
+      <div class="form__item">
+        <label for="name">Имя <sup>*</sup></label>
+        <input id="name" type="text" name="name" placeholder="Введите имя">
+        <span class="form__error">Введите имя</span>
+      </div>
+      <div class="form__item">
+        <label for="message">Контактные данные <sup>*</sup></label>
+        <textarea id="message" name="message" placeholder="Напишите как с вами связаться"></textarea>
+        <span class="form__error">Напишите как с вами связаться</span>
+      </div>
+      <span class="form__error form__error--bottom">Пожалуйста, исправьте ошибки в форме.</span>
+      <button type="submit" class="button" name="signUp">Зарегистрироваться</button>
+      <a class="text-link" href="login.php">Уже есть аккаунт</a>
     </form>
   </main>
 
@@ -78,24 +77,19 @@
 <footer class="main-footer">
   <nav class="nav">
     <ul class="nav__list container">
-      <li class="nav__item">
-        <a href="all-lots.html">Доски и лыжи</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Крепления</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Ботинки</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Одежда</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Инструменты</a>
-      </li>
-      <li class="nav__item">
-        <a href="all-lots.html">Разное</a>
-      </li>
+        <?php
+
+        foreach ($categoriesResult as $cathegory) :
+
+            ?>
+            <li class="nav__item">
+                <a href="all-lots.php?category=<?= $cathegory['id']?>"><?= $cathegory['name']?></a>
+            </li>
+        <?php
+
+        endforeach;
+
+        ?>
     </ul>
   </nav>
   <div class="main-footer__bottom container">
@@ -141,4 +135,3 @@
 </footer>
 
 </body>
-</html>
