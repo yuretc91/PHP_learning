@@ -7,8 +7,8 @@ include 'dbOpen.php';
 include "function.php";
 $is_auth = rand(0, 1);
 
-$user_name = 'Yura'; // укажите здесь ваше имя
-$title = 'Title from layout';
+
+$title = 'Main page';
 
 
 //достаём категории

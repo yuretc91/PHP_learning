@@ -24,12 +24,19 @@ if(!$lotsResult) {
     echo "Запрос не удался";
 }
 
+$getLotStaf = "SELECT user_staf.staf_date, user_staf.amount, users.name FROM user_staf RIGHT JOIN users ON user_staf.user_id = users.id WHERE user_staf.lot_id = '{$lotId}' LIMIT 10";
+$lotStafResult = mysqli_query($connection, $getLotStaf);
+if(!$lotStafResult) {
+    echo "Запрос не удался";
+}
+
 
 
 $content = renderTemplate('lot.php', [
     'user_name' => $user_name,
     'categoriesResult' => $categoriesResult,
-    'lotsResult' => $lotsResult
+    'lotsResult' => $lotsResult,
+    'lotStafResult' => $lotStafResult
 ]);
 
 $layout = renderTemplate('layout.php', [

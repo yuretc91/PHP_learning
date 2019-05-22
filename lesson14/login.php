@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_SESSION['userName'])){
+    $user_name = $_SESSION['userName'];
+}
 include 'dbOpen.php';
 include "function.php";
 $title = 'Login';
@@ -13,14 +16,15 @@ if (isset($_POST['login'])){
 
     if (mysqli_num_rows($getUserResult) != 0){
         $getUserResult = mysqli_fetch_assoc($getUserResult);
-        $_SESSION['userName'] = $getUserResult['name'];
+        if ($_POST['password'] == $getUserResult['password']){
+            $_SESSION['userName'] = $getUserResult['name'];
+        }else echo 'password is incorrect';
+
     } else echo 'This user not found';
 
 
 }
-if (isset($_SESSION['userName'])){
-    $user_name = $_SESSION['userName'];
-}
+
 //достаём категории
 $getCategories = "SELECT * FROM cathegory";
 $categoriesResult = mysqli_query($connection, $getCategories);

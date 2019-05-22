@@ -2,6 +2,11 @@
 session_start();
 if (isset($_SESSION['userName'])){
     $user_name = $_SESSION['userName'];
+}else header('Refresh: 0; url=login.php');
+
+if (isset($_GET['logout'])){
+    $_SESSION = [];
+    session_destroy();
 }
 include 'dbOpen.php';
 include "function.php";
