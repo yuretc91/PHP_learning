@@ -1,13 +1,14 @@
 <?php
 session_start();
-if (isset($_SESSION['userName'])){
-    $user_name = $_SESSION['userName'];
-}else header('Refresh: 0; url=login.php');
-
 if (isset($_GET['logout'])){
     $_SESSION = [];
     session_destroy();
 }
+if (isset($_SESSION['userName'])){
+    $user_name = $_SESSION['userName'];
+}else header('Refresh: 0; url=login.php');
+
+
 include 'dbOpen.php';
 include "function.php";
 $title = 'Add lot title';
@@ -44,6 +45,7 @@ if(!$categoriesResult) {
 
 $content = renderTemplate('add-lot.php', [
     'user_name' => $user_name,
+    'nnn' => $n,
     'categoriesResult' => $categoriesResult,
     'lotsResult' => $lotsResult,
     'categoriesResult' => $categoriesResult

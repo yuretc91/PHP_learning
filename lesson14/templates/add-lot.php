@@ -17,7 +17,7 @@
       <div class="user-menu__logged">
         <p><?= $user_name?></p>
         <a class="user-menu__bets" href="my-bets.php">Мои ставки</a>
-        <a class="user-menu__logout" href="login.php?logout=true">Выход</a>
+        <a class="user-menu__logout" href="add-lot.php?logout=true">Выход</a>
       </div>
     </nav>
   </div>
