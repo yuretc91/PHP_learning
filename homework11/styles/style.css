@@ -1,0 +1,34 @@
+.filtr{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.menu,
+.cartButton{
+    flex-basis: 25%;
+}
+.content{
+    flex-basis: 45%;
+    flex-grow: 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.content p,
+.content a{
+    margin: 5px 0;
+    flex-basis: 45%;
+    flex-grow: 1;
+}
+.productList{
+    text-align: center;
+    margin: 10px 0;
+}
+.cart{
+    position: fixed;
+    left: 300px;
+    top:100px;
+    border: 2px solid grey;
+}
