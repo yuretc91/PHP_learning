@@ -31,7 +31,7 @@ require 'dbOpen.php';
 require 'registration.php';
 if (isset($_POST['submit'])){
     $newUser = new Registration($_POST['login'], $_POST['password'], $_POST['email']);
-    $db = new Database('localhost', 'root', '', 'test');
+    $db = new Database('localhost', 'root', '', 'cms');
     $sql = "SELECT * FROM users";
     $users = $db->selectAll($sql);
     /*$regNewUser = "INSERT INTO users (login, password, email) VALUES ('{$newUser->login}', '{$newUser->password}', '{$newUser->email}')";
