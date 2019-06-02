@@ -1,53 +1,67 @@
 $(function () {
-	var addToCart = $(".addToCart");
+	var buyFromCart = $(".buyFromCart");
 	var cartList = $('.cartList');
 	var checkProduct = $('.checkProduct');
+	var openCart = $('#openCart');
+	var cart = $('.cart');
 
 
+    openCart.click(function () {
+        if (!openCart.hasClass("cartActive")) {
+            $.ajax({
+                url: "cart.php",
+                type: "POST",
+                dataType: 'json',
+                data: {
+                    openCart: true
+                }
+            }).done(function (response) {
+                cartList.empty();
+                for(let i = 0;i < response.length;i++){
+                    cartList.append($("<tr class='oneProduct'><td>" + response[i]['name'] + "</td><td>" + response[i]['description'] + "</td><td>" + response[i]['cathegory_id'] + "</td><td><button class='deleteProduct' value='" + response[i]['id'] + "'>Delete</button></td></tr>"));
+                }
+                $('.deleteProduct').each(function () {
+                    $(this).on('click', function () {
+                        $.ajax({
+                            url: "cart.php",
+                            type: "POST",
+                            dataType: 'json',
+                            data: {
+                                deletedProductId: $(this).val()
+                            }
+                        });
+                        $(this).parent().parent().remove();
+                    });
+                });
+                });
+            };
+        cart.toggleClass("cartActive");
+    });
 
     checkProduct.each(function () {
         $(this).on('click', function () {
-			//cartList.empty();
 
+            var productsId = [];
+            productsId.push($(this).val());
 
-			var productsId = [];
-			var checkedProducts = $(".checkProduct:checked");
+            $.ajax({
+                url: "cart.php",
+                type: "POST",
+                dataType: 'json',
+                data: {
+                    productsId: productsId
+                }
+            })
 
-			if (checkedProducts.length > 0){
-				checkedProducts.each(function(){
-                    productsId.push($(this).val());
-				});
-
-				console.log(productsId);
-				$.ajax({
-					url: "cart.php",
-					type: "POST",
-					dataType: 'json',
-					data: {
-                        productsId: productsId
-					}
-				}).done(function (response) {
-					console.log(response);
-					//var products = response;
-
-					for(let i = 0;i < response.length;i++){
-						cartList.append($("<tr></tr>"));
-						var cartListRow = $('.cartList tr');
-                        cartListRow.append($("<td></td>").text(response[i]['name']));
-                        cartList.append($("<td></td>").text(response[i]['description']));
-                        cartList.append($("<td></td>").text(response[i]['cathegory_id']));
-					}
-
-					//content.html(response);
-				});
-			}
-
-
-
-
-
+            //console.log(productsId);
 
 		});
 	});
+
+
+    /*buyFromCart.click(function () {
+        var productsInCart = $('.oneProduct');
+        if ()
+    });*/
 
 });

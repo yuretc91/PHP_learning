@@ -1,7 +1,8 @@
 <?php
-/*require 'session.php';
-$session = new Session();*/
 session_start();
+if (isset($_SESSION['products'])){
+    $productsId = $_SESSION['products'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -15,14 +16,20 @@ session_start();
 
 <body>
 <div class="cart">
-    <table class="cartList">
+
+    <table>
         <thead>
         <th>Product name</th>
         <th>Product description</th>
         <th>Cathegory id</th>
         <th>Delete from cart</th>
         </thead>
+        <tbody class="cartList">
+
+        </tbody>
     </table>
+    <a href="buy.php" id="buyFromCart">Buy</a>
+    <a href="index.php?sessionDestroy">Delete products from session</a>
 </div>
 <?php
 require 'dbOpen.php';
@@ -50,7 +57,7 @@ $cathegories = $db->selectAll($sql);
     <div class="content">
 
     </div>
-    <div class="cartButton"><button id="cart">Cart</button></div>
+    <div class="cartButton"><button id="openCart">Cart</button></div>
 </div>
 <div class="products">
     <?php
@@ -72,18 +79,28 @@ $cathegories = $db->selectAll($sql);
             <td><?=$product['name']?></td>
             <td><?=$product['description']?></td>
             <td><?=$product['cathegory_id']?></td>
-            <td><input type="checkbox" class="checkProduct" name="checkProduct" value="<?=$product['id']?>"></td>
+            <td><button class="checkProduct" value="<?=$product['id']?>">Add</button></td>
         </tr>
             <?php
         endforeach;
         ?>
 
     </table>
-    <input type="button" name="addToCart" class="addToCart" value="Add to cart">
+
 </div>
 
 
+<?php
+if (isset($_GET['seeProducts'])){
+    foreach ($productsId as $oneProduct){
+        echo $oneProduct . '<br>';
+    }
 
+}
+if (isset($_GET['sessionDestroy'])){
+    $_SESSION['products'] = [];
+}
+?>
 	
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
