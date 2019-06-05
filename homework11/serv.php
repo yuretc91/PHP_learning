@@ -10,8 +10,7 @@ if (isset($_POST['cathegoryId'])){
         $items = $db->selectAll($sql);
 
         foreach ($items as $key => $item){
-            //$row[] = "<p>" . $item['item_name'] . "</p>";
-            //$row[] = $item['item_name'];
+
             $row[] = $row[$key];
             $row[$key]['item_name'] = $item['item_name'];
             $row[$key]['id'] = $item['id'];
@@ -19,8 +18,6 @@ if (isset($_POST['cathegoryId'])){
         }
     }
 
-
-    //$row = implode(' ', $row);
     $row = json_encode($row);
     echo $row;
 }
