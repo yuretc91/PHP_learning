@@ -1,0 +1,14 @@
+{
+    "name": "web/lesson17",
+    "description": "composer first lesson",
+    "type": "project",
+    "require": {
+        "intervention/image": "^2.4"
+    },
+    "authors": [
+        {
+            "name": "Yury Plodunov",
+            "email": "yuretc91@mail.ru"
+        }
+    ]
+}

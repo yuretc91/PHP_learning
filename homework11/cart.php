@@ -57,9 +57,9 @@ if (isset($_POST['deletedProductId'])){
         unset($productsId['products'][$key]);
         $_SESSION['products'] = $productsId;
     }*/
-    $delKey = intval($_POST['deletedProductId']);
-    unset($productsId['products'][$delKey]);
-    $_SESSION['products'] = $productsId;
+    //$delKey = intval($_POST['deletedProductId']);
+    unset($_SESSION['products'][$_POST['deletedProductId']]);
+    //$_SESSION['products'] = $productsId;
 }
 
 
