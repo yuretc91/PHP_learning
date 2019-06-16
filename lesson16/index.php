@@ -27,30 +27,38 @@ echo 'Summ: ' . ($vasia->salary + $peter->salary) . '<br>';
 
 echo $vasia->getName();*/
 
+
+
 require 'dbOpen.php';
 require 'registration.php';
 if (isset($_POST['submit'])){
     $newUser = new Registration($_POST['login'], $_POST['password'], $_POST['email']);
     $db = new Database('localhost', 'root', '', 'cms');
-    $sql = "SELECT * FROM users";
-    $users = $db->selectAll($sql);
-    /*$regNewUser = "INSERT INTO users (login, password, email) VALUES ('{$newUser->login}', '{$newUser->password}', '{$newUser->email}')";
-    $regNewUserRezult = mysqli_query($connection, $regNewUser);
+    //$sql = "SELECT * FROM users";
+    //$users = $db->selectAll($sql);
+    $regNewUser = "INSERT INTO users (login, password, email) VALUES ('{$newUser->login}', '{$newUser->password}', '{$newUser->email}')";
+    $regNewUserRezult = $db->selectAll($regNewUser);
     if(!$regNewUserRezult) {
         echo "Запрос не удался";
-    }*/
+    }
 }
-
-
-foreach ($users as $user):
 ?>
 
-<ul>
-    <li><?=$user['name']?></li>
-</ul>
 
-
-
+<!--<ul>
 <?php
-endforeach;
-    ?>
+/*foreach ($users as $user):
+    */?>
+    <li><?/*=$user['name']*/?></li>
+<?php
+/*endforeach;
+*/?>
+</ul>-->
+
+<form action="" method="post">
+    <input type="text" name="login">Login<br>
+    <input type="password" name="password">Password<br>
+    <input type="email" name="email">Email<br>
+    <input type="submit" name="submit">
+</form>
+

@@ -2,6 +2,7 @@
 session_start();
 if (isset($_SESSION['products'])){
     $productsId = $_SESSION['products'];
+    //$productsQuantity = $_SESSION['productsQuantity'];
 }
 ?>
 <!DOCTYPE html>
@@ -22,6 +23,7 @@ if (isset($_SESSION['products'])){
         <th>Product name</th>
         <th>Product description</th>
         <th>Cathegory id</th>
+        <th>Quantity</th>
         <th>Delete from cart</th>
         </thead>
         <tbody class="cartList">
@@ -69,6 +71,7 @@ $cathegories = $db->selectAll($sql);
         <th>Product name</th>
         <th>Product description</th>
         <th>Cathegory id</th>
+        <th>Quantity</th>
         <th>Add to cart</th>
         </thead>
 
@@ -79,6 +82,8 @@ $cathegories = $db->selectAll($sql);
             <td><?=$product['name']?></td>
             <td><?=$product['description']?></td>
             <td><?=$product['cathegory_id']?></td>
+            <td class="quantity"><button class="minus">-</button>
+                <input type="number" class="quantityCount" value="1"><button class="plus">+</button></td>
             <td><button class="checkProduct" value="<?=$product['id']?>">Add</button></td>
         </tr>
             <?php
@@ -101,6 +106,13 @@ if (isset($_GET['sessionDestroy'])){
     $_SESSION['products'] = [];
 }
 ?>
+
+
+<div>
+    <?php
+    var_dump($_SESSION['products']);
+    ?>
+</div>
 	
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
