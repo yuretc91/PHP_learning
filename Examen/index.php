@@ -11,12 +11,12 @@ include "function.php";
 $title = 'Main page';
 
 
-//достаём категории
-/*$getCategories = "SELECT * FROM cathegory";
-$categoriesResult = mysqli_query($connection, $getCategories);
-if(!$categoriesResult) {
+//достаём слайды
+$getSlides = "SELECT * FROM slider";
+$slidesResult = mysqli_query($connection, $getSlides);
+if(!$slidesResult) {
     echo "Запрос не удался";
-}*/
+}
 
 
 //достаём теги
@@ -26,8 +26,17 @@ if(!$tagsResult) {
     echo "Запрос не удался";
 }
 
+//достаём теги
+$getPostsPreview = "SELECT * FROM posts_preview LIMIT 3";
+$postsPreviewResult = mysqli_query($connection, $getPostsPreview);
+if(!$postsPreviewResult) {
+    echo "Запрос не удался";
+}
+
 $content = renderTemplate('index.php', [
-    'tags' => $tagsResult
+    'tags' => $tagsResult,
+    'slides' => $slidesResult,
+    'postsPreview' => $postsPreviewResult
 
 ]);
 

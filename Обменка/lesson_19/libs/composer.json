@@ -1,8 +1,0 @@
-{
-    "name": "web/libs",
-    "description": "First project with libs",
-    "require": {
-        "swiftmailer/swiftmailer": "^6.2",
-        "wixel/gump": "^1.5"
-    }
-}

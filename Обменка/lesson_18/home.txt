@@ -1,2 +1,0 @@
-1. https://slides.com/alex_novikov/php-16
-Доделать предыдущие домашние задания
