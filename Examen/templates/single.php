@@ -134,7 +134,7 @@
                                 <div id="comment">
                                     <h3>Leave a Reply</h3>
                                     <span>Your email address will not be published. Required fields are marked </span>
-                                    <form name="comment_form" id="comment_form" method="post" action="">
+                                    <div id="comment_form">
                                         <label>
                                             <span>Comment:</span>
                                             <textarea name="message" id="message"></textarea>
@@ -147,8 +147,8 @@
                                             <span>Email:</span>
                                             <input type="email"  name="email" id="email" required>
                                         </label>
-                                        <center><input class="sendButton" type="button" name="submitcomment" value="Submit"></center>
-                                    </form>
+                                        <center><input class="sendButton" id="sendButton" type="button" name="submitcomment" value="send"></center>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -242,34 +242,7 @@
     </footer>
 </div>
 </body>
-<script>
-    $(function () {
-        var commentsBlock = $('.commentsBlock');
-        var sendButton = $('.sendButton');
-        var message = $('#message').val();
-        var userName = $('#name').val();
-        var userEmail = $('#email').val();
-        var commentDate = $.now();
 
-        sendButton.click(function () {
-            console.log(message);
-            //commentsBlock.append($("<h3>" + userName + "</h3><p>" + message + "</p><p><i>" + commentDate + "</i></p>"));
-                $.ajax({
-                    url: "comments.php",
-                    type: "POST",
-                    dataType: 'json',
-                    data: {
-                        message: message,
-                        userName: userName,
-                        userEmail: userEmail
-                    }
-                }).done(function () {
+    <script src="js/comments.js"></script>
 
-                    commentsBlock.append($("<h3>" + userName + "</h3><p>" + message + "</p><p><i>" + commentDate + "</i></p>"));
-
-                });
-
-        });
-    });
-</script>
 </html>

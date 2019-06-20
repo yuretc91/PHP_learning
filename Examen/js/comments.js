@@ -1,85 +1,29 @@
 $(function () {
-	var cartList = $('.cartList');
-	var checkProduct = $('.checkProduct');
-	var openCart = $('#openCart');
-	var cart = $('.cart');
-	var minus = $('.minus');
-	var plus = $('.plus');
+    let commentsBlock = $('.commentsBlock');
+    let sendButton = $('#sendButton');
+    let message = $('#message');
+    let userName = $('#name');
+    let userEmail = $('#email');
+    let commentDate = $.now();
 
+    sendButton.click(function () {
+        //console.log(userName);
+        //commentsBlock.append($("<h3>" + userName + "</h3><p>" + message + "</p><p><i>" + commentDate + "</i></p>"));
+        $.ajax({
+            url: "comments.php",
+            type: "POST",
+            dataType: 'json',
+            data: {
+                send: true,
+                message: message.val(),
+                userName: userName.val(),
+                userEmail: userEmail.val()
+            }
+        }).done(function (response) {
+            console.log(true);
+            commentsBlock.append($("<h3>" + userName.val() + "</h3><p>" + message.val() + "</p><p><i>" + commentDate + "</i></p>"));
 
-    minus.each(function () {
-        $(this).click(function () {
-            let value = Number($(this).siblings(".quantityCount").val()) - 1;
-
-            $(this).siblings(".quantityCount").val(value);
-            //console.log($(this).siblings(".quantityCount").val());
         });
-    });
-    plus.each(function () {
-        $(this).click(function () {
-            let value = Number($(this).siblings(".quantityCount").val()) + 1;
-
-            $(this).siblings(".quantityCount").val(value);
-            //console.log($(this).siblings(".quantityCount").val());
-        });
 
     });
-
-    openCart.click(function () {
-        if (!openCart.hasClass("cartActive")) {
-            $.ajax({
-                url: "cart.php",
-                type: "POST",
-                dataType: 'json',
-                data: {
-                    openCart: true
-                }
-            }).done(function (response) {
-                cartList.empty();
-                for(let i = 0;i < response.length;i++){
-                    cartList.append($("<tr class='oneProduct'><td>" + response[i]['name'] + "</td><td>" + response[i]['description'] + "</td><td>" + response[i]['cathegory_id'] + "</td><td>" + response[i]['quantityCounter'] +"</td><td><button class='deleteProduct' value='" + response[i]['id'] + "'>Delete</button></td></tr>"));
-                }
-                $('.deleteProduct').each(function () {
-                    $(this).on('click', function () {
-                        $.ajax({
-                            url: "cart.php",
-                            type: "POST",
-                            dataType: 'json',
-                            data: {
-                                deletedProductId: $(this).val()
-                            }
-                        });
-                        $(this).parent().parent().remove();
-                    });
-                });
-            });
-        }
-        cart.toggleClass("cartActive");
-    });
-
-
-    checkProduct.each(function () {
-        $(this).on('click', function () {
-
-            //var productsId = [];
-            //var productsQuantity = [];
-            //productsId.push($(this).val());
-            var productsId = $(this).val();
-            //productsQuantity.push($(this).parents().siblings(".quantity").children(".quantityCount").val());
-            var productsQuantity = $(this).parents().siblings(".quantity").children(".quantityCount").val()
-            console.log(productsQuantity);
-            $.ajax({
-                url: "cart.php",
-                type: "POST",
-                dataType: 'json',
-                data: {
-                    productsId: productsId,
-                    productsQuantity: productsQuantity
-                }
-            })
-
-		});
-	});
-
-
 });
