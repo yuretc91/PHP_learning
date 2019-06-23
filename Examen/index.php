@@ -1,14 +1,11 @@
 <?php
-/*session_start();
-if (isset($_SESSION['userName'])){
-    $user_name = $_SESSION['userName'];
-}*/
+session_start();
+if (isset($_SESSION['userLogin'])){
+    $user_login = $_SESSION['userLogin'];
+}
 include 'dbOpen.php';
 include "function.php";
 
-
-
-$title = 'Main page';
 
 
 //достаём слайды
@@ -26,7 +23,7 @@ if(!$tagsResult) {
     echo "Запрос не удался";
 }
 
-//достаём теги
+//достаём превью постов
 $getPostsPreview = "SELECT * FROM posts_preview LIMIT 3";
 $postsPreviewResult = mysqli_query($connection, $getPostsPreview);
 if(!$postsPreviewResult) {
@@ -40,9 +37,5 @@ $content = renderTemplate('index.php', [
 
 ]);
 
-/*$layout = renderTemplate('layout.php', [
-    'content' => $content,
-    'title' => $title
-    ]);*/
 
 print($content);

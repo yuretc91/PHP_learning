@@ -1,8 +1,8 @@
 <?php
-/*session_start();
-if (isset($_SESSION['userName'])){
-    $user_name = $_SESSION['userName'];
-}*/
+session_start();
+if (isset($_SESSION['userLogin'])){
+    $user_login = $_SESSION['userLogin'];
+}
 include 'dbOpen.php';
 include "function.php";
 
@@ -20,9 +20,5 @@ $content = renderTemplate('gallery.php', [
     'tags' => $tagsResult
 ]);
 
-/*$layout = renderTemplate('layout.php', [
-    'content' => $content,
-    'title' => $title
-    ]);*/
 
 print($content);

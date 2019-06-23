@@ -1,11 +1,15 @@
-
 <?php
 
+$connection = mysqli_connect(
+    'localhost',
+    'root',
+    '',
+    'examen'
+);
 
-$connection = mysqli_connect('localhost', 'root', '', 'examen');
 if(!$connection) {
-    die("Database connection failed");
+    echo "Подключение к БД не успешно";
 }
 
-?>
 
+?>

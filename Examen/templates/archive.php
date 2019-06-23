@@ -74,7 +74,7 @@
                     </ul>
                 </li>
                 <li><a href="single.php"><span>About</span></a></li>
-                <li class="last"><a href="contact.php"><span>Contact</span></a></li>
+                <li class="last"><a href="sign-in.php"><span>Sign in</span></a></li>
             </ul>
         </div>
         <div id="owl-slide" class="owl-carousel">
