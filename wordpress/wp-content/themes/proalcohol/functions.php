@@ -49,6 +49,9 @@ if ( ! function_exists( 'proalcohol_setup' ) ) :
         register_nav_menus( array(
             'footer-menu' => esc_html__( 'Footer-menu', 'proalcohol' ),
         ) );
+        register_nav_menus( array(
+            'social-menu' => esc_html__( 'Social-menu', 'proalcohol' ),
+        ) );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments

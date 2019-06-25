@@ -6,22 +6,23 @@
                 <p>Proalcohol — Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolorem cum reiciendis nam magni nemo totam, repellat sint, quaerat autem alias eaque quod officiis ipsam. Voluptatibus, voluptatem dolores dolorem iure!</p>
                 <p class="copy">© Proalcohol, 2017</p>
             </div>
-            <div class="uk-text-right">
+            <!--<div class="uk-text-right">
                 <a href="" class="uk-icon-button uk-margin-small-right" uk-icon="icon: google"></a>
                 <a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="icon: facebook"></a>
                 <a href="" class="uk-icon-button" uk-icon="icon: instagram"></a>
-            </div>
+            </div>-->
+            <?php
+            wp_nav_menu(array(
+                'menu_class' => 'uk-text-right',
+                'theme_location' => 'social-menu',
+                'items_wrap' => '<a class="uk-icon-button uk-margin-small-right" uk-icon="icon: google">%3$s</a>'
+            ))
+            ?>
         </div>
     </div>
     <nav class="uk-navbar-container uk-navbar-transparent uk-margin-top uk-navbar" uk-navbar>
         <div class="uk-navbar-center">
-            <!--<ul class="uk-navbar-nav">
-                <li><a href="#">Что такое proalcohol</a></li>
-                <li><a href="#">Реклама и спецпроекты</a></li>
-                <li><a href="#">Контакты</a></li>
-                <li><a href="#">Правила пользования</a></li>
-                <li><a href="#">Политика конфедициальности</a></li>
-            </ul>-->
+
             <?php
             wp_nav_menu(array(
                 'menu_class' => 'uk-navbar-nav',
