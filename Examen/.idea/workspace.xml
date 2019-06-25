@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fbec4bd5-6fcf-465e-b9ef-968e05e5d112" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive.php" beforeDir="false" afterPath="$PROJECT_DIR$/archive.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/comments.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbOpen.php" beforeDir="false" afterPath="$PROJECT_DIR$/dbOpen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/gallery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single.php" beforeDir="false" afterPath="$PROJECT_DIR$/single.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/archive.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/archive.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gallery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/single.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/single.php" afterDir="false" />
-    </list>
+    <list default="true" id="fbec4bd5-6fcf-465e-b9ef-968e05e5d112" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,16 +187,15 @@
       <workItem from="1560881543279" duration="8694000" />
       <workItem from="1560955814781" duration="12023000" />
       <workItem from="1561044941920" duration="6263000" />
-      <workItem from="1561275232553" duration="6507000" />
+      <workItem from="1561275232553" duration="7106000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33487000" />
+    <option name="totallyTimeSpent" value="34086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10363086" />
       <window_info id="Structure" order="1" weight="0.25" />
