@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="11ee1b43-abeb-45a0-b46b-1f61fb666d95" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Examen/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Examen/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/proalcohol/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/proalcohol/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/proalcohol/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/proalcohol/functions.php" afterDir="false" />
-    </list>
+    <list default="true" id="11ee1b43-abeb-45a0-b46b-1f61fb666d95" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,16 +161,15 @@
       <option name="presentableId" value="Default" />
       <updated>1561306418062</updated>
       <workItem from="1561306419780" duration="6994000" />
-      <workItem from="1561487868451" duration="1977000" />
+      <workItem from="1561487868451" duration="2245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8971000" />
+    <option name="totallyTimeSpent" value="9239000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.123298034" />
       <window_info id="Structure" order="1" weight="0.25" />
