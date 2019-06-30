@@ -1,0 +1,12 @@
+1. cd domains
+2. в консоле: composer create-project --prefer-dist laravel/laravel blog (doc: https://laravel.com/docs/5.8#installation)
+3. Создаем БД
+4. .env.example переименовываем в .env
+5. Прописываем настройки в файле .env
+6. в консоле: cd webshop
+7. в консоле: php artisan serve
+8. в консоле Создаем контроллер
+9. в консоле Создаем модель
+10. в консоле Создаем миграцию
+11. Заполним миграцию
+12. в консоле php artisan migrate
