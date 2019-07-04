@@ -1,0 +1,9 @@
+https://github.com/ChDickens/webshopweb22018
+
+git clone
+create database
+composer install
+.env.example => .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
