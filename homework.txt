@@ -1,2 +1,1 @@
 https://github.com/yuretc91/PHP_learning.git
-catalog "wordpress"
