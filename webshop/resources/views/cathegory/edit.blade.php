@@ -3,11 +3,11 @@
 @section('content')
     <div class="row">
         <div class="col-lg-6">
-            <form action="{{--{{ route('cathegories.update') }}--}}"
+            <form action="{{ route('cathegories.update', $cathegory->id) }}"
                   method="post"
                   enctype="multipart/form-data">
                 @csrf
-                @foreach($cathegories as $cathegory)
+                    <input type="hidden" name="_method" value="PUT">
                 <div class="form-group">
                     <label for="">Имя категории</label>
                     <input type="text" class="form-control" name="name" value="{{ $cathegory->name }}">
@@ -28,7 +28,6 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Обновить</button>
                 </div>
-                @endforeach
             </form>
         </div>
     </div>

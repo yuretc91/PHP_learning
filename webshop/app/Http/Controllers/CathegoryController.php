@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cathegory;
 use Illuminate\Http\Request;
-
+use App\Product;
 class CathegoryController extends Controller
 {
     /**
@@ -59,8 +59,8 @@ class CathegoryController extends Controller
      */
     public function edit($id)
     {
-        $cathegories = Cathegory::find($id);
-        return view('cathegory.edit', compact('cathegories'));
+        $cathegory = Cathegory::find($id);
+        return view('cathegory.edit', compact('cathegory'));
     }
 
     /**
@@ -72,7 +72,9 @@ class CathegoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Cathegory::find($id);
+        $category->update($request->all());
+        return redirect()->route('cathegories.index');
     }
 
     /**
@@ -83,6 +85,15 @@ class CathegoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Cathegory::find($id)->delete();
+        return redirect()->route('cathegories.index');
     }
+
+
+    public function getProducts($id)
+    {
+        $cathegory = Cathegory::find($id)->with('products')->first();
+        return view('cathegory.products', compact('cathegory'));
+    }
+
 }

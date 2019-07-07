@@ -1,11 +1,13 @@
 @extends('admin-panel')
 
 @section('content')
+
     <a href="{{ route('products.create') }}"
        class="btn btn-primary">Создать продукт</a>
     <table class="table table-striped">
         <thead>
             <tr>
+                <th>Bvz rfntujhbb</th>
                 <th>Имя</th>
                 <th>Ссылка</th>
                 <th>Цена</th>
@@ -18,6 +20,7 @@
         <tbody>
         @foreach($products as $product)
             <tr>
+                <td>{{ $product->cathegory->name }}</td>
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->url }}</td>
                 <td>{{ $product->price }}</td>
