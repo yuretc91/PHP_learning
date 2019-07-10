@@ -94,13 +94,12 @@ class CathegoryController extends Controller
     {
 
         $cathegory = Cathegory::find($id);
-        dd($cathegory);
+        //dd($cathegory);
         if($cathegory != null){
             $products = $cathegory->products;
             return view('cathegory.products', compact('products'));
         }else{
-            $products[] = 'This cathegory doesn\'t have any product';
-            return view('cathegory.products', $products);
+            return view('cathegory.404');
         }
 
     }

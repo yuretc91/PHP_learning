@@ -19,6 +19,7 @@ Route::get('/cathegory-products/{id}', 'CathegoryController@getProducts')->name(
 Route::resource('/products', 'ProductController');
 Route::resource('/cathegories', 'CathegoryController');
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
