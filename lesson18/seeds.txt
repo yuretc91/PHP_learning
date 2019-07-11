@@ -1,0 +1,1 @@
+https://laraveldaily.com/generating-fake-seeds-data-with-faker-package/

@@ -4,7 +4,7 @@
 
         <table>
 
-            {{--@dd($products)--}}
+
             @foreach($products as $product)
             <tr>
                 <td>{{ $product->cathegory->name }}</td>
@@ -14,8 +14,7 @@
                 <td>{{ $product->price }}</td>
             </tr>
             @endforeach
-            {{--@else {{$products}}--}}
-            {{--@endif--}}
+
         </table>
 
 

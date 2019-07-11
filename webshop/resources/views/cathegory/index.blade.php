@@ -1,6 +1,7 @@
 @extends('admin-panel')
 
 @section('content')
+
     <a href="{{ route('cathegories.create') }}"
        class="btn btn-primary">Создать категорию</a>
     <table class="table table-striped">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Cathegory;
+use App\Http\Requests\StoreProductRequest;
 
 class ProductController extends Controller
 {
@@ -16,7 +17,7 @@ class ProductController extends Controller
     public function index()
     {
 
-        $products = Product::with('cathegory')->get();
+        $products = Product::with('cathegory')->paginate(10);
         //dd($products);
         return view('product.index', compact('products'));
     }
@@ -38,10 +39,10 @@ class ProductController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return void
      */
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
         Product::create($request->all());
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with("success", "Продукт успешно создан");
     }
 
     /**
