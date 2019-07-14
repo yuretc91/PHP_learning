@@ -13,4 +13,5 @@ class Cathegory extends Model
     {
        return $this->hasMany('App\Product');
     }
+    public $timestamps = false;
 }

@@ -92,8 +92,16 @@ class CathegoryController extends Controller
 
     public function getProducts($id)
     {
-        $cathegory = Cathegory::find($id)->with('products')->first();
-        return view('cathegory.products', compact('cathegory'));
+
+        $cathegory = Cathegory::find($id);
+        //dd($cathegory);
+        if($cathegory != null){
+            $products = $cathegory->products;
+            return view('cathegory.products', compact('products'));
+        }else{
+            return view('cathegory.404');
+        }
+
     }
 
 }
