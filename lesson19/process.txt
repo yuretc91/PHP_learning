@@ -1,0 +1,2 @@
+1.https://nodejs.org/en/ - node
+2. https://laravel.com/docs/5.8/mix laravel mix

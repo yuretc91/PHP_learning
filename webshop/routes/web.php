@@ -11,13 +11,14 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::get('/cathegory-products/{id}', 'CathegoryController@getProducts')->name('cathegory.prod');
 
 Route::resource('/products', 'ProductController');
 Route::resource('/cathegories', 'CathegoryController');
+Route::resource('/main-page', 'PageController');
 
 Auth::routes();
 
