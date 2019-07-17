@@ -10,7 +10,7 @@
                     <li><a href="#">Автотрейдинг</a></li>
                     <li><a href="#">ЖелДорЭкспедиция</a></li>
                 </ul>
-                <div class="infoAndContactsBtn"><a href="#">ПОДРОБНЕЕ О НАС</a></div>
+                <div class="infoAndContactsBtn"><a href="#" class="btn_orange-black">ПОДРОБНЕЕ О НАС</a></div>
 
             </div>
             <div class="contacts">
@@ -18,7 +18,7 @@
                 <div class="contactsName">Контакты</div>
                 <div class="contactsDescription">Вы можете забрать товар сами, заехав в наш офис.
                     Заодно, вы сможете проверить работоспособность покупки. Всякое бывает</div>
-                <div class="map"><img src="images/contacts/map.png" alt="map"></div>
-                <div class="infoAndContactsBtn"><a href="#">НАПИШИТЕ НАМ</a></div>
+                <div class="map"><img src="main-page/main/info-and-contacts/images/map.png" alt="map"></div>
+                <div class="infoAndContactsBtn"><a href="#" class="btn_orange-black">НАПИШИТЕ НАМ</a></div>
             </div>
         </section>

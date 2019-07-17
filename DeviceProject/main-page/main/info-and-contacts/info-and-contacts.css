@@ -59,16 +59,9 @@
 }
 
 .infoAndContactsBtn{
-    font-family: Gilroy ExtraBold;
-    font-size: 18px;
-    padding: 50px 0;
     letter-spacing: 0.3rem;
 }
 .infoAndContactsBtn > a{
-    background-image: url("../images/btnBackground.png");
-    background-repeat: repeat-x;
-    background-position-y: center;
-    display: block;
     width: 260px;
-    text-align: center;
 }
+
