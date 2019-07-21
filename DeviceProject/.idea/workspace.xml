@@ -1,62 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c481e078-5f93-4d76-89f4-c56ab0040edf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/fonts/gilroyextrabold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/gilroyextrabold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/gilroylight.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/gilroylight.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/opensans.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/opensans.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/opensanslight.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/opensanslight.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/btnBackground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/contacts/map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/footer/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/footer/shevron.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/logotypes/dji.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/logotypes/gopro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/logotypes/spgadgets.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/logotypes/vive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/popular/popular-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/popular/popular-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/popular/popular-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/popular/popular-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/popular/popular-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/popular/popular-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/products/item1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/products/item2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/products/item3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/products/item4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/services/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/services/credit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/services/delivery.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/services/warranty.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slider/slider1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slider/slider2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slider/slider3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slider/sliderButtonEmpty.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/slider/sliderButtonFull.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main-page/footer/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/main-page/footer/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main-page/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/main-page/header/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main-page/header/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/main-page/header/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main-page/main/info-and-contacts/infoAndContacts.php" beforeDir="false" afterPath="$PROJECT_DIR$/main-page/main/info-and-contacts/infoAndContacts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main-page/main/logotypes/logotypes.php" beforeDir="false" afterPath="$PROJECT_DIR$/main-page/main/logotypes/logotypes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main-page/main/popular/popular.php" beforeDir="false" afterPath="$PROJECT_DIR$/main-page/main/popular/popular.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main-page/main/services/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/main-page/main/services/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main-page/main/slider/slider.php" beforeDir="false" afterPath="$PROJECT_DIR$/main-page/main/slider/slider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/btn_orange-black.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/catalogStyle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/indexStyle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/logotypes.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/popular.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/services.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/slider-position.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/slider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webshop/.idea/webshop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../webshop/.idea/webshop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webshop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../webshop/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c481e078-5f93-4d76-89f4-c56ab0040edf" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +14,7 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main-page/main/info-and-contacts/infoAndContacts.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -128,7 +73,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,11 +111,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main-page/header" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../webshop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -203,23 +149,19 @@
       <option name="presentableId" value="Default" />
       <updated>1563396497522</updated>
       <workItem from="1563396499957" duration="5719000" />
+      <workItem from="1563549188741" duration="411000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5719000" />
+    <option name="totallyTimeSpent" value="6130000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -227,36 +169,25 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/styles/indexStyle.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main-page/header/main-page.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main-page/header/footer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-697">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/styles/indexStyle.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/indexStyle.css" />
+    <entry file="file://$PROJECT_DIR$/main-page/header/main-page.css" />
+    <entry file="file://$PROJECT_DIR$/main-page/header/footer.css" />
+    <entry file="file://$PROJECT_DIR$/common/styles/indexStyle.css" />
     <entry file="file://$PROJECT_DIR$/common/styles/main-page.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>

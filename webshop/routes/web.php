@@ -19,6 +19,7 @@ Route::get('/cathegory-products/{id}', 'CathegoryController@getProducts')->name(
 Route::resource('/products', 'ProductController');
 Route::resource('/cathegories', 'CathegoryController');
 Route::resource('/main-page', 'PageController');
+Route::resource('/rasp', 'RaspController');
 
 
 Auth::routes();
