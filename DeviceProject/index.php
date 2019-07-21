@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <title>Device</title>
     <link rel="stylesheet" href="common/styles/fonts.css">
-    <link rel="stylesheet" href="styles/indexStyle.css">
+    <link rel="stylesheet" href="common/styles/main-page.css">
+    <link rel="stylesheet" href="common/styles/btn_orange-black.css">
     <link rel="stylesheet" href="main-page/header/header.css">
-    <link rel="stylesheet" href="styles/slider.css">
-    <link rel="stylesheet" href="styles/slider-position.css">
-    <link rel="stylesheet" href="styles/btn_orange-black.css">
-    <link rel="stylesheet" href="styles/popular.css">
-    <link rel="stylesheet" href="styles/services.css">
+    <link rel="stylesheet" href="main-page/main/info-and-contacts/info-and-contacts.css">
+    <link rel="stylesheet" href="main-page/main/logotypes/logotypes.css">
+    <link rel="stylesheet" href="main-page/main/popular/popular.css">
+    <link rel="stylesheet" href="main-page/main/services/services.css">
+    <link rel="stylesheet" href="main-page/main/slider/slider.css">
+    <link rel="stylesheet" href="main-page/main/slider/slider-position.css">
+    <link rel="stylesheet" href="main-page/footer/footer.css">
 </head>
 
 <body>

@@ -11,6 +11,6 @@
                     Ведь мы неплохо заработаем, поднимая его на ваш этаж</p>
             </div>
             <div class="servicesLogo">
-                <img src="images/services/delivery.png" alt="">
+                <img src="main-page/main/services/images/delivery.png" alt="">
             </div>
         </section>

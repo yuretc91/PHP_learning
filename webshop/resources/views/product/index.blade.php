@@ -8,6 +8,8 @@
 @endif
     <a href="{{ route('products.create') }}"
        class="btn btn-primary">Создать продукт</a>
+<a href="{{ route('rasp.create') }}"
+   class="btn btn-primary">Расписание</a>
     <table class="table table-striped">
         <thead>
             <tr>

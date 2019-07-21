@@ -1,14 +1,3 @@
-html{
-    width: 1160px;
-    padding: 0;
-    margin: 0 auto;
-}
-a,
-a:hover,
-a:active{
-    text-decoration: none;
-    color: black;
-}
 header{
     margin: 40px auto 0;
     height: 300px;
@@ -22,8 +11,7 @@ header{
     justify-content: space-between;
     align-items: center;
 }
-.headerMiniMenu,
-.footerMiniMenu{
+.headerMiniMenu{
     font-size: 15px;
     font-family: OpenSans Light;
     list-style-position: inside;
@@ -33,94 +21,31 @@ header{
     padding-left: 40px;
 }
 .headerSearch{
-    list-style-image: url(../icons/header/search.png);
+    list-style-image: url(icons/search.png);
     flex-basis: 50%;
 }
 .headerUser{
-    list-style-image: url(../icons/header/user.png);
+    list-style-image: url(icons/user.png);
     text-align: center;
     margin: 0 auto;
-}
-.footerUser{
-    list-style-image: url(../icons/footer/user.png);
 }
 .headerCompare{
-    list-style-image: url(../icons/header/compare.png);
+    list-style-image: url(icons/compare.png);
     text-align: center;
     margin: 0 auto;
-}
-.footerCompare{
-    list-style-image: url(../icons/footer/compare.png);
 }
 .headerCart{
-    list-style-image: url(../icons/header/cart.png);
+    list-style-image: url(icons/cart.png);
     text-align: center;
     margin: 0 auto;
-}
-.footerCart{
-    list-style-image: url(../icons/footer/cart.png);
 }
 .headerCatalog{
     flex-basis: 50%;
 }
-.headerSecondMenu,
-.footerSecondMenu{
+.headerSecondMenu{
     font-size: 18px;
     font-family: Gilroy ExtraBold;
     letter-spacing: 4px;
     list-style-type: none;
     margin-top: 40px;
-}
-
-footer{
-    background: #464646;
-    padding: 40px;
-    color: white;
-}
-.footerFirstRow{
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: flex-end;
-    justify-content: flex-end;
-}
-.footerLogo{
-    justify-self: flex-start;
-    margin-right: auto;
-}
-.footerMiniMenu{
-    flex-basis: 35%;
-    display: flex;
-    flex-flow: row nowrap;
-}
-.footerMiniMenuItem{
-    text-align: right;
-}
-.footerMiniMenuItem,
-.footerSecondMenuItem{
-    flex-grow: 1;
-}
-.footerSecondMenuItem,
-.socialNetwork > a{
-    padding: 0 10px;
-}
-.footerSecondRow,
-.footerThirdRow{
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-between;
-}
-.footerSecondRow{
-    margin: 30px 0;
-}
-.footerSecondMenu{
-    flex-basis: 35%;
-    justify-self: center;
-    margin: 0 auto;
-    display: flex;
-}
-.footerLine{
-    width: 80px;
-    height: 7px;
-    background: #ffc600;
 }
