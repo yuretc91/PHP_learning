@@ -20,7 +20,19 @@
                         <label>Title</label>
                         <input type="text" class="form-control" name="title">
                     </div>
-
+                    <div class="form-group col-lg-4">
+                        <label>Author</label>
+                        <input type="text" class="form-control" name="author">
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <label>Cathegory</label>
+                        <select name="cathegory_id" class="form-control">
+                            @foreach($cathegories as $cathegory)
+                                <option value="{{ $cathegory->id }}">{{ $cathegory->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <input type="hidden" name="approved" value="0">
                     <div class="clearfix"></div>
                     <div class="form-group col-lg-12">
                         <label>Text</label>

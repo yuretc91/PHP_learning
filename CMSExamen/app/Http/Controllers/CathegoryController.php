@@ -6,7 +6,7 @@ use App\Cathegory;
 use Illuminate\Http\Request;
 use App\Anekdot;
 
-class AnekdotController extends Controller
+class CathegoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,7 @@ class AnekdotController extends Controller
      */
     public function index()
     {
-        $anekdots = Anekdot::with('cathegory');
-        //$anekdots = Anekdot::all();
-        dd($anekdots);
-        return view('anekdot.index', compact('anekdots'));
+        //
     }
 
     /**
@@ -28,8 +25,7 @@ class AnekdotController extends Controller
      */
     public function create()
     {
-        $cathegories = Cathegory::all();
-        return view('anekdot.create', compact('cathegories'));
+        //
     }
 
     /**
@@ -40,8 +36,7 @@ class AnekdotController extends Controller
      */
     public function store(Request $request)
     {
-        Anekdot::create($request->all());
-        return redirect()->route('anekdots.index');
+        //
     }
 
     /**
@@ -89,8 +84,19 @@ class AnekdotController extends Controller
         //
     }
 
-    public function mainPage()
+    public function getAnekdots($id)
     {
-        return view('welcome');
+
+        $cathegory = Cathegory::find($id);
+        /*if($cathegory != null){
+            $products = $cathegory->products;
+            return view('cathegory.products', compact('products'));
+        }else{
+            return view('cathegory.404');
+        }*/
+
+        $anekdots = $cathegory->anekdots;
+        return view('cathegory.anekdots', compact('anekdots'));
+
     }
 }

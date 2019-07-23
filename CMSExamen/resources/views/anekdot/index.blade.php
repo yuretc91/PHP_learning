@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+{{dd($anekdots)}}
     <div class="container">
 
         <div class="row">

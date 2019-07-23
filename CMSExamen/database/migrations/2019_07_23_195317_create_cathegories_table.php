@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAnekdotsTable extends Migration
+class CreateCathegoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateAnekdotsTable extends Migration
      */
     public function up()
     {
-        Schema::create('anekdots', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->text('content');
-            $table->integer('cathegory_id');
-            $table->string('author');
-            $table->boolean('approved');
+        Schema::create('cathegories', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->text('description');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateAnekdotsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('anekdots');
+        Schema::dropIfExists('cathegories');
     }
 }
