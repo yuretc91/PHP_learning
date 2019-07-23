@@ -4,9 +4,9 @@
     <div class="row">
         <div class="col-lg-6">
             <form action="{{ route('products.store') }}"
-                  method="post"
-                  enctype="multipart/form-data">
-                @csrf
+                           method="post"
+                           enctype="multipart/form-data">
+                    @csrf
                 <div class="form-group {{$errors->first("name") ? "has-error" : ""}}">
                     <label for="">Имя продукта</label>
                     <input type="text" class="form-control" name="name" value="{{old("name")}}">
