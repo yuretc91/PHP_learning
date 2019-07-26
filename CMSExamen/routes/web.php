@@ -11,7 +11,6 @@
 |
 */
 
-Route::resource('/anekdots', 'AnekdotController');
-Route::get('/', 'AnekdotController@mainPage')->name('main.page');
-
-
+Route::get('/', function () {
+    return view('welcome');
+});
