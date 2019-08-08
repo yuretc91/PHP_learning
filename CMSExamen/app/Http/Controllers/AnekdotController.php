@@ -15,10 +15,10 @@ class AnekdotController extends Controller
      */
     public function index()
     {
-        $anekdots = Anekdot::with('cathegory');
-        //$anekdots = Cathegory::all()->with('anekdots');
-        dd($anekdots);
-        return view('anekdot.index', compact('cathegories'));
+        //$anekdots = Anekdot::with('cathegory');
+        $anekdots = Anekdot::get();
+        //dd($anekdots);
+        return view('anekdot.index', compact('anekdots'));
     }
 
     /**

@@ -2,7 +2,7 @@
 
 @section('content')
 
-{{dd($anekdots)}}
+
     <div class="container">
 
         <div class="row">
@@ -13,6 +13,7 @@
                     <hr>
                 </div>
     @foreach($anekdots as $anekdot)
+
     <div class="container">
 
         <div class="row">
@@ -24,6 +25,7 @@
                     </h2>
                     <p>{{ $anekdot->content }}</p>
                     <hr>
+                    <small>{{ $anekdot->cathegory->name }}</small>
                 </div>
             </div>
         </div>
