@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+require('./carousel');
 
 
 window.Vue = require('vue');

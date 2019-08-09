@@ -15,8 +15,8 @@ class AnekdotController extends Controller
      */
     public function index()
     {
-        //$anekdots = Anekdot::with('cathegory');
-        $anekdots = Anekdot::get();
+        $cathegory_id = 1;
+        $anekdots = Anekdot::where('cathegory_id', $cathegory_id)->get();
         //dd($anekdots);
         return view('anekdot.index', compact('anekdots'));
     }

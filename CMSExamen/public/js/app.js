@@ -49197,6 +49197,8 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./carousel */ "./resources/js/carousel.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -49276,6 +49278,22 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/carousel.js":
+/*!**********************************!*\
+  !*** ./resources/js/carousel.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  $('.carousel').carousel({
+    interval: 5000 //changes the speed
+
+  });
+});
 
 /***/ }),
 
