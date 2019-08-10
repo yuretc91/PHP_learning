@@ -4565,6 +4565,9 @@ input[type=button].btn-block {
   text-decoration: none;
 }
 
+#main-menu{
+    flex-direction: row;
+}
 .navbar-nav {
   display: flex;
   flex-direction: column;
