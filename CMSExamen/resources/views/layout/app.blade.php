@@ -43,33 +43,32 @@
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav" id="main-menu">
+            <ul class="nav navbar-nav" {{--id="main-menu"--}}>
                 <li>
-                    <a href="{{ route('main.page') }}">Home</a>
+                    <a class="btn btn-default" href="{{ route('main.page') }}">Home</a>
                 </li>
                 <li>
-                    <a href="{{ route('anekdots.index') }}">All anekdots</a>
+                    <a class="btn btn-default" href="{{ route('anekdots.index') }}">All anekdots</a>
                 </li>
+                <li>
+                    <a class="btn btn-default dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown link
+                    </a>
 
-<div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Action
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Separated link</a>
-  </div>
-</div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        @foreach($cathegories as $cathegory)
+                        <a class="dropdown-item" href="#">{{ $cathegory->name }}</a>
+                        @endforeach
+                    </div>
+
+                </li>
 
 
                 <li>
-                    <a href="{{ route('anekdots.create') }}">New anekdot</a>
+                    <a class="btn btn-default" href="{{ route('anekdots.create') }}">New anekdot</a>
                 </li>
                 <li>
-                    <a href="contact.html">Log in</a>
+                    <a class="btn btn-default" href="contact.html">Log in</a>
                 </li>
             </ul>
         </div>
@@ -93,5 +92,5 @@
 
 
 </body>
-
+<script src="{{mix('js/app.js')}}"></script>
 </html>

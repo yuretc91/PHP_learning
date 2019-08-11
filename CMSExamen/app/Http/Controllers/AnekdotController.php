@@ -16,9 +16,10 @@ class AnekdotController extends Controller
     public function index()
     {
         $cathegory_id = 1;
+        $cathegories = Cathegory::all();
         $anekdots = Anekdot::where('cathegory_id', $cathegory_id)->get();
         //dd($anekdots);
-        return view('anekdot.index', compact('anekdots'));
+        return view('anekdot.index', compact('anekdots'), compact('cathegories'));
     }
 
     /**
@@ -91,6 +92,7 @@ class AnekdotController extends Controller
 
     public function mainPage()
     {
-        return view('welcome');
+        $cathegories = Cathegory::all();
+        return view('welcome', compact('cathegories'));
     }
 }
