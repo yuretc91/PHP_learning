@@ -21,6 +21,7 @@ class AnekdotController extends Controller
         //dd($anekdots);
         return view('anekdot.index', compact('anekdots'), compact('cathegories'));
     }
+
     public function with_cathegory($id)
     {
         $cathegories = Cathegory::all();
