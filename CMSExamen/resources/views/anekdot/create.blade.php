@@ -14,7 +14,8 @@
             <form action="{{ route('anekdots.store') }}"
                   method="post"
                   enctype="multipart/form-data">
-                {{ csrf_field() }}
+                {{--{{ csrf_field() }}--}}
+                @csrf
                 <div class="row">
                     <div class="form-group col-lg-4">
                         <label>Title</label>

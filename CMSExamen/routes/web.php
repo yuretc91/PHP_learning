@@ -13,3 +13,8 @@
 
 Route::resource('/anekdots', 'AnekdotController');
 Route::get('/', 'AnekdotController@mainPage')->name('main.page');
+Route::get('/cathegory-anekdots/{id}', 'AnekdotController@with_cathegory')->name('cathegory-anekdots');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

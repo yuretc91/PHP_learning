@@ -52,14 +52,15 @@
                 </li>
                 <li>
                     <a class="btn btn-default dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
+                        Select cathegory
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         @foreach($cathegories as $cathegory)
-                        <a class="dropdown-item" href="#">{{ $cathegory->name }}</a>
+                        <a class="dropdown-item" href="{{ route('cathegory-anekdots', $cathegory->id) }}">{{ $cathegory->name }}</a>
                         @endforeach
                     </div>
+
 
                 </li>
 
@@ -68,7 +69,7 @@
                     <a class="btn btn-default" href="{{ route('anekdots.create') }}">New anekdot</a>
                 </li>
                 <li>
-                    <a class="btn btn-default" href="contact.html">Log in</a>
+                    <a class="btn btn-default" href="{{--{{ route('auth.index') }}--}}">Log in (for admin)</a>
                 </li>
             </ul>
         </div>
