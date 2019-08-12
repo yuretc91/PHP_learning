@@ -69,7 +69,7 @@
                     <a class="btn btn-default" href="{{ route('anekdots.create') }}">New anekdot</a>
                 </li>
                 <li>
-                    <a class="btn btn-default" href="{{--{{ route('auth.index') }}--}}">Log in (for admin)</a>
+                    <a class="btn btn-default" href="{{ route('login') }}">Log in (for admin)</a>
                 </li>
             </ul>
         </div>
