@@ -12,17 +12,10 @@
 */
 
 Route::resource('/anekdots', 'AnekdotController');
-Route::resource('/admin-anekdots', 'AdminanekdotController');
+Route::resource('/admin-anekdots', 'AdminanekdotController')->middleware('auth');
+Route::resource('/admin-cathegories', 'AdmincathegoryController')->middleware('auth');
 Route::get('/', 'AnekdotController@mainPage')->name('main.page');
 Route::get('/cathegory-anekdots/{id}', 'AnekdotController@with_cathegory')->name('cathegory-anekdots');
-
-/*Route::get('my-theme', function () {
-
-    return view('welcome2');
-
-});*/
-
-Route::get('/my-theme', 'AdminanekdotController@index');
 
 
 Auth::routes();

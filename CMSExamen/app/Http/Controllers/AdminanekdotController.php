@@ -15,11 +15,8 @@ class AdminanekdotController extends Controller
      */
     public function index()
     {
-        $cathegories = Cathegory::all();
         $anekdots = Anekdot::all();
-        //dd($anekdots);
-        /*return view('admin/anekdot.index', compact('anekdots'), compact('cathegories'));*/
-        return view('welcome2', compact('anekdots'), compact('cathegories'));
+        return view('admin.anekdot.index', compact('anekdots'));
     }
 
     /**
@@ -29,7 +26,8 @@ class AdminanekdotController extends Controller
      */
     public function create()
     {
-        //
+        $cathegories = Cathegory::all();
+        return view('admin.anekdot.create', compact('cathegories'));
     }
 
     /**
@@ -40,7 +38,8 @@ class AdminanekdotController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Anekdot::create($request->all());
+        return redirect()->route('admin-anekdots.index')->with("success", "Продукт успешно создан");
     }
 
     /**
@@ -62,7 +61,9 @@ class AdminanekdotController extends Controller
      */
     public function edit($id)
     {
-        //
+        $anekdot = Anekdot::find($id);
+        $cathegories = Cathegory::all();
+        return view('admin.anekdot.edit', compact('anekdot'), compact('cathegories'));
     }
 
     /**
@@ -74,7 +75,9 @@ class AdminanekdotController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $anekdot = Anekdot::find($id);
+        $anekdot->update($request->all());
+        return redirect()->route('admin-anekdots.index');
     }
 
     /**
@@ -85,6 +88,7 @@ class AdminanekdotController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Anekdot::find($id)->delete();
+        return redirect()->route('admin-anekdots.index');
     }
 }

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Anekdot;
 use App\Cathegory;
 use Illuminate\Http\Request;
-use App\Anekdot;
 
-class AnekdotController extends Controller
+class AdmincathegoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,18 +15,8 @@ class AnekdotController extends Controller
      */
     public function index()
     {
-
         $cathegories = Cathegory::all();
-        $anekdots = Anekdot::where('approved', '1')->get();
-        //dd($anekdots);
-        return view('anekdot.index', compact('anekdots'), compact('cathegories'));
-    }
-
-    public function with_cathegory($id)
-    {
-        $cathegories = Cathegory::all();
-        $anekdots = Anekdot::where('cathegory_id', $id)->where('approved', '1')->get();
-        return view('anekdot.index', compact('anekdots'), compact('cathegories'));
+        return view('admin.cathegory.index', compact('cathegories'));
     }
 
     /**
@@ -36,8 +26,7 @@ class AnekdotController extends Controller
      */
     public function create()
     {
-        $cathegories = Cathegory::all();
-        return view('anekdot.create', compact('cathegories'));
+        return view('admin.cathegory.create');
     }
 
     /**
@@ -48,8 +37,8 @@ class AnekdotController extends Controller
      */
     public function store(Request $request)
     {
-        Anekdot::create($request->all());
-        return redirect()->route('anekdots.index');
+        Cathegory::create($request->all());
+        return redirect()->route('admin-cathegories.index')->with("success", "Продукт успешно создан");
     }
 
     /**
@@ -71,7 +60,8 @@ class AnekdotController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cathegory = Cathegory::find($id);
+        return view('admin.cathegory.edit', compact('cathegory'));
     }
 
     /**
@@ -83,7 +73,9 @@ class AnekdotController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Cathegory::find($id);
+        $category->update($request->all());
+        return redirect()->route('admin-cathegories.index');
     }
 
     /**
@@ -94,12 +86,7 @@ class AnekdotController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
-
-    public function mainPage()
-    {
-        $cathegories = Cathegory::all();
-        return view('welcome', compact('cathegories'));
+        Cathegory::find($id)->delete();
+        return redirect()->route('admin-cathegories.index');
     }
 }
