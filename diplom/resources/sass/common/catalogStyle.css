@@ -1,0 +1,43 @@
+section{
+    padding: 0 40px;
+}
+h1{
+    font-size: 47px;
+    font-family: Gilroy ExtraBold;
+}
+.way{
+    font-family: OpenSans Light;
+    font-size: 14px;
+}
+.stepWay{
+    color: grey;
+}
+.arrowWay{
+    color: black;
+    font-weight: 900;
+
+}
+.catalog{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.control{
+    flex-basis: 360px;
+}
+.visual{
+    flex-grow: 1;
+    padding-left: 70px;
+}
+.products{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.card{
+
+}
+
+    /*font-family: Gilroy Light;*/

@@ -1,0 +1,17 @@
+.btn_orange-black{
+    font-size: 18px;
+    font-family: Gilroy ExtraBold;
+    letter-spacing: 4px;
+    display: block;
+    background-image: url("../images/btnBackground.png");
+    background-repeat: repeat-x;
+    background-position-y: center;
+    text-align: center;
+    padding: 7px 0;
+}
+.btn_orange-black:hover{
+    background-repeat: repeat;
+}
+.btn_orange-black:active{
+    color: gray;
+}

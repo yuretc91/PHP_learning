@@ -1,0 +1,51 @@
+header{
+    margin: 40px auto 0;
+    height: 300px;
+    background: #f7e296;
+    padding-right: 40px;
+}
+.headerMiniMenu,
+.headerSecondMenu{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.headerMiniMenu{
+    font-size: 15px;
+    font-family: OpenSans Light;
+    list-style-position: inside;
+}
+.headerLogo{
+    transform: translateY(-50%);
+    padding-left: 40px;
+}
+.headerSearch{
+    list-style-image: url(icons/search.png);
+    flex-basis: 50%;
+}
+.headerUser{
+    list-style-image: url(icons/user.png);
+    text-align: center;
+    margin: 0 auto;
+}
+.headerCompare{
+    list-style-image: url(icons/compare.png);
+    text-align: center;
+    margin: 0 auto;
+}
+.headerCart{
+    list-style-image: url(icons/cart.png);
+    text-align: center;
+    margin: 0 auto;
+}
+.headerCatalog{
+    flex-basis: 50%;
+}
+.headerSecondMenu{
+    font-size: 18px;
+    font-family: Gilroy ExtraBold;
+    letter-spacing: 4px;
+    list-style-type: none;
+    margin-top: 40px;
+}

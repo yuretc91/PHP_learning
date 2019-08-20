@@ -1,0 +1,74 @@
+footer{
+    background: #464646;
+    padding: 40px;
+    color: white;
+}
+.footerMiniMenu{
+    font-size: 15px;
+    font-family: OpenSans Light;
+    list-style-position: inside;
+}
+.footerUser{
+    list-style-image: url(main-page/footer/icons/user.png);
+}
+.footerCompare{
+    list-style-image: url(icons/compare.png);
+}
+.footerCart{
+    list-style-image: url(icons/cart.png);
+}
+.footerSecondMenu{
+    font-size: 18px;
+    font-family: Gilroy ExtraBold;
+    letter-spacing: 4px;
+    list-style-type: none;
+    margin-top: 40px;
+}
+.footerFirstRow{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.footerLogo{
+    justify-self: flex-start;
+    margin-right: auto;
+}
+.footerMiniMenu{
+    flex-basis: 35%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.footerMiniMenuItem{
+    text-align: right;
+    cursor: pointer;
+}
+.footerMiniMenuItem,
+.footerSecondMenuItem{
+    flex-grow: 1;
+}
+.footerSecondMenuItem,
+.socialNetwork > a{
+    padding: 0 10px;
+}
+.footerSecondRow,
+.footerThirdRow{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.footerSecondRow{
+    margin: 30px 0;
+}
+.footerSecondMenu{
+    flex-basis: 35%;
+    justify-self: center;
+    margin: 0 auto;
+    display: flex;
+}
+.footerLine{
+    width: 80px;
+    height: 7px;
+    background: #ffc600;
+}

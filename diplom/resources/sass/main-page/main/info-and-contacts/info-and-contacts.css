@@ -1,0 +1,67 @@
+.logotypes,
+.infoAndContacts{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.logotypes{
+    padding: 50px 0;
+}
+.logotype{
+    filter: gray;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+.logotype:hover{
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+.info,
+.contacts{
+    flex-basis: 45%;
+    flex-grow: 1;
+}
+.line{
+    width: 80px;
+    height: 7px;
+    background: #000;
+    margin: 30px 0;
+}
+.infoName,
+.contactsName{
+    font-size: 47px;
+    font-family: Gilroy ExtraBold;
+    padding: 20px 0;
+}
+.infoDescription,
+.contactsDescription{
+    font-size: 15px;
+    font-family: OpenSans Light;
+    padding: 20px 0;
+}
+.infoDescription{
+    padding-right: 100px;
+}
+.map{
+    padding-top: 20px;
+}
+.partners{
+    font-family: Gilroy ExtraBold;
+    font-size: 15px;
+    list-style-type: none;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+.partners > li{
+    padding: 10px 0;
+}
+
+.infoAndContactsBtn{
+    letter-spacing: 0.3rem;
+}
+.infoAndContactsBtn > a{
+    width: 260px;
+}
+

@@ -1,38 +1,33 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Device</title>
-    <link rel="stylesheet" href="common/styles/fonts.css">
-    <link rel="stylesheet" href="common/styles/main-page.css">
-    <link rel="stylesheet" href="common/styles/btn_orange-black.css">
-    <link rel="stylesheet" href="main-page/header/header.css">
-    <link rel="stylesheet" href="main-page/main/info-and-contacts/info-and-contacts.css">
-    <link rel="stylesheet" href="main-page/main/logotypes/logotypes.css">
-    <link rel="stylesheet" href="main-page/main/popular/popular.css">
-    <link rel="stylesheet" href="main-page/main/services/services.css">
-    <link rel="stylesheet" href="main-page/main/slider/slider.css">
-    <link rel="stylesheet" href="main-page/main/slider/slider-position.css">
-    <link rel="stylesheet" href="main-page/footer/footer.css">
-</head>
+        <title>Device</title>
 
-<body>
-<header>
-    <div class="headerLogo"><img src="main-page/header/images/logo.png" alt="logo"></div>
-    <ul class="headerMiniMenu">
-        <li class="headerMiniMenuItem headerSearch"><a href="#">Поиск по сайту</a></li>
-        <li class="headerMiniMenuItem headerUser"><a href="#">Войти</a></li>
-        <li class="headerMiniMenuItem headerCompare"><a href="#">Сравнить</a></li>
-        <li class="headerMiniMenuItem headerCart"><a href="#">Корзина</a></li>
-    </ul>
-    <ul class="headerSecondMenu">
-        <li class="headerSecondMenuItem headerCatalog"><a href="#">КАТАЛОГ ТОВАРОВ</a> <img src="main-page/header/icons/plus.png" alt="plus"></li>
-        <li class="headerSecondMenuItem headerDelivery"><a href="#">ДОСТАВКА</a></li>
-        <li class="headerSecondMenuItem headerGarant"><a href="#">ГАРАНТИЯ</a></li>
-        <li class="headerSecondMenuItem headerContacts"><a href="#">КОНТАКТЫ</a></li>
-    </ul>
-</header>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
+        <!-- Styles -->
+
+    </head>
+    <body>
+    <header>
+        <div class="headerLogo"><img src="{{asset('images/logo.png')}}" alt="logo"></div>
+        <ul class="headerMiniMenu">
+            <li class="headerMiniMenuItem headerSearch"><a href="#">Поиск по сайту</a></li>
+            <li class="headerMiniMenuItem headerUser"><a href="#">Войти</a></li>
+            <li class="headerMiniMenuItem headerCompare"><a href="#">Сравнить</a></li>
+            <li class="headerMiniMenuItem headerCart"><a href="#">Корзина</a></li>
+        </ul>
+        <ul class="headerSecondMenu">
+            <li class="headerSecondMenuItem headerCatalog"><a href="#">КАТАЛОГ ТОВАРОВ</a> <img src="main-page/header/icons/plus.png" alt="plus"></li>
+            <li class="headerSecondMenuItem headerDelivery"><a href="#">ДОСТАВКА</a></li>
+            <li class="headerSecondMenuItem headerGarant"><a href="#">ГАРАНТИЯ</a></li>
+            <li class="headerSecondMenuItem headerContacts"><a href="#">КОНТАКТЫ</a></li>
+        </ul>
+    </header>
     <main>
         <section class="slider slider-position">
 
@@ -176,41 +171,41 @@
             </div>
         </section>
     </main>
-<footer>
-    <div class="footerFirstRow">
-        <div class="footerLogo"><img src="main-page/footer/images/logo.png" alt="logo"></div>
-        <ul class="footerMiniMenu">
-            <li class="footerMiniMenuItem footerUser">Войти</li>
-            <li class="footerMiniMenuItem footerCompare">Сравнить</li>
-            <li class="footerMiniMenuItem footerCart">Корзина</li>
-        </ul>
+    <footer>
+        <div class="footerFirstRow">
+            <div class="footerLogo"><img src="main-page/footer/images/logo.png" alt="logo"></div>
+            <ul class="footerMiniMenu">
+                <li class="footerMiniMenuItem footerUser">Войти</li>
+                <li class="footerMiniMenuItem footerCompare">Сравнить</li>
+                <li class="footerMiniMenuItem footerCart">Корзина</li>
+            </ul>
 
-    </div>
-    <div class="footerSecondRow">
-        <div class="adress">г.Москва, ул.Строителей, 15</div>
-        <ul class="footerSecondMenu">
-            <li class="footerSecondMenuItem">ДОСТАВКА</li>
-            <li class="footerSecondMenuItem">ГАРАНТИЯ</li>
-            <li class="footerSecondMenuItem">КОНТАКТЫ</li>
-        </ul>
-        <div class="phone">+ 7(495)495-95-95</div>
-    </div>
-    <div class="footerThirdRow">
-        <div class="footerLine"></div>
-        <div class="socialNetwork">
-            <a href="#" class="facebook"><img src="main-page/footer/icons/fb.png" alt="facebook"></a>
-            <a href="#" class="instagramm"><img src="main-page/footer/icons/inst.png" alt="instagramm"></a>
-            <a href="#" class="twitter"><img src="main-page/footer/icons/twit.png" alt="twitter"></a>
         </div>
-        <div class="footerLogoShevron"><img src="main-page/footer/images/shevron.png" alt="miniLogo"></div>
-    </div>
-</footer>
+        <div class="footerSecondRow">
+            <div class="adress">г.Москва, ул.Строителей, 15</div>
+            <ul class="footerSecondMenu">
+                <li class="footerSecondMenuItem">ДОСТАВКА</li>
+                <li class="footerSecondMenuItem">ГАРАНТИЯ</li>
+                <li class="footerSecondMenuItem">КОНТАКТЫ</li>
+            </ul>
+            <div class="phone">+ 7(495)495-95-95</div>
+        </div>
+        <div class="footerThirdRow">
+            <div class="footerLine"></div>
+            <div class="socialNetwork">
+                <a href="#" class="facebook"><img src="main-page/footer/icons/fb.png" alt="facebook"></a>
+                <a href="#" class="instagramm"><img src="main-page/footer/icons/inst.png" alt="instagramm"></a>
+                <a href="#" class="twitter"><img src="main-page/footer/icons/twit.png" alt="twitter"></a>
+            </div>
+            <div class="footerLogoShevron"><img src="main-page/footer/images/shevron.png" alt="miniLogo"></div>
+        </div>
+    </footer>
     <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
     <script src="js/slider.js"></script>
 
-</body>
+    </body>
 
 </html>

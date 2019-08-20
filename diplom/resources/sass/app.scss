@@ -1,0 +1,21 @@
+// Fonts
+@import 'common/fonts.css';
+
+// Variables
+@import 'variables';
+
+// main-page styles
+@import 'common/main-page.css';
+@import 'common/btn_orange-black.css';
+@import 'main-page/header/header.css';
+@import 'main-page/main/info-and-contacts/info-and-contacts.css';
+@import 'main-page/main/logotypes/logotypes.css';
+@import 'main-page/main/popular/popular.css';
+@import 'main-page/main/services/services.css';
+@import 'main-page/main/slider/slider.css';
+@import 'main-page/main/slider/slider-position.css';
+@import 'main-page/footer/footer.css';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
