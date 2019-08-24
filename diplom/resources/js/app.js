@@ -5,6 +5,8 @@
  */
 
 require('./bootstrap');
+//require('slider.js');
+
 
 window.Vue = require('vue');
 

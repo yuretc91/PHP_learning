@@ -9,13 +9,13 @@ footer{
     list-style-position: inside;
 }
 .footerUser{
-    list-style-image: url(main-page/footer/icons/user.png);
+    list-style-image: url(icons/footer-user.png);
 }
 .footerCompare{
-    list-style-image: url(icons/compare.png);
+    list-style-image: url(icons/footer-compare.png);
 }
 .footerCart{
-    list-style-image: url(icons/cart.png);
+    list-style-image: url(icons/footer-cart.png);
 }
 .footerSecondMenu{
     font-size: 18px;

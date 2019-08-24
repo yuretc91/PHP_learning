@@ -4,7 +4,7 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: start;
-    background-image: url("images/background.png");
+    background-image: url("../../../images/background.png");
     background-repeat: no-repeat;
     background-position: bottom;
     height: 380px;

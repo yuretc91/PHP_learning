@@ -21,21 +21,21 @@ header{
     padding-left: 40px;
 }
 .headerSearch{
-    list-style-image: url(icons/search.png);
+    list-style-image: url(icons/header-search.png);
     flex-basis: 50%;
 }
 .headerUser{
-    list-style-image: url(icons/user.png);
+    list-style-image: url(icons/header-user.png);
     text-align: center;
     margin: 0 auto;
 }
 .headerCompare{
-    list-style-image: url(icons/compare.png);
+    list-style-image: url(icons/header-compare.png);
     text-align: center;
     margin: 0 auto;
 }
 .headerCart{
-    list-style-image: url(icons/cart.png);
+    list-style-image: url(icons/header-cart.png);
     text-align: center;
     margin: 0 auto;
 }

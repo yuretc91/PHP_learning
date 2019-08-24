@@ -56,7 +56,7 @@
     letter-spacing: 0.3rem;
 }
 .infoAndContactsBtn > a{
-    background-image: url("../../../common/images/btnBackground.png");
+    background-image: url("../../../images/btnBackground.png");
     background-repeat: repeat-x;
     background-position-y: center;
     display: block;
