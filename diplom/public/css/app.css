@@ -448,5 +448,104 @@ footer{
     height: 7px;
     background: #ffc600;
 }
+section{
+    padding: 0 40px;
+}
+h1{
+    font-size: 47px;
+    font-family: Gilroy ExtraBold;
+}
+.way{
+    font-family: OpenSans Light;
+    font-size: 14px;
+}
+.stepWay{
+    color: grey;
+}
+.arrowWay{
+    color: black;
+    font-weight: 900;
+}
+.catalog{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.control{
+    flex-basis: 360px;
+    flex-grow: 1;
+    /*padding-right: 70px;*/
+}
+.visual{
+    flex-grow: 1;
+    /*padding-left: 70px;*/
+}
+.control-head,
+.visual-head{
+    height: 70px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+}
+.control-head{
+    background: #dcdcdc;
+    justify-content: center;
+}
+.visual-head{
+    background: #ebebeb;
+    justify-content: flex-start;
+}
+.control-head-title,
+.visual-head-title{
+    font-family: Gilroy ExtraBold;
+    letter-spacing: 0.3rem;
+    font-size: 1rem;
+    display: block;
+    padding: 0 20px;
+}
+.visual-head-option{
+    font-family: OpenSans;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0 20px;
+    opacity: 0.3;
+}
+.visual-head-option:hover,
+.visual-head-option:active{
+    opacity: 1;
+}
+.down-arrow,
+.up-arrow{
+    display: block;
+    padding: 0 5px;
+
+}
+.down-arrow{
+    flex-grow: 1;
+    text-align: right;
+}
+.input-title{
+    font-family: Gilroy ExtraBold;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.18px;
+}
+label{
+    font-family: OpenSans;
+    font-size: 14px;
+}
+.products{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.card{
+
+}
+
+    /*font-family: Gilroy Light;*/
 
 

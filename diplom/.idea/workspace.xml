@@ -2,53 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b67d7799-2d9b-4556-bc29-039b2fe62914" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/main-page.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/compare.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/compare.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/user.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/footer/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main-page/footer/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/footer/icons/cart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/footer/icons/compare.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/footer/icons/user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/footer/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/footer/images/shevron.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main-page/header/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/header/icons/cart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/header/icons/compare.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/header/icons/plus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/header/icons/search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/header/icons/user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/header/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/info-and-contacts/images/map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/logotypes/images/dji.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/logotypes/images/gopro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/logotypes/images/spgadgets.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/logotypes/images/vive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/logotypes/logotypes.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main-page/main/logotypes/logotypes.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/popular/images/popular-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/popular/images/popular-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/popular/images/popular-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/popular/images/popular-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/popular/images/popular-5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/popular/images/popular-6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/services/images/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/services/images/credit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/services/images/delivery.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/services/images/warranty.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/services/services.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main-page/main/services/services.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/slider/images/slider1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/slider/images/slider2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/slider/images/slider3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/slider/images/sliderButtonEmpty.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main-page/main/slider/images/sliderButtonFull.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/main-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/catalog.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/catalog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/catalog.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/main-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/main-page.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,8 +26,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="118" column="81" selection-start-line="118" selection-start-column="44" selection-end-line="118" selection-end-column="81" />
+            <state relative-caret-position="1880">
+              <caret line="163" column="13" selection-start-line="163" selection-start-column="13" selection-end-line="163" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/main-page.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="68" selection-start-line="68" selection-end-line="68" />
             </state>
           </provider>
         </entry>
@@ -76,17 +44,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/catalog.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="42" column="61" lean-forward="true" selection-start-line="42" selection-start-column="61" selection-end-line="42" selection-end-column="61" />
+            <state relative-caret-position="170">
+              <caret line="20" column="69" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+        <entry file="file://$PROJECT_DIR$/resources/sass/catalogStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+            <state relative-caret-position="206">
+              <caret line="81" column="22" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -104,16 +72,19 @@
         <option value="$PROJECT_DIR$/resources/sass/common/btn_orange-black.css" />
         <option value="$PROJECT_DIR$/resources/sass/main-page/main/logotypes/logotypes.css" />
         <option value="$PROJECT_DIR$/resources/sass/main-page/main/services/services.css" />
-        <option value="$PROJECT_DIR$/resources/sass/app.scss" />
         <option value="$PROJECT_DIR$/resources/sass/main-page/footer/footer.css" />
         <option value="$PROJECT_DIR$/resources/sass/main-page/header/header.css" />
         <option value="$PROJECT_DIR$/resources/js/slider.js" />
         <option value="$PROJECT_DIR$/resources/js/app.js" />
         <option value="$PROJECT_DIR$/resources/views/layouts/main.php" />
-        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/main-page.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/sass/catalog.scss" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/main-page.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/resources/sass/app.scss" />
         <option value="$PROJECT_DIR$/resources/views/catalog.blade.php" />
+        <option value="$PROJECT_DIR$/resources/sass/catalogStyle.css" />
       </list>
     </option>
   </component>
@@ -214,6 +185,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -224,13 +196,18 @@
             <path>
               <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
               <item name="diplom" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="diplom" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
               <item name="diplom" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="sass" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
@@ -274,19 +251,19 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/sass" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OSPanel\domains\PHPlearning\diplom\resources\sass" />
       <recent name="D:\OSPanel\domains\PHPlearning\diplom" />
     </key>
   </component>
@@ -319,18 +296,18 @@
       <option name="presentableId" value="Default" />
       <updated>1566323915952</updated>
       <workItem from="1566323918711" duration="5052000" />
-      <workItem from="1566632849389" duration="11500000" />
+      <workItem from="1566632849389" duration="11671000" />
+      <workItem from="1566714005964" duration="9226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16552000" />
+    <option name="totallyTimeSpent" value="25949000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="732" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25377643" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25755286" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -345,7 +322,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32899022" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32899022" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -458,13 +435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="7" selection-start-line="1" selection-end-line="1" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/mix-manifest.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -502,13 +472,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="36" column="70" lean-forward="true" selection-start-line="36" selection-start-column="70" selection-end-line="36" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.php" />
     <entry file="file://$PROJECT_DIR$/../CMSExamen/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -520,13 +484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="80" column="17" lean-forward="true" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/main-page.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
@@ -554,17 +511,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/catalog.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/main-page.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="118" column="81" selection-start-line="118" selection-start-column="44" selection-end-line="118" selection-end-column="81" />
+        <state relative-caret-position="1880">
+          <caret line="163" column="13" selection-start-line="163" selection-start-column="13" selection-end-line="163" selection-end-column="13" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/catalogStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="81" column="22" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.949/build.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-514" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/catalog.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="42" column="61" lean-forward="true" selection-start-line="42" selection-start-column="61" selection-end-line="42" selection-end-column="61" />
+        <state relative-caret-position="170">
+          <caret line="20" column="69" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
         </state>
       </provider>
     </entry>

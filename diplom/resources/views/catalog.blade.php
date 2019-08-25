@@ -14,33 +14,35 @@
 
     </section>
     <section class="catalog">
-        <article class="control">
-            <div class="controlLogo">ФИЛЬТР:</div>
+        <aside class="control">
+            <div class="control-head"><span class="control-head-title">ФИЛЬТР:</span></div>
             <form action="">
                 <hr>
-                <label for="cash">Стоимость<br>
+                <label for="cash"><span class="input-title">Стоимость</span><br>
                     <input type="text" name="cash">
                 </label>
                 <hr>
-                <label for="color">Цвет<br>
+                <label for="color"><span class="input-title">Цвет</span><br>
                     <input type="checkbox" name="color" value="Black">Чёрный<br>
                     <input type="checkbox" name="color" value="White">Белый<br>
                     <input type="checkbox" name="color" value="Blue">Синий<br>
                 </label>
                 <hr>
-                <label for="bluetooth">Bluetooth<br>
+                <label for="bluetooth"><span class="input-title">Bluetooth</span><br>
                     <input type="radio" name="bluetooth" value="true">Есть<br>
                     <input type="radio" name="bluetooth" value="false">Нет<br>
                 </label>
                 <input type="submit" name="submit" value="Показать">
             </form>
 
-        </article>
+        </aside>
         <article class="visual">
-            <div class="visualLogo">СОРТИРОВКА:
-                <a href="catalogMain.php">По цене</a>
-                <a href="catalogMain.php">По типу</a>
-                <a href="catalogMain.php">По популярности</a>
+            <div class="visual-head"><span class="visual-head-title">СОРТИРОВКА:</span>
+                <a href="catalogMain.php" class="visual-head-option">По цене</a>
+                <a href="catalogMain.php" class="visual-head-option">По типу</a>
+                <a href="catalogMain.php" class="visual-head-option">По популярности</a>
+                <a href="catalogMain.php" class="down-arrow"><img src="{{asset('images/iconDownDir.png')}}" alt="down"></a>
+                <a href="catalogMain.php" class="up-arrow"><img src="{{asset('images/iconUpDir.png')}}" alt="up"></a>
             </div>
             <div class="products">
                 <div class="card">
