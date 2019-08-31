@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/catalog', function () {
+Route::get('/catalog/{id}', function () {
     return view('catalog');
 });
+
+
+Route::get('/cathegory-anekdots/{id}', 'AnekdotController@with_cathegory')->name('cathegory-anekdots');
