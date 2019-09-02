@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cathegory;
+use App\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -14,9 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $cathegories = Cathegory::all();
+        $cathegories = Cathegory::where('id', '1')->get();
         $products = Product::where('cathegory_id', '1')->get();
-        //dd($anekdots);
+        //dd($products);
         return view('catalog', compact('products'), compact('cathegories'));
     }
 

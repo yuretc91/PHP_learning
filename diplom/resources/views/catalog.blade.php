@@ -3,13 +3,17 @@
 @section('content')
 
     <section>
-        <h1>Моноподы для селфи</h1>
+        @foreach ($cathegories as $cathegory)
+        <h1>{{$cathegory->name}}</h1>
+
         <div class="way">
             <span class="stepWay">Главная</span>
             <span class="arrowWay">&nbsp; &gt; &nbsp;</span>
             <span class="stepWay">Каталог товаров</span>
             <span class="arrowWay">&nbsp; &gt; &nbsp;</span>
-            <span class="stepWay">Моноподы для селфи</span>
+
+            <span class="stepWay">{{$cathegory->name}}</span>
+            @endforeach
         </div>
 
     </section>
@@ -45,15 +49,17 @@
                 <a href="catalogMain.php" class="up-arrow"><img src="{{asset('images/iconUpDir.png')}}" alt="up"></a>
             </div>
             <div class="products">
+                @foreach ($products as $product)
                 <div class="card">
-                    <div class="cardImage"><img src="{{asset('images/products/item1.png')}}" alt="item1"></div>
+                    <div class="cardImage"><img src="{{asset('images/products/'. $product->image)}}" alt="{{$product->title}}"></div>
                     <div class="cardDescription">
-                        <div class="cardName">Любительская селфи-палка</div>
-                        <div class="cardCash">500 р.</div>
+                        <div class="cardName">{{$product->title}}</div>
+                        <div class="cardCash">{{$product->price . ' BYN'}}</div>
                     </div>
 
                 </div>
-                <div class="card">
+            @endforeach
+                {{--<div class="card">
                     <div class="cardImage"><img src="{{asset('images/products/item2.png')}}" alt="item2"></div>
                     <div class="cardDescription">
                         <div class="cardName">Профессиональная селфи-палка</div>
@@ -76,7 +82,7 @@
                         <div class="cardCash">4900 р.</div>
                     </div>
 
-                </div>
+                </div>--}}
             </div>
         </article>
     </section>
