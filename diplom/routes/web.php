@@ -14,8 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/catalog/{id}', 'ProductController@index');
+Route::get('/catalog/{id}', 'ProductController@product_with_cat');
+Route::resource('/catalog', 'ProductController');
 
 
 
-Route::get('/cathegory-anekdots/{id}', 'AnekdotController@with_cathegory')->name('cathegory-anekdots');
+
+//Route::get('/cathegory-anekdots/{id}', 'AnekdotController@with_cathegory')->name('cathegory-anekdots');

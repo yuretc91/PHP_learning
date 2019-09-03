@@ -21,7 +21,7 @@
         <li class="headerMiniMenuItem headerCart"><a href="#">Корзина</a></li>
     </ul>
     <ul class="headerSecondMenu">
-        <li class="headerSecondMenuItem headerCatalog"><a href="#">КАТАЛОГ ТОВАРОВ</a> <img src="{{asset('images/icons/header/plus.png')}}" alt="plus"></li>
+        <li class="headerSecondMenuItem headerCatalog"><a href="/catalog">КАТАЛОГ ТОВАРОВ</a> <img src="{{asset('images/icons/header/plus.png')}}" alt="plus"></li>
         <li class="headerSecondMenuItem headerDelivery"><a href="#">ДОСТАВКА</a></li>
         <li class="headerSecondMenuItem headerGarant"><a href="#">ГАРАНТИЯ</a></li>
         <li class="headerSecondMenuItem headerContacts"><a href="#">КОНТАКТЫ</a></li>

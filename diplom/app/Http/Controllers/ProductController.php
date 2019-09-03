@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public $restful = true;
     /**
      * Display a listing of the resource.
      *
@@ -15,10 +16,25 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $cathegories = Cathegory::where('id', '1')->get();
-        $products = Product::where('cathegory_id', '1')->get();
+        $cathegories = Cathegory::all();
+        $products = Product::find(1)->paginate(6);
         //dd($products);
-        return view('catalog', compact('products'), compact('cathegories'));
+        return view('catalog.index', compact('products'), compact('cathegories'));
+    }
+    public function product_with_cat()
+    {
+        $cathegories = Cathegory::where('id', '1')->get();
+        $products = Product::where('cathegory_id', '1')->paginate(6);
+        //dd($products);
+        return view('catalog.product-with-cat', compact('products'), compact('cathegories'));
+    }
+    public function post_index()
+    {
+        dd($request);
+        $cathegories = Cathegory::where('id', '1')->get();
+        $products = Product::where('cathegory_id', '1')->paginate(6);
+        //dd($products);
+        return view('catalog.product-with-cat', compact('products'), compact('cathegories'));
     }
 
     /**
@@ -39,7 +55,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -50,7 +66,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

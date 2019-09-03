@@ -7,9 +7,9 @@
         <h1>{{$cathegory->name}}</h1>
 
         <div class="way">
-            <span class="stepWay">Главная</span>
+            <a href="../../" class="stepWay">Главная</a>
             <span class="arrowWay">&nbsp; &gt; &nbsp;</span>
-            <span class="stepWay">Каталог товаров</span>
+            <a href="../catalog" class="stepWay">Каталог товаров</a>
             <span class="arrowWay">&nbsp; &gt; &nbsp;</span>
 
             <span class="stepWay">{{$cathegory->name}}</span>
@@ -20,7 +20,7 @@
     <section class="catalog">
         <aside class="control">
             <div class="control-head"><span class="control-head-title">ФИЛЬТР:</span></div>
-            <form action="">
+            <form action="{{ route('catalog.filtr')}}" method="post">
                 <hr>
                 <label for="cash"><span class="input-title">Стоимость</span><br>
                     <input type="text" name="cash">
@@ -50,39 +50,20 @@
             </div>
             <div class="products">
                 @foreach ($products as $product)
+
                 <div class="card">
                     <div class="cardImage"><img src="{{asset('images/products/'. $product->image)}}" alt="{{$product->title}}"></div>
                     <div class="cardDescription">
                         <div class="cardName">{{$product->title}}</div>
                         <div class="cardCash">{{$product->price . ' BYN'}}</div>
                     </div>
+                    @foreach(json_decode($product->options, true) as $key => $value)
+                        <div>{{$key}} : {{$value}}</div>
+                        @endforeach
 
                 </div>
             @endforeach
-                {{--<div class="card">
-                    <div class="cardImage"><img src="{{asset('images/products/item2.png')}}" alt="item2"></div>
-                    <div class="cardDescription">
-                        <div class="cardName">Профессиональная селфи-палка</div>
-                        <div class="cardCash">1500 р.</div>
-                    </div>
 
-                </div>
-                <div class="card">
-                    <div class="cardImage"><img src="{{asset('images/products/item3.png')}}" alt="item3"></div>
-                    <div class="cardDescription">
-                        <div class="cardName">Непотопляемая селфи-палка</div>
-                        <div class="cardCash">2500 р.</div>
-                    </div>
-
-                </div>
-                <div class="card">
-                    <div class="cardImage"><img src="{{asset('images/products/item4.png')}}" alt="item4"></div>
-                    <div class="cardDescription">
-                        <div class="cardName">Селфи-палка "Следуй за мной"</div>
-                        <div class="cardCash">4900 р.</div>
-                    </div>
-
-                </div>--}}
             </div>
         </article>
     </section>
