@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/catalog/{id}', 'ProductController@product_with_cat');
+Route::get('/catalog/{id}/{color}/{gyroscope}/{microphone}/{accelerometer}', 'ProductController@product_with_cat');
 Route::resource('/catalog', 'ProductController');
+Route::post('/catalog/', 'ProductController@post_index')->name('product.filtr');
 
-
-
-
-//Route::get('/cathegory-anekdots/{id}', 'AnekdotController@with_cathegory')->name('cathegory-anekdots');

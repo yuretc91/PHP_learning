@@ -20,21 +20,30 @@
     <section class="catalog">
         <aside class="control">
             <div class="control-head"><span class="control-head-title">ФИЛЬТР:</span></div>
-            <form action="{{ route('catalog.filtr')}}" method="post">
+            <form action="{{ route('product.filtr')}}" method="post">
+                @csrf
                 <hr>
                 <label for="cash"><span class="input-title">Стоимость</span><br>
                     <input type="text" name="cash">
                 </label>
                 <hr>
                 <label for="color"><span class="input-title">Цвет</span><br>
-                    <input type="checkbox" name="color" value="Black">Чёрный<br>
-                    <input type="checkbox" name="color" value="White">Белый<br>
-                    <input type="checkbox" name="color" value="Blue">Синий<br>
+                    <input type="checkbox" name="color" value="black">Чёрный<br>
+                    <input type="checkbox" name="color" value="white">Белый<br>
+                    <input type="checkbox" name="color" value="green">Зелёный<br>
                 </label>
                 <hr>
-                <label for="bluetooth"><span class="input-title">Bluetooth</span><br>
-                    <input type="radio" name="bluetooth" value="true">Есть<br>
-                    <input type="radio" name="bluetooth" value="false">Нет<br>
+                <label for="gyroscope"><span class="input-title">Gyroscope</span><br>
+                    <input type="radio" name="gyroscope" value="true">Есть<br>
+                    <input type="radio" name="gyroscope" value="false">Нет<br>
+                </label>
+                <label for="microphone"><span class="input-title">Microphone</span><br>
+                    <input type="radio" name="microphone" value="true">Есть<br>
+                    <input type="radio" name="microphone" value="false">Нет<br>
+                </label>
+                <label for="accelerometer"><span class="input-title">Accelerometer</span><br>
+                    <input type="radio" name="accelerometer" value="true">Есть<br>
+                    <input type="radio" name="accelerometer" value="false">Нет<br>
                 </label>
                 <input type="submit" name="submit" value="Показать">
             </form>
@@ -57,6 +66,7 @@
                         <div class="cardName">{{$product->title}}</div>
                         <div class="cardCash">{{$product->price . ' BYN'}}</div>
                     </div>
+
                     @foreach(json_decode($product->options, true) as $key => $value)
                         <div>{{$key}} : {{$value}}</div>
                         @endforeach

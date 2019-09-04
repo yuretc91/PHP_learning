@@ -22,24 +22,7 @@
                 <a href="/catalog/{{$cathegory->id}}" class="input-title">{{$cathegory->name}}</a><br>
                 @endforeach
                 <hr>
-            <form action="{{ route('catalog.index')}}" method="post">
-                <hr>
-                <label for="cash"><span class="input-title">Стоимость</span><br>
-                    <input type="text" name="cash">
-                </label>
-                <hr>
-                <label for="color"><span class="input-title">Цвет</span><br>
-                    <input type="checkbox" name="color" value="Black">Чёрный<br>
-                    <input type="checkbox" name="color" value="White">Белый<br>
-                    <input type="checkbox" name="color" value="Blue">Синий<br>
-                </label>
-                <hr>
-                <label for="bluetooth"><span class="input-title">Bluetooth</span><br>
-                    <input type="radio" name="bluetooth" value="true">Есть<br>
-                    <input type="radio" name="bluetooth" value="false">Нет<br>
-                </label>
-                <input type="submit" name="submit" value="Показать">
-            </form>
+
 
         </aside>
         <article class="visual">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cathegory;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller
 {
@@ -21,20 +22,26 @@ class ProductController extends Controller
         //dd($products);
         return view('catalog.index', compact('products'), compact('cathegories'));
     }
-    public function product_with_cat()
+    public function product_with_cat($id, $color = '', $gyroscope = '', $microphone = '', $accelerometer = '')
     {
+        //json_decode($product->options, true)['color']
         $cathegories = Cathegory::where('id', '1')->get();
-        $products = Product::where('cathegory_id', '1')->paginate(6);
+        $products = Product::where('cathegory_id', '1')->whereJsonContains('options->color', $color)->paginate(6);
         //dd($products);
         return view('catalog.product-with-cat', compact('products'), compact('cathegories'));
     }
-    public function post_index()
+    public function post_index(Request $request)
     {
-        dd($request);
-        $cathegories = Cathegory::where('id', '1')->get();
-        $products = Product::where('cathegory_id', '1')->paginate(6);
+        $color = $request->all()['color'];
+        $gyroscope = $request->all()['gyroscope'];
+        $microphone = $request->all()['microphone'];
+        $accelerometer = $request->all()['accelerometer'];
+        /*dd($request->all()['color']);*/
+        //$cathegories = Cathegory::where('id', '1')->get();
+        //$products = Product::where('cathegory_id', '1')->paginate(6);
         //dd($products);
-        return view('catalog.product-with-cat', compact('products'), compact('cathegories'));
+        //return view('catalog.product-with-cat', compact('products'), compact('cathegories'));
+        return Redirect::to('catalog/1/'.$color.'/'.$gyroscope. '/' .$microphone. '/' .$accelerometer);
     }
 
     /**
