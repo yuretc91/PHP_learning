@@ -27,23 +27,30 @@
                     <input type="text" name="cash">
                 </label>
                 <hr>
-                <label for="color"><span class="input-title">Цвет</span><br>
-                    <input type="checkbox" name="color" value="black">Чёрный<br>
-                    <input type="checkbox" name="color" value="white">Белый<br>
-                    <input type="checkbox" name="color" value="green">Зелёный<br>
+                <label for="type"><span class="input-title">Тип</span><br>
+                    <select name="type">
+                        <option value="for smartphone" selected>Для смартфона</option>
+                        <option value="with integrated screen">Со встроенным экраном</option>
+                    </select>
                 </label>
                 <hr>
-                <label for="gyroscope"><span class="input-title">Gyroscope</span><br>
+                {{--<label for="color"><span class="input-title">Цвет</span><br>
+                    <input type="checkbox" name="color[]" value="black">Чёрный<br>
+                    <input type="checkbox" name="color[]" value="white">Белый<br>
+                    <input type="checkbox" name="color[]" value="green">Зелёный<br>
+                </label>--}}
+                <hr>
+                <label for="gyroscope"><span class="input-title">Гироскоп</span><br>
                     <input type="radio" name="gyroscope" value="true">Есть<br>
-                    <input type="radio" name="gyroscope" value="false">Нет<br>
+                    <input type="radio" name="gyroscope" value="">Нет<br>
                 </label>
-                <label for="microphone"><span class="input-title">Microphone</span><br>
+                <label for="microphone"><span class="input-title">Микрофон</span><br>
                     <input type="radio" name="microphone" value="true">Есть<br>
-                    <input type="radio" name="microphone" value="false">Нет<br>
+                    <input type="radio" name="microphone" value="">Нет<br>
                 </label>
-                <label for="accelerometer"><span class="input-title">Accelerometer</span><br>
+                <label for="accelerometer"><span class="input-title">Акселерометр</span><br>
                     <input type="radio" name="accelerometer" value="true">Есть<br>
-                    <input type="radio" name="accelerometer" value="false">Нет<br>
+                    <input type="radio" name="accelerometer" value="">Нет<br>
                 </label>
                 <input type="submit" name="submit" value="Показать">
             </form>

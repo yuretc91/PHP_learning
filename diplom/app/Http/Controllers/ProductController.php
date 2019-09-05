@@ -6,6 +6,7 @@ use App\Cathegory;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Database\Eloquent\Builder;
 
 class ProductController extends Controller
 {
@@ -26,22 +27,72 @@ class ProductController extends Controller
     {
         //json_decode($product->options, true)['color']
         $cathegories = Cathegory::where('id', '1')->get();
-        $products = Product::where('cathegory_id', '1')->whereJsonContains('options->color', $color)->paginate(6);
+        $products = Product::where('cathegory_id', '1')->orWhereJsonContains('options->color', $color)->paginate(6);
         //dd($products);
         return view('catalog.product-with-cat', compact('products'), compact('cathegories'));
     }
-    public function post_index(Request $request)
+    public function post_index(Request $request, Product $products)
     {
-        $color = $request->all()['color'];
-        $gyroscope = $request->all()['gyroscope'];
-        $microphone = $request->all()['microphone'];
-        $accelerometer = $request->all()['accelerometer'];
+        //dd($request->input('type'));
+        $products = $products->newQuery();
+        if ($request->has('type')) {
+            $products->whereJsonContains('options->type', $request->input('type'));
+
+        }
+
+        /*if ($request->has('color')) {
+            foreach ($request->input('color') as $color){
+                //dd($color);
+                $products->whereJsonContains('options->color', $color);
+            }
+        }*/
+        dd($products->get());
+        if ($request->has('gyroscope')) {
+            $products->whereJsonContains('options->gyroscope', (bool)$request->input('gyroscope'));
+        }
+
+        if ($request->has('accelerometer')) {
+            $products->whereJsonContains('options->accelerometer', (bool)$request->input('accelerometer'));
+        }
+
+        if ($request->has('microphone')) {
+            $products->whereJsonContains('options->microphone', (bool)$request->input('microphone'));
+        }
+
+        dd($products->get());
+        /*if ($request->has('color')) {
+            $products->whereHas('color', function ($query) use ($request) {
+                $query->whereIn('managers.name', $request->input('managers'));
+            });
+        }*/
+        // Continue for all of the filters.
+
+        // Get the results and return them.
+        return $products->get();
+
+//        if ($request->has('color')) {
+//            $color = $request->all()['color'];
+//            if ($request->has('gyroscope')) {
+//                $gyroscope = $request->all()['gyroscope'];
+//                if ($request->has('microphone')) {
+//                    $microphone = $request->all()['microphone'];
+//                    if ($request->has('accelerometer')) {
+//                        $accelerometer = $request->all()['accelerometer'];
+//                        return Redirect::to('catalog/1/'.$color.'/'.$gyroscope. '/' .$microphone. '/' .$accelerometer);
+//                    }else return Redirect::to('catalog/1/'.$color.'/'.$gyroscope. '/' .$microphone);
+//                }else return Redirect::to('catalog/1/'.$color.'/'.$gyroscope);
+//            }else return Redirect::to('catalog/1/'.$color);
+//        }
+
+
+
+
         /*dd($request->all()['color']);*/
         //$cathegories = Cathegory::where('id', '1')->get();
         //$products = Product::where('cathegory_id', '1')->paginate(6);
         //dd($products);
         //return view('catalog.product-with-cat', compact('products'), compact('cathegories'));
-        return Redirect::to('catalog/1/'.$color.'/'.$gyroscope. '/' .$microphone. '/' .$accelerometer);
+
     }
 
     /**
