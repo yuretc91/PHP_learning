@@ -3,26 +3,26 @@
 @section('content')
 
     <section>
-        {{--@foreach ($cathegories as $cathegory)--}}
-        <h1>{{--{{$cathegory->name}}--}}</h1>
+        @foreach ($cathegories as $cathegory)
+        <h1>{{$cathegory->name}}</h1>
 
         <div class="way">
             <a href="{{ route('home')}}" class="stepWay">Главная</a>
             <span class="arrowWay">&nbsp; &gt; &nbsp;</span>
-            <a href="{{ route('catalog.index')}}" class="stepWay">Каталог товаров</a>
+{{--            <a href="{{ route('catalog.index')}}" class="stepWay">Каталог товаров</a>--}}
             <span class="arrowWay">&nbsp; &gt; &nbsp;</span>
 
-            <span class="stepWay">{{--{{$cathegory->name}}--}}</span>
-            {{--@endforeach--}}
+            <span class="stepWay">{{$cathegory->name}}</span>
+            @endforeach
         </div>
 
     </section>
     <section class="catalog">
         <aside class="control">
             <div class="control-head"><span class="control-head-title">ФИЛЬТР:</span></div>
-            <form action="{{ route('product.filtr')}}" method="post">
+            <form action="{{ route('product.filtr')}}" method="get">
                 @csrf
-                <input type="hidden" name="id" value="1">
+                <input type="hidden" name="id[]" value="1">
                 <hr>
                 <label for="cash"><span class="input-title">Стоимость</span><br>
                     <input type="text" name="cash">
@@ -31,51 +31,39 @@
                 @foreach ($properties as $property)
                     @foreach(json_decode($property->properties, true) as $key => $value)
 
-                    @if($value == "radio")
-                            <label for={{$key}}><span class="input-title">{{$key}}</span><br>
-                                <input type={{$value}} name={{$key}} value="true">Есть<br>
-                                <input type={{$value}} name={{$key}} value="">Нет<br>
+                    @if($value[0]['type'] == "radio")
+                            <label for={{$key}}><span class="input-title">{{$value[1]['title']}}</span><br>
+
+                                @foreach($value[2]['values'] as $values)
+
+                                    @foreach($values as $value_en => $value_ru)
+                                <input type="radio" name={{$key}} value={{$value_en}} {{ request()->input('type') == true ? 'selected' : '' }}>{{$value_ru}}<br>
+                                @endforeach
+                                @endforeach
+
                             </label>
-                        @elseif($value == "select")
-                        <label for={{$key}}><span class="input-title">{{$key}}</span><br>
+                        @elseif($value[0]['type'] == "select")
+
+                        <label for={{$key}}><span class="input-title">{{$value[1]['title']}}</span><br>
                             <select name={{$key}}>
-                                <option value="for smartphone" selected>Для смартфона</option>
-                                <option value="with integrated screen">Со встроенным экраном</option>
+                                @foreach($value[2]['values'] as $values)
+                                    @foreach($values as $value_en => $value_ru)
+                                <option value="{{$value_en}}">{{$value_ru}}</option>
+                                        @endforeach
+                                @endforeach
+
                             </select>
                         </label>
-                        @elseif($value == "checkbox")
-                            <label for={{$key}}><span class="input-title">{{$key}}</span><br>
-                                <input type={{$value}} name="color[]" value="black">Чёрный<br>
-                                <input type={{$value}} name="color[]" value="white">Белый<br>
-                                <input type={{$value}} name="color[]" value="green">Зелёный<br>
+                        @elseif($value[0]['type'] == "checkbox")
+                            <label for={{$key}}><span class="input-title">{{$value[1]['title']}}</span><br>
+                                @foreach($value[2]['values'] as $values)
+                                    @foreach($values as $value_en => $value_ru)
+                                <input type="checkbox" name="{{$key}}[]" value={{$value_en}}>{{$value_ru}}<br>
+                                        @endforeach
+                                @endforeach
+
                             </label>
                         @endif
-
-                {{--<label for="type"><span class="input-title">Тип</span><br>
-                    <select name="type">
-                        <option value="for smartphone" selected>Для смартфона</option>
-                        <option value="with integrated screen">Со встроенным экраном</option>
-                    </select>
-                </label>
-                <hr>--}}
-                {{--<label for="color"><span class="input-title">Цвет</span><br>
-                    <input type="checkbox" name="color[]" value="black">Чёрный<br>
-                    <input type="checkbox" name="color[]" value="white">Белый<br>
-                    <input type="checkbox" name="color[]" value="green">Зелёный<br>
-                </label>--}}
-                {{--<hr>
-                <label for="gyroscope"><span class="input-title">Гироскоп</span><br>
-                    <input type="radio" name="gyroscope" value="true">Есть<br>
-                    <input type="radio" name="gyroscope" value="">Нет<br>
-                </label>
-                <label for="microphone"><span class="input-title">Микрофон</span><br>
-                    <input type="radio" name="microphone" value="true">Есть<br>
-                    <input type="radio" name="microphone" value="">Нет<br>
-                </label>
-                <label for="accelerometer"><span class="input-title">Акселерометр</span><br>
-                    <input type="radio" name="accelerometer" value="true">Есть<br>
-                    <input type="radio" name="accelerometer" value="">Нет<br>
-                </label>--}}
                     @endforeach
                 @endforeach
                 <input type="submit" name="submit" value="Показать">
@@ -97,7 +85,7 @@
                     <div class="cardImage"><img src="{{asset('images/products/'. $product->image)}}" alt="{{$product->title}}"></div>
                     <div class="cardDescription">
                         <div class="cardName">{{$product->title}}</div>
-                        <div class="cardCash">{{$product->price . ' BYN'}}</div>
+                        <div class="cardCash"><span class="product-cash">{{$product->price. " "}}</span><span>BYN</span></div>
                     </div>
 
                     @foreach(json_decode($product->options, true) as $key => $value)
@@ -110,7 +98,28 @@
             </div>
         </article>
     </section>
+    {{--<script>
+        var cards = document.getElementsByClassName("card");
+        var cash = document.getElementsByClassName("product-cash");
+        var parent = document.getElementsByClassName("products");
+        var SortElements = new Object();
+        cards.forEach(function(card, indx){
+            var cardCash = parseInt(card.querySelector('.product-cash').textContent);
+            SortElements[cardCash] = {'element': card, 'index': indx} ;
+        });
+        var keys = Object.keys(SortElements);
+        function compareNumeric(a, b) {
+            a = parseInt(a);
+            b = parseInt(b);
+            if (a < b) return 1;
+            if (a > b) return -1;
+        }
+        keys.sort(compareNumeric);
+        keys.map(function(key, indx){
+            parent.insertAdjacentElement('beforeend', SortElements[key]['element']);
+        });
 
-
+    </script>
+--}}
 
 @endsection

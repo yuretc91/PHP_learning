@@ -26,23 +26,23 @@ class ProductController extends Controller
     }
     public function product_with_cat($id)
     {
-        //json_decode($product->options, true)['color']
-        //$cathegories = Cathegory::where('id', $id)->get();
+        $cathegories = Cathegory::where('id', $id)->get();
         $properties = Property::where('cathegory_id', $id)->get();
         $products = Product::where('cathegory_id', $id)->paginate(6);
         //dd($properties);
-        return view('catalog.product-with-cat', compact('properties'), compact('products'));
+        return view('catalog.product-with-cat', compact('properties', 'products', 'cathegories'));
     }
     public function post_index(Request $request, Product $products)
     {
 
+        //dd($request->all());
             $products = $products->newQuery();
             //$products->whereIn('cathegory_id', '1');
             //dd($request->input('id'));
-        /*if ($request->has('id')) {
+        if ($request->has('id')) {
             $products->whereIn('cathegory_id', $request->input('id'));
-        }*/
-        //dd($products->get());
+        }
+        /*dd($products->get());*/
             if ($request->has('type')) {
                 $products->whereJsonContains('options->type', $request->input('type'));
 
@@ -82,11 +82,12 @@ class ProductController extends Controller
             // Continue for all of the filters.
 
             // Get the results and return them.
-            $products = $products->paginate(6);
+            $products = $products->orderBy('price')->paginate(6);
 
         $properties = Property::where('cathegory_id', "1")->get();
+        $cathegories = Cathegory::where('id', "1")->get();
 
-        return view('catalog.product-with-cat', compact('products'), compact('properties'));
+        return view('catalog.product-with-cat', compact('products', 'properties', 'cathegories'));
 
     }
 
