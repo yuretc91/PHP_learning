@@ -3,17 +3,17 @@
 @section('content')
 
     <section>
-        @foreach ($cathegories as $cathegory)
-        <h1>{{$cathegory->name}}</h1>
+        {{--@foreach ($cathegories as $cathegory)--}}
+        <h1>{{--{{$cathegory->name}}--}}</h1>
 
         <div class="way">
-            <a href="../../" class="stepWay">Главная</a>
+            <a href="{{ route('home')}}" class="stepWay">Главная</a>
             <span class="arrowWay">&nbsp; &gt; &nbsp;</span>
-            <a href="../catalog" class="stepWay">Каталог товаров</a>
+            <a href="{{ route('catalog.index')}}" class="stepWay">Каталог товаров</a>
             <span class="arrowWay">&nbsp; &gt; &nbsp;</span>
 
-            <span class="stepWay">{{$cathegory->name}}</span>
-            @endforeach
+            <span class="stepWay">{{--{{$cathegory->name}}--}}</span>
+            {{--@endforeach--}}
         </div>
 
     </section>
@@ -22,24 +22,48 @@
             <div class="control-head"><span class="control-head-title">ФИЛЬТР:</span></div>
             <form action="{{ route('product.filtr')}}" method="post">
                 @csrf
+                <input type="hidden" name="id" value="1">
                 <hr>
                 <label for="cash"><span class="input-title">Стоимость</span><br>
                     <input type="text" name="cash">
                 </label>
                 <hr>
-                <label for="type"><span class="input-title">Тип</span><br>
+                @foreach ($properties as $property)
+                    @foreach(json_decode($property->properties, true) as $key => $value)
+
+                    @if($value == "radio")
+                            <label for={{$key}}><span class="input-title">{{$key}}</span><br>
+                                <input type={{$value}} name={{$key}} value="true">Есть<br>
+                                <input type={{$value}} name={{$key}} value="">Нет<br>
+                            </label>
+                        @elseif($value == "select")
+                        <label for={{$key}}><span class="input-title">{{$key}}</span><br>
+                            <select name={{$key}}>
+                                <option value="for smartphone" selected>Для смартфона</option>
+                                <option value="with integrated screen">Со встроенным экраном</option>
+                            </select>
+                        </label>
+                        @elseif($value == "checkbox")
+                            <label for={{$key}}><span class="input-title">{{$key}}</span><br>
+                                <input type={{$value}} name="color[]" value="black">Чёрный<br>
+                                <input type={{$value}} name="color[]" value="white">Белый<br>
+                                <input type={{$value}} name="color[]" value="green">Зелёный<br>
+                            </label>
+                        @endif
+
+                {{--<label for="type"><span class="input-title">Тип</span><br>
                     <select name="type">
                         <option value="for smartphone" selected>Для смартфона</option>
                         <option value="with integrated screen">Со встроенным экраном</option>
                     </select>
                 </label>
-                <hr>
+                <hr>--}}
                 {{--<label for="color"><span class="input-title">Цвет</span><br>
                     <input type="checkbox" name="color[]" value="black">Чёрный<br>
                     <input type="checkbox" name="color[]" value="white">Белый<br>
                     <input type="checkbox" name="color[]" value="green">Зелёный<br>
                 </label>--}}
-                <hr>
+                {{--<hr>
                 <label for="gyroscope"><span class="input-title">Гироскоп</span><br>
                     <input type="radio" name="gyroscope" value="true">Есть<br>
                     <input type="radio" name="gyroscope" value="">Нет<br>
@@ -51,7 +75,9 @@
                 <label for="accelerometer"><span class="input-title">Акселерометр</span><br>
                     <input type="radio" name="accelerometer" value="true">Есть<br>
                     <input type="radio" name="accelerometer" value="">Нет<br>
-                </label>
+                </label>--}}
+                    @endforeach
+                @endforeach
                 <input type="submit" name="submit" value="Показать">
             </form>
 

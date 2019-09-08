@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 05 2019 г., 00:56
+-- Время создания: Сен 08 2019 г., 16:59
 -- Версия сервера: 5.7.23
 -- Версия PHP: 7.1.22
 
@@ -64,7 +64,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_31_081030_create_cathegories_table', 1),
-(4, '2019_08_31_081140_create_products_table', 1);
+(4, '2019_08_31_081140_create_products_table', 1),
+(5, '2019_09_07_140054_create_cathegories__properties_table', 2),
+(6, '2019_09_07_140054_create_catproperties_table', 3);
 
 -- --------------------------------------------------------
 
@@ -113,6 +115,27 @@ INSERT INTO `products` (`id`, `cathegory_id`, `title`, `info`, `image`, `price`,
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `properties`
+--
+
+CREATE TABLE `properties` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `cathegory_id` int(11) NOT NULL,
+  `properties` json NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `properties`
+--
+
+INSERT INTO `properties` (`id`, `cathegory_id`, `properties`, `created_at`, `updated_at`) VALUES
+(1, 1, '{\"type\": \"select\", \"color\": \"checkbox\", \"gyroscope\": \"radio\", \"microphone\": \"radio\", \"accelerometer\": \"radio\"}', '2019-09-07 21:00:00', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `users`
 --
 
@@ -156,6 +179,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `properties`
+--
+ALTER TABLE `properties`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `users`
 --
 ALTER TABLE `users`
@@ -176,13 +205,19 @@ ALTER TABLE `cathegories`
 -- AUTO_INCREMENT для таблицы `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT для таблицы `properties`
+--
+ALTER TABLE `properties`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `users`

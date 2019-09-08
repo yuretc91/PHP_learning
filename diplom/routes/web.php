@@ -13,12 +13,8 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 Route::get('/catalog/{id}', 'ProductController@product_with_cat');
-//Route::get('/catalog/{id}/{color}/{gyroscope}/{microphone}/{accelerometer}', 'ProductController@product_with_cat');
-//Route::get('/catalog/{id}/{color}/{gyroscope}/{microphone}/', 'ProductController@product_with_cat');
-//Route::get('/catalog/{id}/{color}/{gyroscope}/', 'ProductController@product_with_cat');
-//Route::get('/catalog/{id}/{color}/', 'ProductController@product_with_cat');
 Route::resource('/catalog', 'ProductController');
 Route::post('/catalog/', 'ProductController@post_index')->name('product.filtr');
 

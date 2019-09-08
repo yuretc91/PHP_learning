@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cathegory;
+use App\Property;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -23,75 +24,69 @@ class ProductController extends Controller
         //dd($products);
         return view('catalog.index', compact('products'), compact('cathegories'));
     }
-    public function product_with_cat($id, $color = '', $gyroscope = '', $microphone = '', $accelerometer = '')
+    public function product_with_cat($id)
     {
         //json_decode($product->options, true)['color']
-        $cathegories = Cathegory::where('id', '1')->get();
-        $products = Product::where('cathegory_id', '1')->orWhereJsonContains('options->color', $color)->paginate(6);
-        //dd($products);
-        return view('catalog.product-with-cat', compact('products'), compact('cathegories'));
+        //$cathegories = Cathegory::where('id', $id)->get();
+        $properties = Property::where('cathegory_id', $id)->get();
+        $products = Product::where('cathegory_id', $id)->paginate(6);
+        //dd($properties);
+        return view('catalog.product-with-cat', compact('properties'), compact('products'));
     }
     public function post_index(Request $request, Product $products)
     {
-        //dd($request->input('type'));
-        $products = $products->newQuery();
-        if ($request->has('type')) {
-            $products->whereJsonContains('options->type', $request->input('type'));
 
-        }
+            $products = $products->newQuery();
+            //$products->whereIn('cathegory_id', '1');
+            //dd($request->input('id'));
+        /*if ($request->has('id')) {
+            $products->whereIn('cathegory_id', $request->input('id'));
+        }*/
+        //dd($products->get());
+            if ($request->has('type')) {
+                $products->whereJsonContains('options->type', $request->input('type'));
 
-        /*if ($request->has('color')) {
-            foreach ($request->input('color') as $color){
-                //dd($color);
-                $products->whereJsonContains('options->color', $color);
             }
-        }*/
-        dd($products->get());
-        if ($request->has('gyroscope')) {
-            $products->whereJsonContains('options->gyroscope', (bool)$request->input('gyroscope'));
-        }
 
-        if ($request->has('accelerometer')) {
-            $products->whereJsonContains('options->accelerometer', (bool)$request->input('accelerometer'));
-        }
+            /*if ($request->has('color')) {
+                foreach ($request->input('color') as $color){
+                    //dd($color);
+                    $products->whereJsonContains('options->color', $color[0] or $color[1]);
+                }
+            }*/
+            /*if ($request->has('color')) {
+                    //dd($request->input('color')[0]);
+                    $products->whereJsonContains('options->color', $request->input('color')[0] or $request->input('color')[1]);
+                //$products->whereJsonContains('options->color', $request->input('color')[1]);
+            }*/
 
-        if ($request->has('microphone')) {
-            $products->whereJsonContains('options->microphone', (bool)$request->input('microphone'));
-        }
+            //dd($products->get());
+            if ($request->has('gyroscope')) {
+                $products->whereJsonContains('options->gyroscope', (bool)$request->input('gyroscope'));
+            }
 
-        dd($products->get());
-        /*if ($request->has('color')) {
-            $products->whereHas('color', function ($query) use ($request) {
-                $query->whereIn('managers.name', $request->input('managers'));
-            });
-        }*/
-        // Continue for all of the filters.
+            if ($request->has('accelerometer')) {
+                $products->whereJsonContains('options->accelerometer', (bool)$request->input('accelerometer'));
+            }
 
-        // Get the results and return them.
-        return $products->get();
+            if ($request->has('microphone')) {
+                $products->whereJsonContains('options->microphone', (bool)$request->input('microphone'));
+            }
 
-//        if ($request->has('color')) {
-//            $color = $request->all()['color'];
-//            if ($request->has('gyroscope')) {
-//                $gyroscope = $request->all()['gyroscope'];
-//                if ($request->has('microphone')) {
-//                    $microphone = $request->all()['microphone'];
-//                    if ($request->has('accelerometer')) {
-//                        $accelerometer = $request->all()['accelerometer'];
-//                        return Redirect::to('catalog/1/'.$color.'/'.$gyroscope. '/' .$microphone. '/' .$accelerometer);
-//                    }else return Redirect::to('catalog/1/'.$color.'/'.$gyroscope. '/' .$microphone);
-//                }else return Redirect::to('catalog/1/'.$color.'/'.$gyroscope);
-//            }else return Redirect::to('catalog/1/'.$color);
-//        }
+            //dd($products->get());
+            /*if ($request->has('color')) {
+                $products->whereHas('color', function ($query) use ($request) {
+                    $query->whereIn('managers.name', $request->input('managers'));
+                });
+            }*/
+            // Continue for all of the filters.
 
+            // Get the results and return them.
+            $products = $products->paginate(6);
 
+        $properties = Property::where('cathegory_id', "1")->get();
 
-
-        /*dd($request->all()['color']);*/
-        //$cathegories = Cathegory::where('id', '1')->get();
-        //$products = Product::where('cathegory_id', '1')->paginate(6);
-        //dd($products);
-        //return view('catalog.product-with-cat', compact('products'), compact('cathegories'));
+        return view('catalog.product-with-cat', compact('products'), compact('properties'));
 
     }
 

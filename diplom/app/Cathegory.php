@@ -9,8 +9,12 @@ class Cathegory extends Model
     protected $fillable = [
         'name', 'description',  'picture'
     ];
-    public function cathegory()
+    public function products()
     {
         return $this->hasMany('App\Product');
+    }
+    public function properties()
+    {
+        return $this->hasMany('App\Property');
     }
 }
