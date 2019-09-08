@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 08 2019 г., 16:59
--- Версия сервера: 5.7.23
--- Версия PHP: 7.1.22
+-- Время создания: Сен 08 2019 г., 20:50
+-- Версия сервера: 5.7.25
+-- Версия PHP: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -131,7 +131,7 @@ CREATE TABLE `properties` (
 --
 
 INSERT INTO `properties` (`id`, `cathegory_id`, `properties`, `created_at`, `updated_at`) VALUES
-(1, 1, '{\"type\": \"select\", \"color\": \"checkbox\", \"gyroscope\": \"radio\", \"microphone\": \"radio\", \"accelerometer\": \"radio\"}', '2019-09-07 21:00:00', NULL);
+(1, 1, '{\"type\": [{\"type\": \"select\"}, {\"title\": \"Тип\"}, {\"values\": [{\"for smartphone\": \"для смартфона\"}, {\"with integrated screen\": \"со встроенным экраном\"}]}], \"color\": [{\"type\": \"checkbox\"}, {\"title\": \"Цвет\"}, {\"values\": [{\"white\": \"белый\"}, {\"black\": \"чёрный\"}, {\"green\": \"зелёный\"}]}], \"gyroscope\": [{\"type\": \"radio\"}, {\"title\": \"Гироскоп\"}, {\"values\": [{\"true\": \"Есть\"}, {\"\": \"Нет\"}]}], \"microphone\": [{\"type\": \"radio\"}, {\"title\": \"Микрофон\"}, {\"values\": [{\"true\": \"Есть\"}, {\"\": \"Нет\"}]}], \"accelerometer\": [{\"type\": \"radio\"}, {\"title\": \"Акселерометр\"}, {\"values\": [{\"true\": \"Есть\"}, {\"\": \"Нет\"}]}]}', '2019-09-07 21:00:00', NULL);
 
 -- --------------------------------------------------------
 

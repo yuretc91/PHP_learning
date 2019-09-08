@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', 'HomeController@home')->name('home');
 Route::get('/catalog/{id}', 'ProductController@product_with_cat');
 Route::resource('/catalog', 'ProductController');
-Route::post('/catalog/', 'ProductController@post_index')->name('product.filtr');
+Route::get('/catalog/', 'ProductController@post_index')->name('product.filtr');
 
