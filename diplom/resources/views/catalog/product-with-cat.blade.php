@@ -5,6 +5,7 @@
     <section>
         @foreach ($cathegories as $cathegory)
         <h1>{{$cathegory->name}}</h1>
+        <div id="ajaxtest"></div>
 
         <div class="way">
             <a href="{{ route('home')}}" class="stepWay">Главная</a>
@@ -72,7 +73,7 @@
         </aside>
         <article class="visual">
             <div class="visual-head"><span class="visual-head-title">СОРТИРОВКА:</span>
-                <a href="catalogMain.php" class="visual-head-option">По цене</a>
+                <button class="visual-head-option" id="sort-cash" type="button">По цене</button>
                 <a href="catalogMain.php" class="visual-head-option">По типу</a>
                 <a href="catalogMain.php" class="visual-head-option">По популярности</a>
                 <a href="catalogMain.php" class="down-arrow"><img src="{{asset('images/iconDownDir.png')}}" alt="down"></a>
@@ -98,28 +99,41 @@
             </div>
         </article>
     </section>
-    {{--<script>
-        var cards = document.getElementsByClassName("card");
-        var cash = document.getElementsByClassName("product-cash");
-        var parent = document.getElementsByClassName("products");
-        var SortElements = new Object();
-        cards.forEach(function(card, indx){
-            var cardCash = parseInt(card.querySelector('.product-cash').textContent);
-            SortElements[cardCash] = {'element': card, 'index': indx} ;
-        });
-        var keys = Object.keys(SortElements);
-        function compareNumeric(a, b) {
-            a = parseInt(a);
-            b = parseInt(b);
-            if (a < b) return 1;
-            if (a > b) return -1;
-        }
-        keys.sort(compareNumeric);
-        keys.map(function(key, indx){
-            parent.insertAdjacentElement('beforeend', SortElements[key]['element']);
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $.urlParam = function(name){
+                var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                if (results==null) {
+                    return null;
+                }
+                return decodeURI(results[1]) || 0;
+            };
+            $("[name]");
+
+
+
+            var url_string = window.location.href
+            var url = new URL(url_string);
+            var utm = url.searchParams.get("type");
+            //$("#sort-cash").on('click', function (){console.log($.urlParam())});
+            $("#sort-cash").on('click', function (){console.log($("[name]"))});
+
+            $("#sort-cash").on('click', function (){
+                $.ajax({
+                        type:'POST',
+                        url:"{{ route('product.ajax')}}",
+                        data:"blabla",
+                    }).done(function(response) {
+                        $("#ajaxtest").text(response);
+                    });
+            });
         });
 
     </script>
---}}
-
 @endsection

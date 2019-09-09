@@ -21,7 +21,6 @@ class ProductController extends Controller
     {
         $cathegories = Cathegory::all();
         $products = Product::find(1)->paginate(6);
-        //dd($products);
         return view('catalog.index', compact('products'), compact('cathegories'));
     }
     public function product_with_cat($id)
@@ -35,6 +34,9 @@ class ProductController extends Controller
     public function post_index(Request $request, Product $products)
     {
 
+
+        //$products->whereJsonContains('options->color',"white");
+        //dd($products->whereJsonContains('options->color',"green")->orWhereJsonContains('options->color',"white")->get());
         //dd($request->all());
             $products = $products->newQuery();
             //$products->whereIn('cathegory_id', '1');
@@ -42,18 +44,23 @@ class ProductController extends Controller
         if ($request->has('id')) {
             $products->whereIn('cathegory_id', $request->input('id'));
         }
-        /*dd($products->get());*/
+
             if ($request->has('type')) {
                 $products->whereJsonContains('options->type', $request->input('type'));
-
             }
 
+
+               /* if ($request->has('color')) {
+                    $products->WhereJsonContains('options->color', $request->input('color'));
+                }*/
+
+
             /*if ($request->has('color')) {
-                foreach ($request->input('color') as $color){
-                    //dd($color);
-                    $products->whereJsonContains('options->color', $color[0] or $color[1]);
-                }
-            }*/
+                $products->whereJsonContains('options->color',"green");
+            }
+        if ($request->has('color')) {
+            $products->WhereJsonContains('options->color',"white");
+        }*/
             /*if ($request->has('color')) {
                     //dd($request->input('color')[0]);
                     $products->whereJsonContains('options->color', $request->input('color')[0] or $request->input('color')[1]);
@@ -91,6 +98,13 @@ class ProductController extends Controller
 
     }
 
+
+    public function ajax($data)
+    {
+        dd($data);
+        $var = 'success';
+        echo $var;
+    }
     /**
      * Show the form for creating a new resource.
      *
