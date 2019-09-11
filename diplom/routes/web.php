@@ -15,5 +15,11 @@ Route::get('/', 'HomeController@home')->name('home');
 Route::get('/catalog/{id}', 'ProductController@product_with_cat');
 Route::resource('/catalog', 'ProductController');
 Route::get('/catalog/', 'ProductController@post_index')->name('product.filtr');
-Route::post('/catalog/filtr', 'ProductController@ajax')->name('product.ajax');
+//Route::post('/catalog/filtr', 'AjaxController')->name('product.ajax');
+Route::get('my-theme', function () {
+    return view('welcome2');
+});
 
+Route::get('/catalog/filtr', 'AjaxController@ajaxRequest');
+
+Route::post('/catalog/filtr', 'AjaxController@ajaxRequestPost');

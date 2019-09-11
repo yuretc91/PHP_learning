@@ -33,77 +33,41 @@ class ProductController extends Controller
     }
     public function post_index(Request $request, Product $products)
     {
-
-
-        //$products->whereJsonContains('options->color',"white");
-        //dd($products->whereJsonContains('options->color',"green")->orWhereJsonContains('options->color',"white")->get());
-        //dd($request->all());
             $products = $products->newQuery();
-            //$products->whereIn('cathegory_id', '1');
-            //dd($request->input('id'));
         if ($request->has('id')) {
             $products->whereIn('cathegory_id', $request->input('id'));
         }
-
             if ($request->has('type')) {
                 $products->whereJsonContains('options->type', $request->input('type'));
             }
+                if ($request->has('color')) {
 
-
-               /* if ($request->has('color')) {
-                    $products->WhereJsonContains('options->color', $request->input('color'));
-                }*/
-
-
-            /*if ($request->has('color')) {
-                $products->whereJsonContains('options->color',"green");
-            }
-        if ($request->has('color')) {
-            $products->WhereJsonContains('options->color',"white");
-        }*/
-            /*if ($request->has('color')) {
-                    //dd($request->input('color')[0]);
-                    $products->whereJsonContains('options->color', $request->input('color')[0] or $request->input('color')[1]);
-                //$products->whereJsonContains('options->color', $request->input('color')[1]);
-            }*/
-
-            //dd($products->get());
+                    $products->where(function ($query){
+                        global $request;
+                        foreach ($request->input('color') as $color){
+                            $query->orWhereJsonContains('options->color', $color);
+                        }
+                    });
+                }
             if ($request->has('gyroscope')) {
                 $products->whereJsonContains('options->gyroscope', (bool)$request->input('gyroscope'));
             }
-
             if ($request->has('accelerometer')) {
                 $products->whereJsonContains('options->accelerometer', (bool)$request->input('accelerometer'));
             }
-
             if ($request->has('microphone')) {
                 $products->whereJsonContains('options->microphone', (bool)$request->input('microphone'));
             }
-
-            //dd($products->get());
-            /*if ($request->has('color')) {
-                $products->whereHas('color', function ($query) use ($request) {
-                    $query->whereIn('managers.name', $request->input('managers'));
-                });
-            }*/
-            // Continue for all of the filters.
-
-            // Get the results and return them.
             $products = $products->orderBy('price')->paginate(6);
-
         $properties = Property::where('cathegory_id', "1")->get();
         $cathegories = Cathegory::where('id', "1")->get();
-
         return view('catalog.product-with-cat', compact('products', 'properties', 'cathegories'));
-
     }
 
 
-    public function ajax($data)
+    public function ajax()
     {
-        dd($data);
-        $var = 'success';
-        echo $var;
+
     }
     /**
      * Show the form for creating a new resource.

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class AjaxController extends Controller
 {
@@ -13,7 +14,7 @@ class AjaxController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -80,5 +81,19 @@ class AjaxController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function ajaxRequest()
+    {
+        return view('catalog.product-with-cat');
+    }
+
+    public function ajaxRequestPost(Request $request, Product $products)
+    {
+        $input = $request->all();
+        $names = $input['names'];
+        $values = $input['values'];
+        $names = array_diff($names, ["_token", "cash", "submit"]);
+        return response()->json(['success'=>$names]);
     }
 }

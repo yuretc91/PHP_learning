@@ -38,7 +38,7 @@
                                 @foreach($value[2]['values'] as $values)
 
                                     @foreach($values as $value_en => $value_ru)
-                                <input type="radio" name={{$key}} value={{$value_en}} {{ request()->input('type') == true ? 'selected' : '' }}>{{$value_ru}}<br>
+                                <input type="radio" name={{$key}} value={{$value_en}} {{--{{ request()->input('type') == true ? 'selected' : '' }}--}}>{{$value_ru}}<br>
                                 @endforeach
                                 @endforeach
 
@@ -107,31 +107,74 @@
     <script>
         $(document).ready(function () {
 
-            $.urlParam = function(name){
+            /*$.urlParam = function(name){
                 var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
                 if (results==null) {
                     return null;
                 }
                 return decodeURI(results[1]) || 0;
-            };
-            $("[name]");
+            };*/
+
+
+            $.extend({
+                getUrlVars: function(){
+                    var vars = [], hash;
+                    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                    for(var i = 0; i < hashes.length; i++)
+                    {
+                        hash = hashes[i].split('=');
+                        vars.push(hash[0]);
+                        vars[hash[0]] = hash[1];
+                    }
+                    return vars;
+                },
+                getUrlVar: function(name){
+                    return $.getUrlVars()[name];
+                }
+            });
+
+            var allVars = $.getUrlVars();
+            var names = [];
+            var values = [];
+            //var byName = $.getUrlVar('type');
+
+                $.each(allVars,function(index,value){
+                    values.push($.getUrlVar(value));
+                    if (value.includes('%5B%5D')) {
+                        value = value.replace('%5B%5D','');
+                    }
+
+                    names.push(value);
 
 
 
-            var url_string = window.location.href
-            var url = new URL(url_string);
-            var utm = url.searchParams.get("type");
-            //$("#sort-cash").on('click', function (){console.log($.urlParam())});
-            $("#sort-cash").on('click', function (){console.log($("[name]"))});
+                    //console.log(value);
+                });
 
-            $("#sort-cash").on('click', function (){
+
+console.log(names);
+console.log(values);
+            $("#sort-cash").on('click', function (){console.log($.getUrlVar($.getUrlVars()[2]))});
+            //$("#sort-cash").on('click', function (){console.log($.getUrlVars()[8])});
+
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $("#sort-cash").click(function(e){
+                e.preventDefault();
+                //var url = $.getUrlVars();
                 $.ajax({
-                        type:'POST',
-                        url:"{{ route('product.ajax')}}",
-                        data:"blabla",
-                    }).done(function(response) {
-                        $("#ajaxtest").text(response);
-                    });
+                    type:'POST',
+                    url:'/catalog/filtr',
+                    data:{names:names, values:values},
+                    success:function(data){
+                        alert(data.success);
+                        console.log(data.success);
+                    }
+                });
             });
         });
 
