@@ -93,46 +93,43 @@ class AjaxController extends Controller
         $input = $request->all();
         $names = $input['names'];
         $values = $input['values'];
-        $qwerty = 1;
-        //$names = array_diff($names, ["_token", "cash", "submit"]);
+        $ordering = $input['ordering'];
+
         array_splice($values, 0, 1);
         array_splice($values,-1);
         array_splice($names, 0, 1);
         array_splice($names,-1);
 
-        $array = array_combine($names, $values);
+        $GLOBALS['optionsArr'] = array_combine($names, $values);
 
-        /*$products = $products->newQuery();
+        $products = $products->newQuery();
+        $products->where(function ($query){
 
-
-            $products->whereIn('cathegory_id', $array['id']);
-
-            $products->whereJsonContains('options->type', $request->input('type'));
-
-
-            $products->where(function ($query){
-                global $request;
-                foreach ($request->input('color') as $color){
-                    $query->orWhereJsonContains('options->color', $color);
+            foreach ($GLOBALS['optionsArr'] as $optionName => $optionVal){
+                if ($optionName != 'cash'){
+                    //dd($optionName);
+                    if ($optionVal){
+                        if ($optionName == 'id'){
+                            $query->where('cathegory_id', $optionVal);
+                            //dd($query->get());
+                        }else{
+                            $query->whereJsonContains('options->' .$optionName, $optionVal);
+                        }
+                    }
                 }
-            });
-        }
-        if ($request->has('gyroscope')) {
-            $products->whereJsonContains('options->gyroscope', (bool)$request->input('gyroscope'));
-        }
-        if ($request->has('accelerometer')) {
-            $products->whereJsonContains('options->accelerometer', (bool)$request->input('accelerometer'));
-        }
-        if ($request->has('microphone')) {
-            $products->whereJsonContains('options->microphone', (bool)$request->input('microphone'));
-        }
-        $products = $products->orderBy('price')->paginate(6);*/
+            }
+        });
 
-        //$view = view('products', compact('qwerty'))->render();
+        //dd($products->get());
+        if ($ordering == 'down-arrow'){
+            $products = $products->orderBy('price')->paginate(6);
+        }else $products = $products->orderBy('price', 'desc')->paginate(6);
+
+
+        $view = view('products', compact('products'))->render();
         //dd($view);
         return response()->json([
-            'array' => $array,
-            //'view' => $view
+            'view' => $view
             ]
         );
     }

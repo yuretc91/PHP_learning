@@ -74,10 +74,11 @@
         <article class="visual">
             <div class="visual-head"><span class="visual-head-title">СОРТИРОВКА:</span>
                 <button class="visual-head-option" id="sort-cash" type="button">По цене</button>
-                <a href="catalogMain.php" class="visual-head-option">По типу</a>
-                <a href="catalogMain.php" class="visual-head-option">По популярности</a>
-                <a href="catalogMain.php" class="down-arrow"><img src="{{asset('images/iconDownDir.png')}}" alt="down"></a>
-                <a href="catalogMain.php" class="up-arrow"><img src="{{asset('images/iconUpDir.png')}}" alt="up"></a>
+                <div class="ordering-arrows">
+                    <button class="down-arrow"><img src="{{asset('images/iconDownDir.png')}}" alt="down"></button>
+                    <button class="up-arrow ordering-active"><img src="{{asset('images/iconUpDir.png')}}" alt="up"></button>
+                </div>
+
             </div>
             <div class="products">
                 @foreach ($products as $product)
@@ -107,15 +108,6 @@
     <script>
         $(document).ready(function () {
 
-            /*$.urlParam = function(name){
-                var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-                if (results==null) {
-                    return null;
-                }
-                return decodeURI(results[1]) || 0;
-            };*/
-
-
             $.extend({
                 getUrlVars: function(){
                     var vars = [], hash;
@@ -133,11 +125,13 @@
                 }
             });
 
-            var allVars = $.getUrlVars();
-            var names = [];
-            var values = [];
+
 
                 //Удаляем ненужные символы
+            if ($.getUrlVar(1) != undefined){
+                var allVars = $.getUrlVars();
+                var names = [];
+                var values = [];
                 $.each(allVars,function(index,value){
                     $value = $.getUrlVar(value);
                     if ($value.includes('+')) {
@@ -148,34 +142,35 @@
                         value = value.replace('%5B%5D','');
                     }
                     names.push(value);
-
                 });
+            }
 
 
-console.log(names);
-console.log(values);
-            $("#sort-cash").on('click', function (){console.log($.getUrlVar($.getUrlVars()[2]))});
-            //$("#sort-cash").on('click', function (){console.log($.getUrlVars()[8])});
 
+//console.log(names);
+//console.log(values);
+            var orderingArrow = $('.ordering-active').attr('class').replace(' ordering-active', '');
+            //$("#sort-cash").on('click', function (){console.log()});
 
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            $("#sort-cash").click(function(e){
+            function sorting(e){
                 e.preventDefault();
-                //var url = $.getUrlVars();
+                //$('.down-arrow').addClass("ordering-active");
                 $.ajax({
                     type:'POST',
                     url:'/catalog/filtr',
-                    data:{names:names, values:values},
+                    data:{names:names, values:values, ordering:orderingArrow},
                     success:function(data){
-                        console.log(data.array);
-                        //$('#card').html(data.view);
+                        $('.products').empty();
+                        $('.products').html(data.view);
                     }
                 });
-            });
+            }
+            $("#sort-cash").click(sorting);
         });
 
     </script>

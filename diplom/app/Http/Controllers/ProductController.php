@@ -58,7 +58,7 @@ class ProductController extends Controller
             if ($request->has('microphone')) {
                 $products->whereJsonContains('options->microphone', (bool)$request->input('microphone'));
             }
-            $products = $products->orderBy('price')->paginate(6);
+            $products = $products->paginate(6);
         $properties = Property::where('cathegory_id', "1")->get();
         $cathegories = Cathegory::where('id', "1")->get();
         return view('catalog.product-with-cat', compact('products', 'properties', 'cathegories'));
