@@ -136,19 +136,19 @@
             var allVars = $.getUrlVars();
             var names = [];
             var values = [];
-            //var byName = $.getUrlVar('type');
 
+                //Удаляем ненужные символы
                 $.each(allVars,function(index,value){
-                    values.push($.getUrlVar(value));
+                    $value = $.getUrlVar(value);
+                    if ($value.includes('+')) {
+                        $value = $value.split('+').join(" ");
+                    }
+                    values.push($value);
                     if (value.includes('%5B%5D')) {
                         value = value.replace('%5B%5D','');
                     }
-
                     names.push(value);
 
-
-
-                    //console.log(value);
                 });
 
 
@@ -171,8 +171,8 @@ console.log(values);
                     url:'/catalog/filtr',
                     data:{names:names, values:values},
                     success:function(data){
-                        alert(data.success);
-                        console.log(data.success);
+                        console.log(data.array);
+                        //$('#card').html(data.view);
                     }
                 });
             });
