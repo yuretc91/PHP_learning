@@ -90,5 +90,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="DeviceProject" />
+    <orderEntry type="module" module-name="CMSExamen" />
   </component>
 </module>

@@ -95,10 +95,10 @@ class AjaxController extends Controller
         $values = $input['values'];
         $ordering = $input['ordering'];
 
-        array_splice($values, 0, 1);
-        array_splice($values,-1);
-        array_splice($names, 0, 1);
-        array_splice($names,-1);
+        //array_splice($values, 0, 1);
+        //array_splice($values,-1);
+        //array_splice($names, 0, 1);
+        //array_splice($names,-1);
 
         $GLOBALS['optionsArr'] = array_combine($names, $values);
 
@@ -106,22 +106,27 @@ class AjaxController extends Controller
         $products->where(function ($query){
 
             foreach ($GLOBALS['optionsArr'] as $optionName => $optionVal){
-                if ($optionName != 'cash'){
+                if ($optionName != 'cash' && $optionName != '_token' && $optionName != 'submit'){
                     //dd($optionName);
                     if ($optionVal){
                         if ($optionName == 'id'){
                             $query->where('cathegory_id', $optionVal);
-                            //dd($query->get());
-                        }else{
+                        }elseif($optionName == 'type'){
                             $query->whereJsonContains('options->' .$optionName, $optionVal);
+                        }else{
+                            $query->whereJsonContains('options->' .$optionName, (bool)$optionVal);
                         }
                     }
                 }
+                /*if ($optionName == 'type'){
+                    dd($query->get());
+                }*/
             }
-        });
 
+        });
+        //$products = $products->orderBy('price', 'desc')->paginate(6);
         //dd($products->get());
-        if ($ordering == 'down-arrow'){
+        if ($ordering == 'up-arrow'){
             $products = $products->orderBy('price')->paginate(6);
         }else $products = $products->orderBy('price', 'desc')->paginate(6);
 

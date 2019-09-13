@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b67d7799-2d9b-4556-bc29-039b2fe62914" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/404.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/cathegory/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/cathegory/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/cathegory/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/diplom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/diplom.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/catalog/product-with-cat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/catalog/product-with-cat.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,41 +31,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="18" column="20" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AjaxController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2000">
-              <caret line="125" column="60" selection-start-line="125" selection-start-column="60" selection-end-line="125" selection-end-column="60" />
-              <folding>
-                <element signature="e#40#68#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-120">
-              <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
-              <folding>
-                <element signature="e#40#58#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="416">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/catalog/product-with-cat.blade.php">
+        <entry file="file://$PROJECT_DIR$/vendor/jeroennoten/laravel-adminlte/resources/views/page.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="78" column="59" selection-start-line="78" selection-start-column="59" selection-end-line="78" selection-end-column="59" />
+            <state relative-caret-position="-1072">
+              <caret line="62" column="67" selection-start-line="62" selection-start-column="67" selection-end-line="62" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -102,11 +85,14 @@
         <option value="$PROJECT_DIR$/resources/views/catalog/ajax.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/main-page.blade.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome2.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" />
         <option value="$PROJECT_DIR$/resources/views/catalog/product-with-cat.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/../CMSExamen/vendor/jeroennoten/laravel-adminlte/resources/views/partials/menu-item.blade.php" />
+        <option value="$PROJECT_DIR$/vendor/jeroennoten/laravel-adminlte/resources/views/page.blade.php" />
+        <option value="$PROJECT_DIR$/../CMSExamen/vendor/jeroennoten/laravel-adminlte/config/adminlte.php" />
       </list>
     </option>
   </component>
@@ -247,42 +233,79 @@
             </path>
             <path>
               <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="diplom" type="462c0819:PsiDirectoryNode" />
+              <item name="CMSExamen" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMSExamen" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMSExamen" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="catalog" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="diplom" type="462c0819:PsiDirectoryNode" />
+              <item name="CMSExamen" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMSExamen" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="jeroennoten" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMSExamen" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="jeroennoten" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel-adminlte" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMSExamen" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="jeroennoten" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel-adminlte" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMSExamen" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="jeroennoten" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel-adminlte" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMSExamen" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="jeroennoten" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel-adminlte" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="diplom" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="CMSExamen" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="jeroennoten" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel-adminlte" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DeviceProject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DeviceProject" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DeviceProject" type="462c0819:PsiDirectoryNode" />
-              <item name="main-page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="diplom" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DeviceProject" type="462c0819:PsiDirectoryNode" />
-              <item name="main-page" type="462c0819:PsiDirectoryNode" />
-              <item name="footer" type="462c0819:PsiDirectoryNode" />
+              <item name="CMSExamen" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="jeroennoten" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel-adminlte" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -293,20 +316,21 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\OSPanel\domains\PHPlearning\diplom\resources\views\products" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OSPanel\domains\PHPlearning\diplom\resources\views" />
       <recent name="C:\OSPanel\OSPanel\domains\PHPlearning\diplom" />
       <recent name="D:\OSPanel\domains\PHPlearning\diplom\resources\views\catalog" />
       <recent name="D:\OSPanel\domains\PHPlearning\diplom" />
       <recent name="D:\OSPanel\domains\PHPlearning\diplom\resources\sass" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OSPanel\domains\PHPlearning\diplom\resources\views\products" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -354,16 +378,17 @@
       <workItem from="1568141196013" duration="6357000" />
       <workItem from="1568217702468" duration="11504000" />
       <workItem from="1568315284811" duration="7081000" />
+      <workItem from="1568399840338" duration="6591000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123451000" />
+    <option name="totallyTimeSpent" value="130042000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="732" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20392749" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20694864" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -389,54 +414,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/sass/catalog.scss" />
-    <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.949/build.php" />
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../CMSExamen/app/Anekdot.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Connection.php" />
-    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-          <folding>
-            <element signature="e#33#72#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../CMSExamen/database/migrations/2019_07_27_210813_create_anekdots_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="21" column="40" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="21" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_31_081030_create_cathegories_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/products/catalog.blade.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/products/index.blade.php" />
     <entry file="file://$PROJECT_DIR$/resources/sass/catalogStyle.css">
@@ -483,13 +460,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../CMSExamen/resources/views/anekdot/create.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../CMSExamen/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="17" column="102" selection-start-line="17" selection-start-column="74" selection-end-line="17" selection-end-column="102" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/catalog/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -618,40 +588,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/products.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/catalog/product-with-cat.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="20" />
+        <state relative-caret-position="346">
+          <caret line="165" column="76" selection-start-line="165" selection-start-column="54" selection-end-line="165" selection-end-column="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+        <state relative-caret-position="272">
+          <caret line="52" column="73" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="73" />
           <folding>
             <element signature="e#40#58#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/products.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AjaxController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2000">
-          <caret line="125" column="60" selection-start-line="125" selection-start-column="60" selection-end-line="125" selection-end-column="60" />
+        <state relative-caret-position="408">
+          <caret line="129" column="65" selection-start-line="129" selection-start-column="65" selection-end-line="129" selection-end-column="65" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/catalog/product-with-cat.blade.php">
+    <entry file="file://$PROJECT_DIR$/../CMSExamen/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="78" column="59" selection-start-line="78" selection-start-column="59" selection-end-line="78" selection-end-column="59" />
+        <state relative-caret-position="80">
+          <caret line="14" selection-start-line="14" selection-end-line="15" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/anekdot/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CMSExamen/vendor/jeroennoten/laravel-adminlte/resources/views/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CMSExamen/vendor/jeroennoten/laravel-adminlte/resources/views/partials/menu-item-top-nav.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-48" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CMSExamen/vendor/jeroennoten/laravel-adminlte/resources/views/plugins.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CMSExamen/vendor/jeroennoten/laravel-adminlte/resources/views/partials/menu-item.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="20" column="63" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CMSExamen/vendor/jeroennoten/laravel-adminlte/resources/views/page.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="98" column="132" lean-forward="true" selection-start-line="95" selection-start-column="20" selection-end-line="98" selection-end-column="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CMSExamen/vendor/jeroennoten/laravel-adminlte/resources/views/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CMSExamen/vendor/jeroennoten/laravel-adminlte/config/adminlte.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2824">
+          <caret line="93" column="20" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/jeroennoten/laravel-adminlte/resources/views/page.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1072">
+          <caret line="62" column="67" selection-start-line="62" selection-start-column="67" selection-end-line="62" selection-end-column="67" />
         </state>
       </provider>
     </entry>

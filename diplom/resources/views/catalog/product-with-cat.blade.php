@@ -75,8 +75,8 @@
             <div class="visual-head"><span class="visual-head-title">СОРТИРОВКА:</span>
                 <button class="visual-head-option" id="sort-cash" type="button">По цене</button>
                 <div class="ordering-arrows">
-                    <button class="down-arrow"><img src="{{asset('images/iconDownDir.png')}}" alt="down"></button>
-                    <button class="up-arrow ordering-active"><img src="{{asset('images/iconUpDir.png')}}" alt="up"></button>
+                    <button class="down-arrow ordering-active"><img src="{{asset('images/iconDownDir.png')}}" alt="down"></button>
+                    <button class="up-arrow"><img src="{{asset('images/iconUpDir.png')}}" alt="up"></button>
                 </div>
 
             </div>

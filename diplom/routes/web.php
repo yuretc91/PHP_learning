@@ -23,3 +23,14 @@ Route::get('my-theme', function () {
 Route::get('/catalog/filtr', 'AjaxController@ajaxRequest');
 
 Route::post('/catalog/filtr', 'AjaxController@ajaxRequestPost');
+Auth::routes();
+
+/*Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+    Route::resource('/admin-products', ['uses' => 'admin\AdminController@show'])->name('admin_index');
+});*/
+
+Route::resource('/admin-products', 'AdminproductController')->middleware('auth');
+Route::resource('/admin-cathegories', 'AdmincathegoryController')->middleware('auth');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
