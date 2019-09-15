@@ -33,42 +33,32 @@ class ProductController extends Controller
     }
     public function post_index(Request $request, Product $products)
     {
-            $products = $products->newQuery();
-        if ($request->has('id')) {
-            $products->whereIn('cathegory_id', $request->input('id'));
-        }
-            if ($request->has('type')) {
-                $products->whereJsonContains('options->type', $request->input('type'));
-            }
-                if ($request->has('color')) {
-
+        $products = $products->newQuery();
+        foreach($request->all() as $request_key => $request_value){
+            $GLOBALS['request_key'] = $request_key;
+            if ($request_key == "id"){
+                $products->whereIn('cathegory_id', $request->input('id'));
+            }elseif($request_key != "id" && $request_key != "_token" && $request_key != "cash" && $request_key != "submit"){
+                if (is_array($request_value)){
                     $products->where(function ($query){
                         global $request;
-                        foreach ($request->input('color') as $color){
-                            $query->orWhereJsonContains('options->color', $color);
+                        foreach ($request->input($GLOBALS['request_key']) as $one_option){
+                            $query->orWhereJsonContains('options->'.$GLOBALS['request_key'], $one_option);
                         }
                     });
+                }else{
+                    if ($request->input($request_key) == "true" || $request->input($request_key) == ""){
+                        $products->whereJsonContains('options->'.$request_key, (bool)$request->input($request_key));
+                    }else $products->whereJsonContains('options->'.$request_key, $request->input($request_key));
                 }
-            if ($request->has('gyroscope')) {
-                $products->whereJsonContains('options->gyroscope', (bool)$request->input('gyroscope'));
             }
-            if ($request->has('accelerometer')) {
-                $products->whereJsonContains('options->accelerometer', (bool)$request->input('accelerometer'));
-            }
-            if ($request->has('microphone')) {
-                $products->whereJsonContains('options->microphone', (bool)$request->input('microphone'));
-            }
+        }
             $products = $products->paginate(6);
         $properties = Property::where('cathegory_id', "1")->get();
         $cathegories = Cathegory::where('id', "1")->get();
         return view('catalog.product-with-cat', compact('products', 'properties', 'cathegories'));
     }
 
-
-    public function ajax()
-    {
-
-    }
     /**
      * Show the form for creating a new resource.
      *

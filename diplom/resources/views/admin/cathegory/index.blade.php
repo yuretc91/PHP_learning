@@ -15,7 +15,7 @@
 
 
 @section('content')
-    <a href="{{--{{ route('admin-cathegories.create') }}--}}"
+    <a href="{{ route('admin-cathegories.create') }}"
        class="btn btn-primary">Создать категорию</a>
     <table class="table table-striped">
         <thead>

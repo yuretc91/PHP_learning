@@ -18,9 +18,6 @@
     <div class="row">
         <div class="col-lg-12">
 
-
-
-
             <form action="{{ route('admin-properties.update', $property->id) }}"
                   method="post"
                   enctype="multipart/form-data">
@@ -29,53 +26,55 @@
                 @foreach(json_decode($property->properties, true) as $key => $value)
                     <div class="form-group">
                         <table class="table table-striped">
-
                             <tbody>
-
                                 <tr>
                                     <td><h2>{{$value['title']}}</h2></td>
-
                                     <td><button type="submit" class="btn btn-danger btn-lg pull-right" value="{{$key}}" name="option-delete">Удалить опцию</button></td>
                                 </tr>
-
                             </tbody>
                         </table>
-
-                        {{--<a href="{{ route('admin-properties.edit', $property->id, $value['title']) }}" class="btn btn-danger">Удалить опцию</a>--}}
-
-                        {{--<label for="type">Выберите тип отображения в фильтре</label>
-                            <select name="type">
-                                    <option value="select">Выбор одного значения из выпадающего списка</option>
-                                    <option value="radio">Выбор одного значения</option>
-                                    <option value="checkbox">Выбор нескольких сначений</option>
-                            </select>--}}
-
-                        {{--<label for="title">Введите название опции</label>
-                    <input type="text" class="form-control" name="title" value="{{$value['title']}}" placeholder="{{$value['title']}}">--}}
-                        {{--<h3>Существующие значения данной опции</h3>--}}
                         @if($value['type'] != 'radio')
-
                         <table class="table table-striped">
-
                             <tbody>
                             @foreach($value['values'] as $values_key => $values_value)
                                 <tr>
                                     <td><p>{{$values_value}}</p></td>
-                                    {{--<td><a href="{{ route('admin-properties.edit', $property->id) }}" class="btn btn-danger">Удалить</a></td>--}}
                                     <td><button type="submit" class="btn btn-warning pull-right" value="{{$key.'%'.$values_key}}" name="value-delete">Удалить параметр опции</button></td>
                                 </tr>
                             @endforeach
-
+                            <tr>
+                                <td><input type="text" class="form-control" name="en_name" placeholder="Введите название параметра на английском"></td>
+                                <td><input type="text" class="form-control" name="ru_name" placeholder="Введите название параметра на русском"></td>
+                                <td><button type="submit" class="btn btn-success pull-right" value="{{$key}}" name="value-add">Добавить параметр опции</button></td>
+                            </tr>
                             </tbody>
                         </table>
-                            {{--<button type="submit" class="btn btn-success" name="new-value">Обновить</button>--}}
                             @endif
                     </div>
                 @endforeach
-
-
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" name="update">Обновить</button>
+                    <label for="">Введите название опции</label>
+                    <input type="text" class="form-control" name="en_option_name" placeholder="на английском языке">
+                    <input type="text" class="form-control" name="ru_option_name" placeholder="на русском языке">
+                    <label for="">Первый параметр</label>
+                    <label for="type">Выберите тип отображения в фильтре</label><br>
+                    <select name="type">
+                        <option value="select">Выбор одного значения из выпадающего списка</option>
+                        <option value="radio">Выбор одного значения</option>
+                        <option value="checkbox">Выбор нескольких значений</option>
+                    </select>
+                    <input type="text" class="form-control" name="en_value_name[]" placeholder="на английском языке">
+                    <input type="text" class="form-control" name="ru_value_name[]" placeholder="на русском языке">
+                    <label for="">Второй параметр</label>
+                    <label for="type">Выберите тип отображения в фильтре</label><br>
+                    <select name="type">
+                        <option value="select">Выбор одного значения из выпадающего списка</option>
+                        <option value="radio">Выбор одного значения</option>
+                        <option value="checkbox">Выбор нескольких значений</option>
+                    </select>
+                    <input type="text" class="form-control" name="en_value_name[]" placeholder="на английском языке">
+                    <input type="text" class="form-control" name="ru_value_name[]" placeholder="на русском языке">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" name="option-add">Добавить опцию</button>
                 </div>
             </form>
         </div>

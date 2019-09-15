@@ -8,7 +8,7 @@
 
 @section('content_header')
 
-    <h1>Dashboard</h1>
+    <h1>Создайте опции для вашей категории</h1>
 
 @stop
 
@@ -17,21 +17,41 @@
 @section('content')
     <div class="row">
         <div class="col-lg-6">
-            <form action="{{ route('admin-cathegories.store') }}"
+            <form action="{{ route('admin-properties.store') }}"
                   method="post"
                   enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="">Имя категории</label>
-                    <input type="text" class="form-control" name="name">
-                </div>
-                <div class="form-group">
-                    <label for="">Описание категории</label>
-                    <textarea name="description" class="form-control" id="" cols="30" rows="10"></textarea>
-                </div>
+                    @foreach($cathegories as $cathegory)
+                        <input type="hidden" name="cathegory_id" value="{{$cathegory->id}}">
+                    @endforeach
+                    <label for="">Введите название опции</label>
+                    <input type="text" class="form-control" name="en_option_name" placeholder="на английском языке">
+                    <input type="text" class="form-control" name="ru_option_name" placeholder="на русском языке">
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Создать</button>
+                    <label for="">Первый параметр</label><br>
+                    <label for="type">Выберите тип отображения в фильтре</label><br>
+                    <select name="type">
+                        <option value="select">Выбор одного значения из выпадающего списка</option>
+                        <option value="radio">Выбор одного значения</option>
+                        <option value="checkbox">Выбор нескольких значений</option>
+                    </select>
+                    <input type="text" class="form-control" name="en_value_name[]" placeholder="на английском языке">
+                    <input type="text" class="form-control" name="ru_value_name[]" placeholder="на русском языке">
+                    <label for="">Второй параметр</label><br>
+                    <label for="type">Выберите тип отображения в фильтре</label><br>
+                    <select name="type">
+                        <option value="select">Выбор одного значения из выпадающего списка</option>
+                        <option value="radio">Выбор одного значения</option>
+                        <option value="checkbox">Выбор нескольких значений</option>
+                    </select>
+                    <input type="text" class="form-control" name="en_value_name[]" placeholder="на английском языке">
+                    <input type="text" class="form-control" name="ru_value_name[]" placeholder="на русском языке">
+
+
+
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" name="option-add">Добавить опцию</button>
                 </div>
             </form>
         </div>

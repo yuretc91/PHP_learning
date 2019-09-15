@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Property;
+use App\Cathegory;
 use Illuminate\Http\Request;
 
 class PropertyController extends Controller
@@ -22,9 +23,14 @@ class PropertyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, Cathegory $cathegories)
     {
-        //
+
+        foreach ($request->all() as $key => $value){
+            $cathegory_name = str_replace("_", " ", $key);
+    }
+        $cathegories = Cathegory::where('name', $cathegory_name)->get();
+        return view('admin.property.create', compact('cathegories'));
     }
 
     /**
@@ -35,7 +41,17 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+        $properties = [$request->input('en_option_name')=>["type"=>$request->input('type'),
+            "title"=>$request->input('ru_option_name'),
+            "values"=>[$request->input('en_value_name')[0]=>$request->input('ru_value_name')[0],
+                $request->input('en_value_name')[1]=>$request->input('ru_value_name')[1]]]];
+
+        $attributes = array('cathegory_id' => $request->input('cathegory_id'), 'properties'=>json_encode($properties, JSON_UNESCAPED_UNICODE));
+        //dd($attributes);
+        Property::create($attributes);
+
+        return redirect()->route('admin-cathegories.index')->with("success", "Продукт успешно создан");
     }
 
     /**
@@ -68,27 +84,26 @@ class PropertyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Property $properties, $id)
+    public function update(Request $request, $id)
     {
-
-        //dd($array);
         $property = Property::where('cathegory_id', $id)->find(1);
         $properties = json_decode($property->properties, true);
-
-        //dd($properties[$array[0]]['values'][$array[1]]);
         if ($request->has('value-delete')) {
             $del_property_array = explode('%', $request->input('value-delete'));
             unset($properties[$del_property_array[0]]['values'][$del_property_array[1]]);
+        }elseif ($request->has('option-delete')){
+            unset($properties[$request->input('option-delete')]);
+        }elseif ($request->has('value-add')){
+            $properties[$request->input('value-add')]['values'] +=[$request->input('en_name')=>$request->input('ru_name')];
+        }elseif ($request->has('option-add')){
+            $properties += [$request->input('en_option_name')=>["type"=>$request->input('type'),
+            "title"=>$request->input('ru_option_name'),
+            "values"=>[$request->input('en_value_name')[0]=>$request->input('ru_value_name')[0],
+            $request->input('en_value_name')[1]=>$request->input('ru_value_name')[1]]]];
         }
-        //dd(json_encode($properties, JSON_UNESCAPED_UNICODE));
 
-        //dd(json_decode($property->properties, true)[$request->input('value-delete')]);
-        //dd(json_decode($property->properties, true)['color']['values']['white']);
-
-
-        //dd($cathegory);
         $property->update(['properties' => json_encode($properties, JSON_UNESCAPED_UNICODE)]);
-        dd($property);
+        //dd($property);
         return redirect()->route('admin-cathegories.index');
     }
 
@@ -100,6 +115,7 @@ class PropertyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Property::where('cathegory_id', $id)->delete();
+        return redirect()->route('admin-cathegories.index');
     }
 }

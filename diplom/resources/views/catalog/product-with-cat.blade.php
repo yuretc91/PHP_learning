@@ -8,7 +8,7 @@
         <div id="ajaxtest"></div>
 
         <div class="way">
-            <a href="{{ route('home')}}" class="stepWay">Главная</a>
+            <a href="{{--{{ route('home')}}--}}" class="stepWay">Главная</a>
             <span class="arrowWay">&nbsp; &gt; &nbsp;</span>
 {{--            <a href="{{ route('catalog.index')}}" class="stepWay">Каталог товаров</a>--}}
             <span class="arrowWay">&nbsp; &gt; &nbsp;</span>
@@ -30,37 +30,40 @@
                 </label>
                 <hr>
                 @foreach ($properties as $property)
+
                     @foreach(json_decode($property->properties, true) as $key => $value)
 
-                    @if($value[0]['type'] == "radio")
-                            <label for={{$key}}><span class="input-title">{{$value[1]['title']}}</span><br>
+                    @if($value['type'] == "radio")
+                            <label for={{$key}}><span class="input-title">{{$value['title']}}</span><br>
 
-                                @foreach($value[2]['values'] as $values)
+                                @foreach($value['values'] as $value_en_name => $value_ru_name)
 
-                                    @foreach($values as $value_en => $value_ru)
-                                <input type="radio" name={{$key}} value={{$value_en}}>{{$value_ru}}<br>
-                                @endforeach
+
+                                <input type="radio" name={{$key}} value={{$value_en_name}}>{{$value_ru_name}}<br>
+
                                 @endforeach
 
                             </label>
-                        @elseif($value[0]['type'] == "select")
+                        @elseif($value['type'] == "select")
 
-                        <label for={{$key}}><span class="input-title">{{$value[1]['title']}}</span><br>
+                        <label for={{$key}}><span class="input-title">{{$value['title']}}</span><br>
                             <select name={{$key}}>
-                                @foreach($value[2]['values'] as $values)
-                                    @foreach($values as $value_en => $value_ru)
-                                <option value="{{$value_en}}">{{$value_ru}}</option>
-                                        @endforeach
+                                {{--{{dd($value['values'])}}--}}
+                                @foreach($value['values'] as $value_en_name => $value_ru_name)
+
+
+                                <option value="{{$value_en_name}}">{{$value_ru_name}}</option>
+
                                 @endforeach
 
                             </select>
                         </label>
-                        @elseif($value[0]['type'] == "checkbox")
-                            <label for={{$key}}><span class="input-title">{{$value[1]['title']}}</span><br>
-                                @foreach($value[2]['values'] as $values)
-                                    @foreach($values as $value_en => $value_ru)
-                                <input type="checkbox" name="{{$key}}[]" value={{$value_en}}>{{$value_ru}}<br>
-                                        @endforeach
+                        @elseif($value['type'] == "checkbox")
+                            <label for={{$key}}><span class="input-title">{{$value['title']}}</span><br>
+                                @foreach($value['values'] as $value_en_name => $value_ru_name)
+
+                                <input type="checkbox" name="{{$key}}[]" value={{$value_en_name}}>{{$value_ru_name}}<br>
+
                                 @endforeach
 
                             </label>

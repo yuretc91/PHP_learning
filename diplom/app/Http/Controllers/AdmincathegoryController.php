@@ -27,7 +27,7 @@ class AdmincathegoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.cathegory.create');
     }
 
     /**
@@ -38,7 +38,12 @@ class AdmincathegoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->input('name'));
+        Cathegory::create($request->all());
+
+        $cathegory_name = $request->input('name');
+
+        return redirect()->route('admin-properties.create', $cathegory_name);
     }
 
     /**
@@ -73,9 +78,7 @@ class AdmincathegoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //dd($request);
         $cathegory = Cathegory::find($id);
-        //dd($cathegory);
         $cathegory->update($request->all());
         return redirect()->route('admin-cathegories.index');
     }
@@ -86,9 +89,11 @@ class AdmincathegoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Property $properties)
     {
         Cathegory::find($id)->delete();
+        //$properties = Property::where('cathegory_id', $id)->get();
+        //dd($properties);
         return redirect()->route('admin-cathegories.index');
     }
 }

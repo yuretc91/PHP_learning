@@ -29,7 +29,7 @@
                     <label for="">Описание категории</label>
                     <textarea name="description" class="form-control" id="" cols="30" rows="10"></textarea>
                 </div>
-
+                <input type="hidden" name="picture" value="img.jpg">
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Создать</button>
                 </div>
