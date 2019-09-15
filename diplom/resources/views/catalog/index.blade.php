@@ -44,30 +44,7 @@
 
                 </div>
             @endforeach
-                {{--<div class="card">
-                    <div class="cardImage"><img src="{{asset('images/products/item2.png')}}" alt="item2"></div>
-                    <div class="cardDescription">
-                        <div class="cardName">Профессиональная селфи-палка</div>
-                        <div class="cardCash">1500 р.</div>
-                    </div>
 
-                </div>
-                <div class="card">
-                    <div class="cardImage"><img src="{{asset('images/products/item3.png')}}" alt="item3"></div>
-                    <div class="cardDescription">
-                        <div class="cardName">Непотопляемая селфи-палка</div>
-                        <div class="cardCash">2500 р.</div>
-                    </div>
-
-                </div>
-                <div class="card">
-                    <div class="cardImage"><img src="{{asset('images/products/item4.png')}}" alt="item4"></div>
-                    <div class="cardDescription">
-                        <div class="cardName">Селфи-палка "Следуй за мной"</div>
-                        <div class="cardCash">4900 р.</div>
-                    </div>
-
-                </div>--}}
             </div>
         </article>
     </section>

@@ -38,7 +38,7 @@
                                 @foreach($value[2]['values'] as $values)
 
                                     @foreach($values as $value_en => $value_ru)
-                                <input type="radio" name={{$key}} value={{$value_en}} {{--{{ request()->input('type') == true ? 'selected' : '' }}--}}>{{$value_ru}}<br>
+                                <input type="radio" name={{$key}} value={{$value_en}}>{{$value_ru}}<br>
                                 @endforeach
                                 @endforeach
 

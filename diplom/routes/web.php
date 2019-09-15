@@ -16,7 +16,7 @@ Route::get('/catalog/{id}', 'ProductController@product_with_cat');
 Route::resource('/catalog', 'ProductController');
 Route::get('/catalog/', 'ProductController@post_index')->name('product.filtr');
 //Route::post('/catalog/filtr', 'AjaxController')->name('product.ajax');
-Route::get('my-theme', function () {
+Route::get('/admin', function () {
     return view('welcome2');
 });
 
@@ -26,11 +26,13 @@ Route::post('/catalog/filtr', 'AjaxController@ajaxRequestPost');
 Auth::routes();
 
 /*Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
-    Route::resource('/admin-products', ['uses' => 'admin\AdminController@show'])->name('admin_index');
+    Route::get('/products', ['uses' => 'admin\AdminproductController@index'])->name('admin_products');
+    Route::get('/cathegories', ['uses' => 'admin\AdmincathegoryController@index'])->name('admin_cathegories');
 });*/
 
 Route::resource('/admin-products', 'AdminproductController')->middleware('auth');
 Route::resource('/admin-cathegories', 'AdmincathegoryController')->middleware('auth');
+Route::resource('/admin-properties', 'PropertyController')->middleware('auth');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');

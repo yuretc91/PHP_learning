@@ -13,8 +13,8 @@ class Cathegory extends Model
     {
         return $this->hasMany('App\Product');
     }
-    public function properties()
+    public function property()
     {
-        return $this->hasMany('App\Property');
+        return $this->hasOne('App\Property');
     }
 }

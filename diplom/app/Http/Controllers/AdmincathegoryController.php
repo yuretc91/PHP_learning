@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
+use App\Property;
+use App\Cathegory;
 
 class AdmincathegoryController extends Controller
 {
@@ -13,7 +16,8 @@ class AdmincathegoryController extends Controller
      */
     public function index()
     {
-        //
+        $cathegories = Cathegory::all();
+        return view('admin.cathegory.index', compact('cathegories'));
     }
 
     /**
@@ -56,7 +60,8 @@ class AdmincathegoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cathegory = Cathegory::find($id);
+        return view('admin.cathegory.edit', compact('cathegory'));
     }
 
     /**
@@ -68,7 +73,11 @@ class AdmincathegoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //dd($request);
+        $cathegory = Cathegory::find($id);
+        //dd($cathegory);
+        $cathegory->update($request->all());
+        return redirect()->route('admin-cathegories.index');
     }
 
     /**
@@ -79,6 +88,7 @@ class AdmincathegoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Cathegory::find($id)->delete();
+        return redirect()->route('admin-cathegories.index');
     }
 }
