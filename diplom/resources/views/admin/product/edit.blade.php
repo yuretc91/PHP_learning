@@ -17,7 +17,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-6">
-{{--{{dd(json_decode($properties->properties, true))}}--}}
+
             <form action="{{ route('products.update', $product->id) }}"
                   method="post"
                   enctype="multipart/form-data">
@@ -40,28 +40,35 @@
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="availability" value="0">
+                        <input class="form-check-input" type="radio" name="availability" value="">
                         <label class="form-check-label" for="exampleRadios1">
                             Нет в наличии
                         </label>
                     </div>
+                    <div class="form-group">
+                        <label for="price">Цена продукта</label>
+                        <input type="text" name="price" value="{{$product->price}}">
+                    </div>
                 </div>
-                {{--@foreach(json_decode($product->options, true) as $option_name => $option_value)
-                <div class="form-group">
-                    <label for="{{$option_name}}">{{$option_name}}</label>
-                    <input type="text" class="form-control" name="{{$option_name}}" value="{{$option_value}}">
-                </div>
-                @endforeach--}}
+
                 @foreach(json_decode($properties->properties, true) as $property_name => $property_value)
                 <div class="form-group">
-                    <label for="{{$property_name}}">{{$property_value['title']}}</label>
+                    <label for="">{{$property_value['title']}}</label>
                     <div class="form-check">
+
                         @foreach($property_value['values'] as $property_en_name => $property_ru_name)
-                        <input class="form-check-input" type="radio" name="{{$property_en_name}} {{ $property_ru_name == 'true' ? 'checked' : '' }}">
-                        <label class="form-check-label" for="{{$property_en_name}}">
+                            @if($property_value['type'] == 'radio')
+                        <input class="form-check-input" type="radio" name="{{$property_name}}" value="{{$property_en_name}}"
+                                {{ (bool)$property_en_name == (bool)json_decode($product->options, true)[$property_name] ? 'checked' : ''}}>
+                            @else
+                                <input class="form-check-input" type="radio" name="{{$property_name}}" value="{{$property_en_name}}"
+                                        {{ $property_en_name == json_decode($product->options, true)[$property_name] ? 'checked' : ''}}>
+                                @endif
+                        <label class="form-check-label" for="{{$property_name}}">
                             {{$property_ru_name}}
                         </label>
                             @endforeach
+
                     </div>
 
                 </div>

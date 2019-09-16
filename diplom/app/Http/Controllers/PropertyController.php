@@ -30,7 +30,7 @@ class PropertyController extends Controller
             $cathegory_name = str_replace("_", " ", $key);
     }
         $cathegories = Cathegory::where('name', $cathegory_name)->get();
-        return view('properties.create', compact('cathegories'));
+        return view('admin.property.create', compact('cathegories'));
     }
 
     /**
@@ -74,7 +74,7 @@ class PropertyController extends Controller
     public function edit($id)
     {
         $property = Property::where('cathegory_id', $id)->first();
-        return view('properties.edit', compact('property'));
+        return view('admin.property.edit', compact('property'));
     }
 
     /**

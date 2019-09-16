@@ -35,4 +35,5 @@
 "accelerometer": {"type": "radio", "title": "Акселерометр", "values": {"": "Нет", "true": "Есть"}}}
 
 
-{"new cathegory new option": {"type": "checkbox", "title": "новая опция новой категории", "values": {"option value 1": "параметр опции 1", "option value 2": "параметр опции 2"}}}
+
+{"type": "with integrated screen", "color": "white", "gyroscope": true, "microphone": false, "accelerometer": true}

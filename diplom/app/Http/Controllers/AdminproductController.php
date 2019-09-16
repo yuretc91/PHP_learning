@@ -74,23 +74,25 @@ class AdminproductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $property = Property::where('cathegory_id', $id)->find(1);
-        $properties = json_decode($property->properties, true);
-        if ($request->has('value-delete')) {
-            $del_property_array = explode('%', $request->input('value-delete'));
-            unset($properties[$del_property_array[0]]['values'][$del_property_array[1]]);
-        }elseif ($request->has('option-delete')){
-            unset($properties[$request->input('option-delete')]);
-        }elseif ($request->has('value-add')){
-            $properties[$request->input('value-add')]['values'] +=[$request->input('en_name')=>$request->input('ru_name')];
-        }elseif ($request->has('option-add')){
-            $properties += [$request->input('en_option_name')=>["type"=>$request->input('type'),
-                "title"=>$request->input('ru_option_name'),
-                "values"=>[$request->input('en_value_name')[0]=>$request->input('ru_value_name')[0],
-                    $request->input('en_value_name')[1]=>$request->input('ru_value_name')[1]]]];
-        }
 
-        $property->update(['properties' => json_encode($properties, JSON_UNESCAPED_UNICODE)]);
+        $product = Product::where('id', $id)->find(1);
+        $properties = Property::where('cathegory_id', $product->cathegory->id)->find(1);
+        //dd(json_decode($properties->properties, true));
+        $options = $request->all();
+        $title = $options['title'];
+        $info = $options['info'];
+        $price = $options['price'];
+        $availability = $options['availability'];
+        unset($options['_token'], $options['_method'], $options['title'], $options['info'], $options['availability'], $options['price']);
+        foreach ($options as $key => $value){
+
+            if ($options[$key] == "true" || $options[$key] == "false"){
+                //dd(in_array("true", json_decode($properties->properties, true)[$key]['values']));
+                $options[$key] = (bool)$value;
+            }
+        }
+        dd($options);
+        $product->update(['title'=>$title,'info'=>$info, 'availability'=>$availability, 'price'=>$price, 'options' => json_encode($options, JSON_UNESCAPED_UNICODE)]);
         //dd($property);
         return redirect()->route('products.index');
     }
