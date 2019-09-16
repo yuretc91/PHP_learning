@@ -110,7 +110,6 @@
 
     <script>
         $(document).ready(function () {
-
             $.extend({
                 getUrlVars: function(){
                     var vars = [], hash;
@@ -127,8 +126,6 @@
                     return $.getUrlVars()[name];
                 }
             });
-
-
 
                 //Удаляем ненужные символы
             if ($.getUrlVar(1) != undefined){
@@ -147,11 +144,6 @@
                     names.push(value);
                 });
             }
-
-
-
-//console.log(names);
-//console.log(values);
             var orderingArrow = $('.ordering-active').attr('class').replace(' ordering-active', '');
             //$("#sort-cash").on('click', function (){console.log()});
 

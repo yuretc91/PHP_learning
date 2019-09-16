@@ -17,7 +17,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-6">
-            <form action="{{ route('admin-properties.store') }}"
+            <form action="{{ route('properties.store') }}"
                   method="post"
                   enctype="multipart/form-data">
                 @csrf

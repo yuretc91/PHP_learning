@@ -79,6 +79,6 @@ class CathegoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }

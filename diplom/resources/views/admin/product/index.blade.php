@@ -15,58 +15,42 @@
 
 
 @section('content')
-    <a href="{{ route('admin-anekdots.create') }}"
-       class="btn btn-primary">Создать анекдот</a>
+    <a href="{{ route('products.create') }}"
+       class="btn btn-primary">Создать продукт</a>
 
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>Cathegory name</th>
+    @foreach($products as $product)
+<h1>{{$product->title}}</h1>
+<div><img src="{{asset('images/products/'. $product->image)}}" alt="{{$product->title}}"></div>
+<h2>{{$product->price. " "}}<span>BYN</span></h2>
+<h2>Характеристики продукта</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Название</th>
+        <th>Значение</th>
+    </tr>
+    </thead>
+    <tbody>
 
-            <th>Anekdot title</th>
-            <th>Anekdot author</th>
-            <th>Anekdot content</th>
-            <th>Is approved</th>
-            <th>Approved</th>
-            <th>Редактирование</th>
-            <th>Удаление</th>
-        </tr>
-        </thead>
-        <tbody>
+@foreach(json_decode($product->options, true) as $key => $value)
+    <tr>
+        <td>{{$key}}</td>
+        <td>{{$value}}</td>
+    </tr>
+@endforeach
+    </tbody>
+</table>
+<a href="{{ route('products.edit', $product->id) }}" class="btn btn-lg btn-success">Редактировать</a>
 
-        @foreach($anekdots as $anekdot)
-            <tr>
-                <td>{{ $anekdot->cathegory['name'] }}</td>
-                <td>{{ $anekdot->title }}</td>
-                <td>{{ $anekdot->author }}</td>
-                <td>{{ $anekdot->content }}</td>
-                <td>{{ $anekdot->approved }}</td>
+    <form action="{{ route('products.destroy', $product->id) }}" method="post">
+        @csrf
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="btn btn-lg btn-danger">Удалить</button>
+    </form>
 
-                <td>
-                    <form action="{{ route('admin-anekdots.update', $anekdot->id) }}"
-                          method="post"
-                          enctype="multipart/form-data">
-                        @csrf
-                        <input type="hidden" name="_method" value="PUT">
-                        <input type="hidden" name="approved" value="1">
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success {{$anekdot->approved == '1' ? "disabled" : ""}}">Approve</button>
-                        </div>
-                    </form>
-                </td>
-                <td><a href="{{ route('admin-anekdots.edit', $anekdot->id) }}" class="btn btn-success">Редактировать</a></td>
-                <td>
-                    <form action="{{ route('admin-anekdots.destroy', $anekdot->id) }}" method="post">
-                        @csrf
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn btn-danger">Удалить</button>
-                    </form>
-                </td>
-            </tr>
-        @endforeach
 
-        </tbody>
-    </table>
+    @endforeach
+
 
 @stop
 

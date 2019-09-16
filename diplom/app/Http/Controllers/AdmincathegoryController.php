@@ -43,7 +43,7 @@ class AdmincathegoryController extends Controller
 
         $cathegory_name = $request->input('name');
 
-        return redirect()->route('admin-properties.create', $cathegory_name);
+        return redirect()->route('properties.create', $cathegory_name);
     }
 
     /**
@@ -80,7 +80,7 @@ class AdmincathegoryController extends Controller
     {
         $cathegory = Cathegory::find($id);
         $cathegory->update($request->all());
-        return redirect()->route('admin-cathegories.index');
+        return redirect()->route('cathegories.index');
     }
 
     /**
@@ -91,9 +91,12 @@ class AdmincathegoryController extends Controller
      */
     public function destroy($id, Property $properties)
     {
+        $properties = Property::where('cathegory_id', $id)->first();
+        $properties->delete();
+
         Cathegory::find($id)->delete();
-        //$properties = Property::where('cathegory_id', $id)->get();
+
         //dd($properties);
-        return redirect()->route('admin-cathegories.index');
+        return redirect()->route('cathegories.index');
     }
 }

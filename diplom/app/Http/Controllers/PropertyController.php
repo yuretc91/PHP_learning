@@ -30,7 +30,7 @@ class PropertyController extends Controller
             $cathegory_name = str_replace("_", " ", $key);
     }
         $cathegories = Cathegory::where('name', $cathegory_name)->get();
-        return view('admin.property.create', compact('cathegories'));
+        return view('properties.create', compact('cathegories'));
     }
 
     /**
@@ -51,7 +51,7 @@ class PropertyController extends Controller
         //dd($attributes);
         Property::create($attributes);
 
-        return redirect()->route('admin-cathegories.index')->with("success", "Продукт успешно создан");
+        return redirect()->route('cathegories.index')->with("success", "Продукт успешно создан");
     }
 
     /**
@@ -74,7 +74,7 @@ class PropertyController extends Controller
     public function edit($id)
     {
         $property = Property::where('cathegory_id', $id)->first();
-        return view('admin.property.edit', compact('property'));
+        return view('properties.edit', compact('property'));
     }
 
     /**
@@ -104,7 +104,7 @@ class PropertyController extends Controller
 
         $property->update(['properties' => json_encode($properties, JSON_UNESCAPED_UNICODE)]);
         //dd($property);
-        return redirect()->route('admin-cathegories.index');
+        return redirect()->route('cathegories.index');
     }
 
     /**
@@ -116,6 +116,6 @@ class PropertyController extends Controller
     public function destroy($id)
     {
         Property::where('cathegory_id', $id)->delete();
-        return redirect()->route('admin-cathegories.index');
+        return redirect()->route('cathegories.index');
     }
 }

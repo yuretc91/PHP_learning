@@ -17,7 +17,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12">
-            <form action="{{ route('admin-cathegories.update', $cathegory->id) }}"
+            <form action="{{ route('cathegories.update', $cathegory->id) }}"
                   method="post"
                   enctype="multipart/form-data">
                 @csrf
@@ -35,7 +35,7 @@
                     <button type="submit" class="btn btn-primary">Обновить</button>
                 </div>
             </form>
-            <a href="{{ route('admin-properties.edit', $cathegory->id) }}" class="btn btn-primary">Редактировать опции категории</a>
+            <a href="{{ route('properties.edit', $cathegory->id) }}" class="btn btn-primary">Редактировать опции категории</a>
         </div>
 
     </div>
