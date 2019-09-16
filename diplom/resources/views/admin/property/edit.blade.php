@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-lg-12">
 
-            <form action="{{ route('admin-properties.update', $property->id) }}"
+            <form action="{{ route('properties.update', $property->id) }}"
                   method="post"
                   enctype="multipart/form-data">
                 @csrf

@@ -15,7 +15,7 @@
 
 
 @section('content')
-    <a href="{{ route('admin-cathegories.create') }}"
+    <a href="{{ route('cathegories.create') }}"
        class="btn btn-primary">Создать категорию</a>
     <table class="table table-striped">
         <thead>
@@ -35,10 +35,10 @@
                 <td>{{ $cathegory->name }}</td>
                 <td>{{ $cathegory->description }}</td>
 
-                <td><a href="{{ route('admin-cathegories.edit', $cathegory->id) }}" class="btn btn-success">Редактировать</a></td>
+                <td><a href="{{ route('cathegories.edit', $cathegory->id) }}" class="btn btn-success">Редактировать</a></td>
                 <td>
 
-                    <form action="{{ route('admin-cathegories.destroy', $cathegory->id) }}" method="post">
+                    <form action="{{ route('cathegories.destroy', $cathegory->id) }}" method="post">
                         @csrf
                         <input type="hidden" name="_method" value="DELETE">
                         <button type="submit" class="btn btn-danger">Удалить</button>
