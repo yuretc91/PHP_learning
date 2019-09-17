@@ -17,31 +17,61 @@
 @section('content')
     <div class="row">
         <div class="col-lg-6">
-            <form action="{{ route('admin-anekdots.store') }}"
-                           method="post"
-                           enctype="multipart/form-data">
-                    @csrf
-                <div class="form-group {{$errors->first("name") ? "has-error" : ""}}">
-                    <label for="">Имя категории</label>
-                    <select name="cathegory_id" id="">
-                        @foreach ($cathegories as $cathegory)
-                            <option value="{{ $cathegory->id }}">{{ $cathegory->name }}</option>
-                        @endforeach
-                    </select>
+
+            <form action="{{ route('products.store')}}"
+                  method="post"
+                  enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" name="cathegory_id" value="{{$properties->cathegory_id}}">
+                <input type="hidden" name="image" value="vr/newproduct.jpeg">
+                <div class="form-group">
+                    <label for="title">Название продукта</label>
+                    <input type="text" name="title" value="">
                 </div>
                 <div class="form-group">
-                    <label for="">Название анекдота</label>
-                    <input type="text" class="form-control" name="title" value="{{old("title")}}">
+                    <label for="info">Описание продукта</label>
+                    <textarea name="info" class="form-control" cols="30" rows="10" ></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="">Автор анекдота</label>
-                    <input type="text" class="form-control" name="author" value="{{old("author")}}">
+                    <label for="availability">Наличие продукта</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="availability" value="1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Есть в наличии
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="availability" value="">
+                        <label class="form-check-label" for="exampleRadios1">
+                            Нет в наличии
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Цена продукта</label>
+                        <input type="text" name="price" value="">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="">Текст анекдота</label>
-                    <textarea name="content" class="form-control" id="" cols="30" rows="10">{{old("content")}}</textarea>
-                </div>
-                <input type="hidden" name="approved" value="0">
+
+                @foreach(json_decode($properties->properties, true) as $property_name => $property_value)
+                    <div class="form-group">
+                        <label for="">{{$property_value['title']}}</label>
+                        <div class="form-check">
+
+                            @foreach($property_value['values'] as $property_en_name => $property_ru_name)
+                                @if($property_value['type'] == 'radio')
+                                    <input class="form-check-input" type="radio" name="{{$property_name}}" value="{{$property_en_name}}">
+                                @else
+                                    <input class="form-check-input" type="radio" name="{{$property_name}}" value="{{$property_en_name}}">
+                                @endif
+                                <label class="form-check-label" for="{{$property_name}}">
+                                    {{$property_ru_name}}
+                                </label>
+                            @endforeach
+
+                        </div>
+
+                    </div>
+                @endforeach
 
 
                 <div class="form-group">

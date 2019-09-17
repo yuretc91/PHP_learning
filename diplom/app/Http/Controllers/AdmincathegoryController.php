@@ -38,11 +38,8 @@ class AdmincathegoryController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->input('name'));
         Cathegory::create($request->all());
-
         $cathegory_name = $request->input('name');
-
         return redirect()->route('properties.create', $cathegory_name);
     }
 
@@ -89,14 +86,11 @@ class AdmincathegoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, Property $properties)
+    public function destroy($id)
     {
         $properties = Property::where('cathegory_id', $id)->first();
         $properties->delete();
-
         Cathegory::find($id)->delete();
-
-        //dd($properties);
         return redirect()->route('cathegories.index');
     }
 }

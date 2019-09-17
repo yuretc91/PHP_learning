@@ -26,7 +26,8 @@ class AdminproductController extends Controller
      */
     public function create()
     {
-        //
+        $properties = Property::where('cathegory_id', 1)->find(1);
+        return view('admin.product.create', compact('properties'));
     }
 
     /**
@@ -37,7 +38,22 @@ class AdminproductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $options = $request->all();
+        $cathegory_id = $options['cathegory_id'];
+        $title = $options['title'];
+        $image = $options['image'];
+        $info = $options['info'];
+        $price = $options['price'];
+        $availability = $options['availability'];
+        unset($options['_token'], $options['cathegory_id'], $options['image'], $options['title'], $options['info'], $options['availability'], $options['price']);
+        foreach ($options as $key => $value){
+            if ($options[$key] == "true" || $options[$key] == null){
+                //dd(in_array("true", json_decode($properties->properties, true)[$key]['values']));
+                $options[$key] = (bool)$value;
+            }
+        }
+        Product::create(['cathegory_id'=>$cathegory_id, 'title'=>$title, 'image'=>$image, 'info'=>$info, 'availability'=>$availability, 'price'=>$price, 'options' => json_encode($options, JSON_UNESCAPED_UNICODE)]);
+        return redirect()->route('products.index');
     }
 
     /**
@@ -59,7 +75,6 @@ class AdminproductController extends Controller
      */
     public function edit($id)
     {
-
         $product = Product::find($id);
         $properties = Property::where('cathegory_id', $product->cathegory_id)->find(1);
         return view('admin.product.edit', compact('product', 'properties'));
@@ -76,7 +91,7 @@ class AdminproductController extends Controller
     {
 
         $product = Product::where('id', $id)->find(1);
-        $properties = Property::where('cathegory_id', $product->cathegory->id)->find(1);
+        //$properties = Property::where('cathegory_id', $product->cathegory->id)->find(1);
         //dd(json_decode($properties->properties, true));
         $options = $request->all();
         $title = $options['title'];
@@ -91,9 +106,8 @@ class AdminproductController extends Controller
                 $options[$key] = (bool)$value;
             }
         }
-        dd($options);
+        //dd(json_encode($options, JSON_UNESCAPED_UNICODE));
         $product->update(['title'=>$title,'info'=>$info, 'availability'=>$availability, 'price'=>$price, 'options' => json_encode($options, JSON_UNESCAPED_UNICODE)]);
-        //dd($property);
         return redirect()->route('products.index');
     }
 

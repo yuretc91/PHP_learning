@@ -23,9 +23,8 @@ class PropertyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request, Cathegory $cathegories)
+    public function create(Request $request)
     {
-
         foreach ($request->all() as $key => $value){
             $cathegory_name = str_replace("_", " ", $key);
     }
@@ -41,16 +40,12 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
         $properties = [$request->input('en_option_name')=>["type"=>$request->input('type'),
             "title"=>$request->input('ru_option_name'),
             "values"=>[$request->input('en_value_name')[0]=>$request->input('ru_value_name')[0],
                 $request->input('en_value_name')[1]=>$request->input('ru_value_name')[1]]]];
-
         $attributes = array('cathegory_id' => $request->input('cathegory_id'), 'properties'=>json_encode($properties, JSON_UNESCAPED_UNICODE));
-        //dd($attributes);
         Property::create($attributes);
-
         return redirect()->route('cathegories.index')->with("success", "Продукт успешно создан");
     }
 
@@ -101,9 +96,7 @@ class PropertyController extends Controller
             "values"=>[$request->input('en_value_name')[0]=>$request->input('ru_value_name')[0],
             $request->input('en_value_name')[1]=>$request->input('ru_value_name')[1]]]];
         }
-
         $property->update(['properties' => json_encode($properties, JSON_UNESCAPED_UNICODE)]);
-        //dd($property);
         return redirect()->route('cathegories.index');
     }
 
