@@ -1,10 +1,28 @@
+.slider{
+    background-image:
+            linear-gradient(
+                    to bottom,
+                    #f7e296,         /* Start with color of top band  */
+                    #f7e296 100px,    /* Top-band color stops at 260px */
+                    transparent 100px,    /* Bottom-band color starts at 260px */
+                    transparent 100%     /* Bottom-band color continues to 100% i.e. remaining height */
+            );
+}
 .slider__slideImage{
     text-align: center;
-    position: absolute;
     opacity: 0;
     z-index: 1;
-    left: 50px;
+    position: absolute;
+    left: 25%;
     vertical-align: center;
+    bottom: 1px;
+
+}
+.slider__slideImage > img{
+    height: 100%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 .slider__slideAside__tagline{
     font-size: 47px;

@@ -10,11 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'ProductController@index');
+Route::get('/', function () {
+    return view('welcome');
+});
 
 //Route::get('/', 'HomeController@home')->name('home');
 Route::get('/catalog/{id}', 'ProductController@product_with_cat');
 Route::resource('/catalog', 'ProductController');
+//Route::get('/catalog/all', 'ProductController@index')->name('catalog.all');
 Route::get('/catalog/', 'ProductController@post_index')->name('product.filtr');
 //Route::post('/catalog/filtr', 'AjaxController')->name('product.ajax');
 Route::get('/admin', function () {

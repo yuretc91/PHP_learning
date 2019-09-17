@@ -5,8 +5,8 @@
         <section class="slider slider-position">
 
             <div class="slider__slideImage slideActive" id="slideImage"><img src="{{asset('images/slider/slider1.png')}}" alt="slider" ></div>
-            <div class="slider__slideImage"><img src="{{asset('images/slider/slider2.png')}}" alt="slider" ></div>
-            <div class="slider__slideImage"><img src="{{asset('images/slider/slider3.png')}}" alt="slider" ></div>
+
+
             <div class="slider__slideAside slideActive">
                 <div class="slider__slideAside__tagline">Делай селфи, <br> как Бен Стиллер!</div>
                 <div class="slider__slideAside__slideDescription">Самая длинная палка для селфи доступна в нашем магазине. <br>
@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-
+            <div class="slider__slideImage"><img src="{{asset('images/slider/slider2.png')}}" alt="slider" ></div>
             <div class="slider__slideAside">
                 <div class="slider__slideAside__tagline">Худеем <br> правильно!</div>
                 <div class="slider__slideAside__slideDescription">Самая длинная палка для селфи доступна в нашем магазине. <br>
@@ -57,7 +57,7 @@
                 </div>
             </div>
 
-
+            <div class="slider__slideImage"><img src="{{asset('images/slider/slider3.png')}}" alt="slider" ></div>
             <div class="slider__slideAside">
                 <div class="slider__slideAside__tagline">Порхает как бабочка, <br> жалит как пчела!</div>
                 <div class="slider__slideAside__slideDescription">Самая длинная палка для селфи доступна в нашем магазине. <br>
@@ -154,12 +154,11 @@
         setInterval(function () {
             leftSlide[imgIndex].classList.remove("slideActive");
             rightSlide[imgIndex].classList.remove("slideActive");
-            if (imgIndex == 2) {
+            if (imgIndex === 2){
                 imgIndex = 0;
             } else imgIndex++;
             leftSlide[imgIndex].classList.add("slideActive");
             rightSlide[imgIndex].classList.add("slideActive");
-
         }, 5000);
     </script>
 @endsection

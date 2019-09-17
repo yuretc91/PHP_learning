@@ -7,9 +7,9 @@
         <h1>All products</h1>
 
         <div class="way">
-            <a href="../" class="stepWay">Главная</a>
+            <a href="/" class="stepWay">Главная</a>
             <span class="arrowWay">&nbsp; &gt; &nbsp;</span>
-            <span class="stepWay">Каталог товаров</span>
+            <span href="/catalog" class="stepWay">Каталог товаров</span>
         </div>
 
     </section>
@@ -39,10 +39,9 @@
                 <div class="card">
                     <div class="cardImage"><img src="{{asset('images/products/'. $product->image)}}" alt="{{$product->title}}"></div>
                     <div class="cardDescription">
-                        <div class="cardName">{{$product->title}}</div>
-                        <div class="cardCash">{{$product->price . ' BYN'}}</div>
+                        <div class="cardName input-title">{{$product->title}}</div>
+                        <div class="cardCash"><span class="product-cash">{{$product->price. " "}}</span><span>BYN</span></div>
                     </div>
-
                 </div>
             @endforeach
 
@@ -50,7 +49,10 @@
         </article>
     </section>
 
-
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
             $.extend({

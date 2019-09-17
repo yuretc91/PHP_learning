@@ -8,27 +8,26 @@
         <div id="ajaxtest"></div>
 
         <div class="way">
-            <a href="{{--{{ route('home')}}--}}" class="stepWay">Главная</a>
-            <span class="arrowWay">&nbsp; &gt; &nbsp;</span>
-{{--            <a href="{{ route('catalog.index')}}" class="stepWay">Каталог товаров</a>--}}
-            <span class="arrowWay">&nbsp; &gt; &nbsp;</span>
-
-            <span class="stepWay">{{$cathegory->name}}</span>
+            <a href="/" class="stepWay input-value">Главная</a>
+            <span class="arrowWay input-value">&nbsp; &gt; &nbsp;</span>
+            <a href="/catalog" class="stepWay input-value">Каталог товаров</a>
+            <span class="arrowWay input-value">&nbsp; &gt; &nbsp;</span>
+            <span class="stepWay input-value">{{$cathegory->name}}</span>
             @endforeach
         </div>
 
     </section>
     <section class="catalog">
-        <aside class="control">
+        <nav class="control">
             <div class="control-head"><span class="control-head-title">ФИЛЬТР:</span></div>
-            <form action="{{ route('product.filtr')}}" method="get">
+            <form action="{{ route('product.filtr')}}" method="get" class="filrt-form">
                 @csrf
                 <input type="hidden" name="id[]" value="1">
                 <hr>
-                <label for="cash"><span class="input-title">Стоимость</span><br>
+                {{--<label for="cash"><span class="input-title">Стоимость</span><br>
                     <input type="text" name="cash">
                 </label>
-                <hr>
+                <hr>--}}
                 @foreach ($properties as $property)
 
                     @foreach(json_decode($property->properties, true) as $key => $value)
@@ -39,11 +38,12 @@
                                 @foreach($value['values'] as $value_en_name => $value_ru_name)
 
 
-                                <input type="radio" name={{$key}} value={{$value_en_name}}>{{$value_ru_name}}<br>
+                                <input type="radio" class="input-value" name={{$key}} value={{$value_en_name}}><span class="input-value">{{$value_ru_name}}</span><br>
 
                                 @endforeach
 
                             </label>
+                            <hr>
                         @elseif($value['type'] == "select")
 
                         <label for={{$key}}><span class="input-title">{{$value['title']}}</span><br>
@@ -52,31 +52,33 @@
                                 @foreach($value['values'] as $value_en_name => $value_ru_name)
 
 
-                                <option value="{{$value_en_name}}">{{$value_ru_name}}</option>
+                                <option class="input-value" value="{{$value_en_name}}"><span class="input-value">{{$value_ru_name}}</span></option>
 
                                 @endforeach
 
                             </select>
                         </label>
+                            <hr>
                         @elseif($value['type'] == "checkbox")
                             <label for={{$key}}><span class="input-title">{{$value['title']}}</span><br>
                                 @foreach($value['values'] as $value_en_name => $value_ru_name)
 
-                                <input type="checkbox" name="{{$key}}[]" value={{$value_en_name}}>{{$value_ru_name}}<br>
+                                <input type="checkbox" name="{{$key}}[]" value={{$value_en_name}}><span class="input-value">{{$value_ru_name}}</span><br>
 
                                 @endforeach
 
                             </label>
+                            <hr>
                         @endif
                     @endforeach
                 @endforeach
-                <input type="submit" name="submit" value="Показать">
+                <input type="submit" name="submit" value="Показать" class="input-submit btn_orange-black">
             </form>
 
-        </aside>
+        </nav>
         <article class="visual">
             <div class="visual-head"><span class="visual-head-title">СОРТИРОВКА:</span>
-                <button class="visual-head-option" id="sort-cash" type="button">По цене</button>
+                <button class="visual-head-option input-value" id="sort-cash" type="button">По цене</button>
                 <div class="ordering-arrows">
                     <button class="down-arrow ordering-active"><img src="{{asset('images/iconDownDir.png')}}" alt="down"></button>
                     <button class="up-arrow"><img src="{{asset('images/iconUpDir.png')}}" alt="up"></button>
@@ -89,20 +91,20 @@
                 <div class="card">
                     <div class="cardImage"><img src="{{asset('images/products/'. $product->image)}}" alt="{{$product->title}}"></div>
                     <div class="cardDescription">
-                        <div class="cardName">{{$product->title}}</div>
+                        <div class="cardName input-title">{{$product->title}}</div>
                         <div class="cardCash"><span class="product-cash">{{$product->price. " "}}</span><span>BYN</span></div>
                     </div>
-
-                    @foreach(json_decode($product->options, true) as $key => $value)
+                    {{--Для проверки работоспособности фильтра--}}
+                    {{--@foreach(json_decode($product->options, true) as $key => $value)
                         <div>{{$key}} : {{$value}}</div>
-                        @endforeach
-
+                        @endforeach--}}
                 </div>
             @endforeach
 
             </div>
         </article>
     </section>
+
     <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

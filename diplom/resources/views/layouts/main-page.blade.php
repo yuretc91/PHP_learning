@@ -13,7 +13,8 @@
 </head>
 <body>
 <header>
-    <div class="headerLogo"><img src="{{asset('images/header/logo.png')}}" alt="logo"></div>
+    <div class="header">
+    <div class="headerLogo"><a href="/"><img src="{{asset('images/header/logo.png')}}" alt="logo"></a></div>
     <ul class="headerMiniMenu">
         <li class="headerMiniMenuItem headerSearch"><a href="#">Поиск по сайту</a></li>
         <li class="headerMiniMenuItem headerUser"><a href="#">Войти</a></li>
@@ -26,11 +27,13 @@
         <li class="headerSecondMenuItem headerGarant"><a href="#">ГАРАНТИЯ</a></li>
         <li class="headerSecondMenuItem headerContacts"><a href="#">КОНТАКТЫ</a></li>
     </ul>
+    </div>
 </header>
-
+<main>
 @yield('content')
-
+</main>
 <footer>
+    <div class="footer">
     <div class="footerFirstRow">
         <div class="footerLogo"><img src="{{asset('images/footer/logo.png')}}" alt="logo"></div>
         <ul class="footerMiniMenu">
@@ -57,6 +60,7 @@
             <a href="#" class="twitter"><img src="{{asset('images/icons/footer/twit.png')}}" alt="twitter"></a>
         </div>
         <div class="footerLogoShevron"><img src="{{asset('images/footer/shevron.png')}}" alt="miniLogo"></div>
+    </div>
     </div>
 </footer>
 <!--<script
