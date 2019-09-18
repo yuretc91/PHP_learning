@@ -22,7 +22,7 @@
         <li class="headerMiniMenuItem headerCart"><a href="#">Корзина</a></li>
     </ul>
     <ul class="headerSecondMenu">
-        <li class="headerSecondMenuItem headerCatalog"><a href="/catalog">КАТАЛОГ ТОВАРОВ</a> <img src="{{asset('images/icons/header/plus.png')}}" alt="plus"></li>
+        <li class="headerSecondMenuItem headerCatalog"><a href="{{route('product.all')}}">КАТАЛОГ ТОВАРОВ</a> <img src="{{asset('images/icons/header/plus.png')}}" alt="plus"></li>
         <li class="headerSecondMenuItem headerDelivery"><a href="#">ДОСТАВКА</a></li>
         <li class="headerSecondMenuItem headerGarant"><a href="#">ГАРАНТИЯ</a></li>
         <li class="headerSecondMenuItem headerContacts"><a href="#">КОНТАКТЫ</a></li>
@@ -63,10 +63,10 @@
     </div>
     </div>
 </footer>
-<!--<script
+<script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>-->
+    crossorigin="anonymous"></script>
 
 </body>
 <!--<script src="{{mix('js/app.js')}}"></script>-->

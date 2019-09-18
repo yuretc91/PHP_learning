@@ -1,4 +1,4 @@
-header,
+/*header,
 footer{
     width: 100%;
 
@@ -6,7 +6,12 @@ footer{
 main,
 .header,
 .footer{
-    /*max-width: 1160px;*/
+    !*max-width: 1160px;*!
+    max-width: 1360px;
+    padding: 0;
+    margin: 0 auto;
+}*/
+html{
     max-width: 1360px;
     padding: 0;
     margin: 0 auto;

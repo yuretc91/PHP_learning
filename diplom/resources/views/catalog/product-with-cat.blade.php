@@ -10,7 +10,7 @@
         <div class="way">
             <a href="/" class="stepWay input-value">Главная</a>
             <span class="arrowWay input-value">&nbsp; &gt; &nbsp;</span>
-            <a href="/catalog" class="stepWay input-value">Каталог товаров</a>
+            <a href="{{route('catalog.all')}}" class="stepWay input-value">Каталог товаров</a>
             <span class="arrowWay input-value">&nbsp; &gt; &nbsp;</span>
             <span class="stepWay input-value">{{$cathegory->name}}</span>
             @endforeach

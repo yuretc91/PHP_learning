@@ -18,10 +18,18 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+{
+    $cathegories = Cathegory::all();
+    $products = Product::find(1)->paginate(6);
+    return view('catalog.index', compact('products'), compact('cathegories'));
+}
+    public function product_all()
     {
+
         $cathegories = Cathegory::all();
         $products = Product::find(1)->paginate(6);
-        return view('catalog.index', compact('products'), compact('cathegories'));
+        dd($products);
+        return view('catalog.all', compact('products'), compact('cathegories'));
     }
     public function product_with_cat($id)
     {
