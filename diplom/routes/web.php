@@ -17,17 +17,7 @@ Route::view('/', 'welcome');
 Route::get('/catalog/{id}', 'ProductController@product_with_cat');
 Route::resource('/catalog', 'ProductController');
 
-
-
-
-
-Route::any('/catalog/all', 'ProductController@product_all')->name('product.all');
-
-
-
-
-
-
+//Route::any('/catalog/all', 'ProductController@product_all')->name('product.all');
 
 Route::get('/catalog/', 'ProductController@post_index')->name('product.filtr');
 //Route::post('/catalog/filtr', 'AjaxController')->name('product.ajax');
@@ -42,7 +32,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::resource('/products', 'AdminproductController');
     Route::resource('/cathegories', 'AdmincathegoryController');
     Route::resource('/properties', 'PropertyController');
-    Route::get('/test', 'PropertyController@test')->name('test.admin');
 });
 
 Auth::routes();

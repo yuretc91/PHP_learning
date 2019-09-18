@@ -91,48 +91,43 @@ class AjaxController extends Controller
     public function ajaxRequestPost(Request $request, Product $products)
     {
         $input = $request->all();
-        $names = $input['names'];
-        $values = $input['values'];
         $ordering = $input['ordering'];
+        if (!isset($input['names'])){
+            $products->where('cathegory_id', $input['id']);
+        }else{
+            $names = $input['names'];
+            $values = $input['values'];
+            $GLOBALS['optionsArr'] = array_combine($names, $values);
 
-        //array_splice($values, 0, 1);
-        //array_splice($values,-1);
-        //array_splice($names, 0, 1);
-        //array_splice($names,-1);
+            $products = $products->newQuery();
+            $products->where(function ($query){
 
-        $GLOBALS['optionsArr'] = array_combine($names, $values);
-
-        $products = $products->newQuery();
-        $products->where(function ($query){
-
-            foreach ($GLOBALS['optionsArr'] as $optionName => $optionVal){
-                if ($optionName != 'cash' && $optionName != '_token' && $optionName != 'submit'){
-                    //dd($optionName);
-                    if ($optionVal){
-                        if ($optionName == 'id'){
-                            $query->where('cathegory_id', $optionVal);
-                        }elseif($optionName == 'type'){
-                            $query->whereJsonContains('options->' .$optionName, $optionVal);
-                        }else{
-                            $query->whereJsonContains('options->' .$optionName, (bool)$optionVal);
+                foreach ($GLOBALS['optionsArr'] as $optionName => $optionVal){
+                    if ($optionName != 'cash' && $optionName != '_token' && $optionName != 'submit'){
+                        //dd($optionName);
+                        if ($optionVal){
+                            if ($optionName == 'id'){
+                                $query->where('cathegory_id', $optionVal);
+                            }elseif($optionName == 'type'){
+                                $query->whereJsonContains('options->' .$optionName, $optionVal);
+                            }else{
+                                $query->whereJsonContains('options->' .$optionName, (bool)$optionVal);
+                            }
                         }
                     }
-                }
-                /*if ($optionName == 'type'){
-                    dd($query->get());
-                }*/
-            }
 
-        });
-        //$products = $products->orderBy('price', 'desc')->paginate(6);
-        //dd($products->get());
+                }
+
+            });
+        }
+
         if ($ordering == 'up-arrow'){
             $products = $products->orderBy('price')->paginate(6);
         }else $products = $products->orderBy('price', 'desc')->paginate(6);
 
 
         $view = view('products', compact('products'))->render();
-        //dd($view);
+
         return response()->json([
             'view' => $view
             ]

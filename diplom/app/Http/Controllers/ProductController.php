@@ -23,14 +23,7 @@ class ProductController extends Controller
     $products = Product::find(1)->paginate(6);
     return view('catalog.index', compact('products'), compact('cathegories'));
 }
-    public function product_all()
-    {
 
-        $cathegories = Cathegory::all();
-        $products = Product::find(1)->paginate(6);
-        dd($products);
-        return view('catalog.all', compact('products'), compact('cathegories'));
-    }
     public function product_with_cat($id)
     {
         $cathegories = Cathegory::where('id', $id)->get();

@@ -16,7 +16,7 @@
     font-weight: normal;
     font-style: normal;
 }
-header,
+/*header,
 footer{
     width: 100%;
 
@@ -24,7 +24,12 @@ footer{
 main,
 .header,
 .footer{
-    /*max-width: 1160px;*/
+    !*max-width: 1160px;*!
+    max-width: 1360px;
+    padding: 0;
+    margin: 0 auto;
+}*/
+html{
     max-width: 1360px;
     padding: 0;
     margin: 0 auto;
@@ -37,7 +42,8 @@ a:active{
 }
 button,
 submit-button,
-a{
+a,
+.cathegory_show{
     cursor: pointer;
 }
 
@@ -88,6 +94,36 @@ header{
     justify-content: space-between;
     align-items: center;
 }
+.headerSecondMenuItem{
+    position: relative;
+
+}
+#submenu{
+    position: absolute;
+    background: #f7e296;
+    top: 20px;
+    left: 200px;
+    z-index: 100;
+    list-style-type: none;
+    line-height: 2rem;
+    margin-left: 0; /* Отступ слева в браузере IE и Opera */
+    padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+
+}
+
+.submenu{
+    display: none;
+
+}
+.submenu_item{
+    padding: 0 5px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    border-radius: 5px;
+}
+
+
 .headerMiniMenu{
     font-size: 15px;
     font-family: OpenSans Light;

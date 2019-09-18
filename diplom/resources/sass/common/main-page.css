@@ -24,7 +24,8 @@ a:active{
 }
 button,
 submit-button,
-a{
+a,
+.cathegory_show{
     cursor: pointer;
 }
 

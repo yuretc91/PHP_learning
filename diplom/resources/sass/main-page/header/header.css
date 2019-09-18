@@ -11,6 +11,34 @@ header{
     justify-content: space-between;
     align-items: center;
 }
+.headerSecondMenuItem{
+    position: relative;
+
+}
+#submenu{
+    position: absolute;
+    background: #f7e296;
+    top: 20px;
+    left: 200px;
+    z-index: 100;
+    list-style-type: none;
+    line-height: 2rem;
+    margin-left: 0; /* Отступ слева в браузере IE и Opera */
+    padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+
+}
+
+.submenu{
+    display: none;
+
+}
+.submenu_item{
+    padding: 0 5px;
+    width: max-content;
+    border-radius: 5px;
+}
+
+
 .headerMiniMenu{
     font-size: 15px;
     font-family: OpenSans Light;

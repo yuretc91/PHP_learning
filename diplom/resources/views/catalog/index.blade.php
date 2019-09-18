@@ -9,7 +9,7 @@
         <div class="way">
             <a href="/" class="stepWay">Главная</a>
             <span class="arrowWay">&nbsp; &gt; &nbsp;</span>
-            <span href="{{route('catalog.index')}}" class="stepWay">Каталог товаров</span>
+            <span href="/catalog" class="stepWay">Каталог товаров</span>
         </div>
 
     </section>

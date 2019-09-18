@@ -10,8 +10,8 @@
         <div class="way">
             <a href="/" class="stepWay input-value">Главная</a>
             <span class="arrowWay input-value">&nbsp; &gt; &nbsp;</span>
-            <a href="{{route('catalog.all')}}" class="stepWay input-value">Каталог товаров</a>
-            <span class="arrowWay input-value">&nbsp; &gt; &nbsp;</span>
+            {{--<a href="/catalog/" class="stepWay input-value">Каталог товаров</a>
+            <span class="arrowWay input-value">&nbsp; &gt; &nbsp;</span>--}}
             <span class="stepWay input-value">{{$cathegory->name}}</span>
             @endforeach
         </div>
@@ -119,6 +119,11 @@
                     for(var i = 0; i < hashes.length; i++)
                     {
                         hash = hashes[i].split('=');
+
+                        if (hash[0].indexOf('%5B%5D') != -1,hash[0].indexOf('id%5B%5D') == -1){
+                            hash[0].replace('%5B%5D',i +'%%%');
+
+                        }
                         vars.push(hash[0]);
                         vars[hash[0]] = hash[1];
                     }
@@ -128,7 +133,7 @@
                     return $.getUrlVars()[name];
                 }
             });
-
+            console.log($.getUrlVars());
                 //Удаляем ненужные символы
             if ($.getUrlVar(1) != undefined){
                 var allVars = $.getUrlVars();
@@ -145,6 +150,8 @@
                     }
                     names.push(value);
                 });
+            }else{
+                var id = $.getUrlVar(0).slice(-1);
             }
             var orderingArrow = $('.ordering-active').attr('class').replace(' ordering-active', '');
             //$("#sort-cash").on('click', function (){console.log()});
@@ -160,7 +167,7 @@
                 $.ajax({
                     type:'POST',
                     url:'/catalog/filtr',
-                    data:{names:names, values:values, ordering:orderingArrow},
+                    data:{names:names, values:values, ordering:orderingArrow, id:id},
                     success:function(data){
                         $('.products').empty();
                         $('.products').html(data.view);
