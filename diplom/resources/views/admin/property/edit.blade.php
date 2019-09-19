@@ -33,7 +33,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        @if($value['type'] != 'radio')
+                        {{--@if($value['type'] != 'radio')--}}
                         <table class="table table-striped">
                             <tbody>
                             @foreach($value['values'] as $values_key => $values_value)
@@ -49,7 +49,7 @@
                             </tr>
                             </tbody>
                         </table>
-                            @endif
+                            {{--@endif--}}
                     </div>
                 @endforeach
                 <div class="form-group">
@@ -67,14 +67,14 @@
                     <input type="text" class="form-control" name="ru_value_name[]" placeholder="на русском языке">
                     <label for="">Второй параметр</label>
                     <label for="type">Выберите тип отображения в фильтре</label><br>
-                    <select name="type">
+                    {{--<select name="type">
                         <option value="select">Выбор одного значения из выпадающего списка</option>
                         <option value="radio">Выбор одного значения</option>
                         <option value="checkbox">Выбор нескольких значений</option>
-                    </select>
+                    </select>--}}
                     <input type="text" class="form-control" name="en_value_name[]" placeholder="на английском языке">
                     <input type="text" class="form-control" name="ru_value_name[]" placeholder="на русском языке">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" name="option-add">Добавить опцию</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" name="option-add" value="true">Добавить опцию</button>
                 </div>
             </form>
         </div>

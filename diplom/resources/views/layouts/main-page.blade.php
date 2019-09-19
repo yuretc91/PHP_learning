@@ -27,11 +27,10 @@
             <img src="{{asset('images/icons/header/plus.png')}}" alt="plus" class="cathegory_show">
             <ul id="submenu" class="submenu">
                 <li class="submenu_item"><a href="/catalog/1">Виртуальная реальность</a></li>
-                <li class="submenu_item"><a href="/catalog/2">Cathegory Name</a></li>
-                <li class="submenu_item"><a href="/catalog/3">Cathegory Name</a></li>
-                <li class="submenu_item"><a href="/catalog/4">Cathegory Name</a></li>
-                <li class="submenu_item"><a href="/catalog/5">Cathegory Name</a></li>
-                <li class="submenu_item"><a href="/catalog/6">Cathegory Name</a></li>
+                <li class="submenu_item"><a href="/catalog/2">Моноподы для селфи</a></li>
+                <li class="submenu_item"><a href="/catalog/3">Экшн-камеры</a></li>
+                <li class="submenu_item"><a href="/catalog/4">Фитнес-браслеты</a></li>
+
             </ul>
         </li>
 
@@ -90,19 +89,7 @@
             return true;
         });
 
-
-
-
-
-
-
-
-
-
     });
-
-
-
 
 </script>
 

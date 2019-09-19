@@ -81,8 +81,12 @@ class PropertyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $property = Property::where('cathegory_id', $id)->find(1);
+        $property = Property::where('cathegory_id', $id)->first();
+        //$properties = Property::where('cathegory_id', $id)->get();
+
+
         $properties = json_decode($property->properties, true);
+
         if ($request->has('value-delete')) {
             $del_property_array = explode('%', $request->input('value-delete'));
             unset($properties[$del_property_array[0]]['values'][$del_property_array[1]]);
@@ -95,6 +99,7 @@ class PropertyController extends Controller
             "title"=>$request->input('ru_option_name'),
             "values"=>[$request->input('en_value_name')[0]=>$request->input('ru_value_name')[0],
             $request->input('en_value_name')[1]=>$request->input('ru_value_name')[1]]]];
+            //dd($properties);
         }
         $property->update(['properties' => json_encode($properties, JSON_UNESCAPED_UNICODE)]);
         return redirect()->route('cathegories.index');

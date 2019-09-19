@@ -151,6 +151,7 @@
                 });
             }else{
                 var id = $.getUrlVar(0).slice(-1);
+                console.log(id);
             }
             var orderingArrow = $('.ordering-active').attr('class').replace(' ordering-active', '');
             //$("#sort-cash").on('click', function (){console.log()});

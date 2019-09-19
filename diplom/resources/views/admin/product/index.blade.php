@@ -8,16 +8,26 @@
 
 @section('content_header')
 
-    <h1>Dashboard</h1>
+    <h1>Продукты</h1>
 
 @stop
 
 
 
 @section('content')
-    <a href="{{ route('products.create') }}"
-       class="btn btn-primary">Создать продукт</a>
-
+    <div class="btn btn-primary btn-lg open-form">
+        Создать продукт
+    </div>
+    <div class="edit-form form-hide" id="create-form">
+        <form action="{{ route('products.create') }}" method="get" enctype="multipart/form-data" class="form-create">
+            @csrf
+                    @foreach($cathegories as $cathegory)
+                <input type="radio" name="cathegory_id" value="{{$cathegory->id}}" class="form-check-input form-control-lg">{{$cathegory->name}}<br>
+                    @endforeach
+                <br>
+            <input type="submit" class="btn btn-primary btn-lg" value="Создать продукт">
+        </form>
+    </div>
     @foreach($products as $product)
 <h1>{{$product->title}}</h1>
 <div><img src="{{asset('images/products/'. $product->image)}}" alt="{{$product->title}}"></div>
@@ -66,6 +76,15 @@
 
 @section('js')
 
-    <script> console.log('Hi!'); </script>
+    <script>
+        $(document).ready(function () {
+            $('.open-form').click(function(){
+                $('#create-form').toggleClass('form-hide');
+                return true;
+            });
+
+        });
+
+    </script>
 
 @stop

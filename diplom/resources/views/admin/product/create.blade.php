@@ -17,13 +17,13 @@
 @section('content')
     <div class="row">
         <div class="col-lg-6">
-
+{{--{{dd($properties)}}--}}
             <form action="{{ route('products.store')}}"
                   method="post"
                   enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="cathegory_id" value="{{$properties->cathegory_id}}">
-                <input type="hidden" name="image" value="vr/newproduct.jpeg">
+                {{--<input type="hidden" name="image" value="vr/newproduct.jpeg">--}}
                 <div class="form-group">
                     <label for="title">Название продукта</label>
                     <input type="text" name="title" value="">
@@ -50,6 +50,10 @@
                         <label for="price">Цена продукта</label>
                         <input type="text" name="price" value="">
                     </div>
+                </div>
+                <div class="form-group">
+                    <label for="image">Загрузите изображение</label>
+                    <input name="image" class="form-control" type="file">
                 </div>
 
                 @foreach(json_decode($properties->properties, true) as $property_name => $property_value)

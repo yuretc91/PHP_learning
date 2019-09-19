@@ -39,12 +39,12 @@
                     <input type="text" class="form-control" name="en_value_name[]" placeholder="на английском языке">
                     <input type="text" class="form-control" name="ru_value_name[]" placeholder="на русском языке">
                     <label for="">Второй параметр</label><br>
-                    <label for="type">Выберите тип отображения в фильтре</label><br>
+                   {{-- <label for="type">Выберите тип отображения в фильтре</label><br>
                     <select name="type">
                         <option value="select">Выбор одного значения из выпадающего списка</option>
                         <option value="radio">Выбор одного значения</option>
                         <option value="checkbox">Выбор нескольких значений</option>
-                    </select>
+                    </select>--}}
                     <input type="text" class="form-control" name="en_value_name[]" placeholder="на английском языке">
                     <input type="text" class="form-control" name="ru_value_name[]" placeholder="на русском языке">
 

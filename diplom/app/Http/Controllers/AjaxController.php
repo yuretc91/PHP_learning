@@ -113,6 +113,7 @@ class AjaxController extends Controller
                         //dd($optionName);
                         if ($optionVal){
                             if ($optionName == 'id'){
+                                dd($optionVal);
                                 $query->where('cathegory_id', $optionVal);
                             }elseif ($optionName == 'color') {
 

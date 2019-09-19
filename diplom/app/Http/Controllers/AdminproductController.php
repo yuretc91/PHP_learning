@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Property;
+use App\Cathegory;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 
 class AdminproductController extends Controller
 {
@@ -15,8 +17,9 @@ class AdminproductController extends Controller
      */
     public function index()
     {
+        $cathegories = Cathegory::all();
         $products = Product::find(1)->paginate(6);
-        return view('admin.product.index', compact('products'));
+        return view('admin.product.index', compact('products', 'cathegories'));
     }
 
     /**
@@ -24,9 +27,13 @@ class AdminproductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $properties = Property::where('cathegory_id', 1)->find(1);
+        $request = $request->all();
+        //dd($request['cathegory_id']);
+        $properties = Property::where('cathegory_id', (int)$request['cathegory_id'])->first();
+        //dd($properties);
+
         return view('admin.product.create', compact('properties'));
     }
 
@@ -38,10 +45,19 @@ class AdminproductController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
         $options = $request->all();
+        if ($request->hasFile('image')){
+            $user_image = $request->file('image');
+            $name = time().'.'.$user_image->getClientOriginalExtension();
+            $destinationPath = public_path('images/products/'.$options['cathegory_id'].'/');
+            $user_image->move($destinationPath, $name);
+            //$user_image->save();
+        }
         $cathegory_id = $options['cathegory_id'];
         $title = $options['title'];
-        $image = $options['image'];
+        $image = ''.$options['cathegory_id'].'/'. $name;
+        //dd($image);
         $info = $options['info'];
         $price = $options['price'];
         $availability = $options['availability'];
