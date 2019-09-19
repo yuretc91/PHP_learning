@@ -121,8 +121,7 @@
                         hash = hashes[i].split('=');
 
                         if (hash[0].indexOf('%5B%5D') != -1,hash[0].indexOf('id%5B%5D') == -1){
-                            hash[0].replace('%5B%5D',i +'%%%');
-
+                            hash[0] = hash[0].replace('%5B%5D','' + i +'%%%');
                         }
                         vars.push(hash[0]);
                         vars[hash[0]] = hash[1];

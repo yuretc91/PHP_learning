@@ -108,7 +108,8 @@ header{
     line-height: 2rem;
     margin-left: 0; /* Отступ слева в браузере IE и Opera */
     padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
-
+    font-size: 15px;
+    font-family: OpenSans Light;
 }
 
 .submenu{

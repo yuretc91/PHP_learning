@@ -91,33 +91,40 @@ class AjaxController extends Controller
     public function ajaxRequestPost(Request $request, Product $products)
     {
         $input = $request->all();
+
         $ordering = $input['ordering'];
         if (!isset($input['names'])){
             $products->where('cathegory_id', $input['id']);
         }else{
+            foreach($input['names'] as &$optionName) {
+                if (strpos($optionName, '%%%') !== FALSE){
+                    $optionName = substr($optionName, 0,-4);
+                }
+            }
             $names = $input['names'];
             $values = $input['values'];
             $GLOBALS['optionsArr'] = array_combine($names, $values);
 
             $products = $products->newQuery();
             $products->where(function ($query){
-
+                //dd($GLOBALS['optionsArr']);
                 foreach ($GLOBALS['optionsArr'] as $optionName => $optionVal){
                     if ($optionName != 'cash' && $optionName != '_token' && $optionName != 'submit'){
                         //dd($optionName);
                         if ($optionVal){
                             if ($optionName == 'id'){
                                 $query->where('cathegory_id', $optionVal);
-                            }elseif($optionName == 'type'){
+                            }elseif ($optionName == 'color') {
+
+                                $query->orWhereJsonContains('options->'.$optionName, $optionVal);
+                            }elseif ($optionName == 'type'){
                                 $query->whereJsonContains('options->' .$optionName, $optionVal);
                             }else{
                                 $query->whereJsonContains('options->' .$optionName, (bool)$optionVal);
                             }
                         }
                     }
-
                 }
-
             });
         }
 
