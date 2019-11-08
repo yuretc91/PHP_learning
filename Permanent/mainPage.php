@@ -1,7 +1,9 @@
 
     <section class="main-section">
+
         <article class="article-left">
             <p>АКЦИЯ!</p>
+
             <img src="images/skidka.png" alt="skidka" id="img-skidka">
             <p>
                 До конца месяца записывайтесь онлайн и получайте скидку

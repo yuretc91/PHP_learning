@@ -1,3 +1,4 @@
+/*
 $(function () {
     var main = $("main");
     var btn = $('.btn');
@@ -22,16 +23,35 @@ $(function () {
         });
     });
 
+});*/
+const page = (title, content) => ({title, content});
+const pagesContent = [
+    page('Главная', 'page1 page1 page1 page1 page1 page1 page1 v page1 page1 page1 page1 page1 page1 '),
+    page('Статьи','page2 page2 page2 page2 page2 page2 page2 page2 page2 page2 page2 page2 page2 '),
+    page('Галерея','page3 page3 page3 page3 page3 page3 page3 page3 page3 page3 page3 page3 page3 page3 '),
+    page('Контакты','page4 page4 page4 page4 page4 page4 page4 page4 page4 page4 page4 page4 page4 ')
+];
+Vue.component('main-content', {
+    data: function () {
+        return {
+            count: 0
+        }
+    }
+});
+new Vue({
+    el: '#body',
+    data: {
+        pagesContent:pagesContent,
+        curPageContent:pagesContent[1],
+        selectedIndex: 0
+        /*pages: ['bla bla bla', 13566, 'b44']*/
+    },
+    methods: {
+        showContent: function (index) {
+            this.curPageContent = pagesContent[index];
+            this.selectedIndex = index;
 
 
-
-
-
-
-
-
-
-
-
-
+        }
+    }
 });
