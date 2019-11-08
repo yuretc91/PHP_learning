@@ -44,7 +44,6 @@ new Vue({
         pagesContent:pagesContent,
         curPageContent:pagesContent[1],
         selectedIndex: 0
-        /*pages: ['bla bla bla', 13566, 'b44']*/
     },
     methods: {
         showContent: function (index) {
