@@ -28,10 +28,9 @@
     </header>
     <main id="main">
         {{curPageContent.content}}
-        <!--<main-content v-if="visible"></main-content>-->
+        <main-content></main-content>
 
-        <!--<section class="main-section">
-
+       <!-- <section class="main-section">
             <article class="article-left">
                 <p>АКЦИЯ!</p>
 
@@ -84,8 +83,8 @@
                 </p>
                 <a href="#" class="article-button">Узнать больше</a>
             </article>
-        </section>-->
-
+        </section>
+-->
 
     </main>
 </div>

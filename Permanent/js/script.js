@@ -24,6 +24,8 @@ $(function () {
     });
 
 });*/
+import MainPage from 'MainComponent.vue';
+import Router from 'vue-router';
 const page = (title, content) => ({title, content});
 const pagesContent = [
     page('Главная', 'page1 page1 page1 page1 page1 page1 page1 v page1 page1 page1 page1 page1 page1 '),
@@ -31,15 +33,27 @@ const pagesContent = [
     page('Галерея','page3 page3 page3 page3 page3 page3 page3 page3 page3 page3 page3 page3 page3 page3 '),
     page('Контакты','page4 page4 page4 page4 page4 page4 page4 page4 page4 page4 page4 page4 page4 ')
 ];
+const router = new Router({
+    routes: [
+        {
+            path: '/',
+            name:'main',
+            component: MainPage
+        }
+    ]
+});
+
 Vue.component('main-content', {
     data: function () {
         return {
             count: 0
         }
     }
+
 });
 new Vue({
     el: '#body',
+    router,
     data: {
         pagesContent:pagesContent,
         curPageContent:pagesContent[1],
