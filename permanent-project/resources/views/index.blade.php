@@ -20,9 +20,8 @@
 </head>
 
 <body>
-<div id="main">
+<div id="index">
 
-    <main-component></main-component>
 </div>
 
 

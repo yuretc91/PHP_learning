@@ -1,5 +1,14 @@
 const mix = require('laravel-mix');
 
+mix.webpackConfig({
+    resolve:{
+        extensions:['.png', '.jpg'],
+        alias: {
+            '@': __dirname + '../../public'
+        }
+    }
+});
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management

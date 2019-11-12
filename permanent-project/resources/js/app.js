@@ -6,11 +6,19 @@
 
 //require('./bootstrap');
 
-window.Vue = require('vue');
+/*window.Vue = require('vue');
 window.axios = require('axios');
-Vue.prototype.$http = window.axios;
+Vue.prototype.$http = window.axios;*/
 
+import Vue from 'vue';
+//import Vuetify from 'vuetify';
 
+import Routes from './routes.js';
+
+//import App from './views/App';
+import Index from './views/Index';
+
+//Vue.use(Vuetify);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -23,9 +31,9 @@ Vue.prototype.$http = window.axios;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('main-component', require('./components/MainComponent.vue').default);
-Vue.component('post-component', require('./components/PostComponent.vue').default);
+//Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+//Vue.component('main-component', require('./components/MainComponent.vue').default);
+//Vue.component('post-component', require('./components/PostsComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -34,9 +42,19 @@ Vue.component('post-component', require('./components/PostComponent.vue').defaul
  */
 
 
-const main = new Vue({
-    el: '#main',
+/*const app = new Vue({
+    el: '#app',
+    router: Routes,
+    render: h => h(App)
+});*/
+
+
+const index = new Vue({
+    el: '#index',
+    router: Routes,
+    render: h => h(Index)
 });
 /*const menu = new Vue({
     el: '#mainMenu',
 });*/
+export default index;

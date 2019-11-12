@@ -1,31 +1,31 @@
 <template>
-    <div>
-        <header id="header">
-            <div class="logo">
 
-                <div class="logo-text">
-                    <p>Permanent</p>
-                    <p>Makeup</p>
-                    <p>Gomel</p>
-                </div>
+       <main>
+           <section class="main-section">
+               <img src="images/mainbgimg.jpg" alt="main-bg" class="main-bg-img">
+               <p class="main-paragraph">Устали каждое утро тратить время на нанесение макияжа? <br>Значит вы попали по адресу!</p>
+               <p class="main-paragraph">Сертифицированный мастер Ирина поможет подчеркнуть Вашу красоту на долгое время.</p>
+               <p class="main-paragraph">Наши услуги:</p>
+               <ul class="main-services">
+                   <li>Перманентный макияж (брови, губы, межресничка)</li>
+                   <li>Шугаринг (сахарная депиляция)</li>
+                   <li>Прокол мочек ушей</li>
+               </ul>
 
-                <img :src="asset('images/sakura.png')" alt="sakura" id="logoImg">
-            </div>
-            <ul class="menu" id="mainMenu">
-                <!--<li><a href="{{route('main')}}" class="menu-btn">Главная</a></li>
-                <li><a href="{{route('posts')}}" class="menu-btn">Статьи</a></li>
-                <li><a href="{{route('getPosts')}}" class="menu-btn">Галерея</a></li>
-                <li><a href="#" class="menu-btn">Контакты</a></li>-->
-            </ul>
-
-        </header>
-       <!-- <main id="main">
-            <section class="main-section">
+               <p class="main-paragraph">Записаться на процедуру, а также получить бесплатную консультацию вы можете по телефону или в нашей группе в
+                   <a href="#" class="main-paragraph-link">Instagramm</a></p>
+               <ul class="tel">
+                   <li>8(029)381-61-00</li>
+               </ul>
+               <p class="main-paragraph">Если вы еще сомневаетесь и хотите получить больше информации по данной процедуре, рекоммендуем посетить раздел
+                   <router-link tag="a" to="/posts" class="main-paragraph-link">Статьи</router-link></p>
+           </section>
+            <!--<section class="main-section">
 
                 <article class="article-left">
                     <p>АКЦИЯ!</p>
 
-                    <img src="{{asset('images/skidka.png')}}" alt="skidka" id="img-skidka">
+                    <img src="images/skidka.png" alt="skidka" id="img-skidka">
                     <p>
                         До конца месяца записывайтесь онлайн и получайте скидку
                     </p>
@@ -46,7 +46,7 @@
             <hr>
             <section class="main-section">
                 <article class="article-left">
-                    <img src="{{asset('images/permanent.jpg')}}" alt="permanent" class="img-procedure">
+                    <img src="images/permanent.jpg" alt="permanent" class="img-procedure">
                 </article>
                 <article class="article-right">
                     <p id="permanent">Перманентный макияж - отличная возможность выглядеть в любой ситуации безупречно! </p>
@@ -60,13 +60,13 @@
                     <a href="#" class="article-button">Узнать больше</a>
                 </article>
                 <article class="article-right">
-                    <img src="{{asset('images/shugaring.jpg')}}" alt="shugaring" class="img-procedure">
+                    <img src="images/shugaring.jpg" alt="shugaring" class="img-procedure">
                 </article>
             </section>
             <hr>
             <section class="main-section">
                 <article class="article-left">
-                    <img src="{{asset('images/prokol.jpg')}}" alt="prokol ushey" class="img-procedure">
+                    <img src="images/prokol.jpg" alt="prokol ushey" class="img-procedure">
                 </article>
                 <article class="article-right">
                     <p>
@@ -74,18 +74,8 @@
                     </p>
                     <a href="#" class="article-button">Узнать больше</a>
                 </article>
-            </section>
+            </section>-->
         </main>
-        <footer>
-            <p class="seti">Мы в социальных сетях:</p>
-            <a href="#"><img src="{{asset('images/icons/ok.png')}}/" alt="ok" class="icon"></a>
-            <a href="#"><img src="{{asset('images/icons/mail.png')}}" alt="mail" class="icon"></a>
-            <a href="#"><img src="{{asset('images/icons/vk.png')}}" alt="vk" class="icon"></a>
-            <a href="#"><img src="{{asset('images/icons/fb.png')}}" alt="fb" class="icon"></a>
-            <a href="#"><img src="{{asset('images/icons/twitter.png')}}" alt="twitter" class="icon"></a>
-            <a href="#"><img src="{{asset('images/icons/g.png')}}" alt="g+" class="icon"></a>
-        </footer>-->
-    </div>
 
 
 </template>
@@ -93,28 +83,10 @@
 <script>
     export default {
 
-        props: {
-            imagesrc: Object
-        },
-
         mounted() {
-            console.log('imagesrc')
+            console.log('Main page mounted')
         }
 
-        /*data: function() {
-            return{
-                postdata:[],
-                is_refresh: false
-            }
-        },
-        mounted(){
-            this.update();
-        },
-        methods:{
-            update: function(){
-                main.$refs.foo.show();
-            }
-        }*/
     }
 </script>
 <style>

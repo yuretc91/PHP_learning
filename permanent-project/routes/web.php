@@ -16,12 +16,13 @@
 });*/
 
 //Route::view('/', 'main')->name('main');
+Route::get('/{any}', 'MainController@index')->where('any', '.*');
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'MainController@index')->name('main');
+//Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/', 'MainController@index')->name('main');
 
 Auth::routes();
 
-Route::get('/posts', 'MainController@index')->name('posts');
-Route::get('/posts/get-posts', 'MainController@getPosts')->name('getPosts');
+//Route::get('/posts', 'MainController@index')->name('posts');
+//Route::get('/posts/get-posts', 'MainController@getPosts')->name('getPosts');
 

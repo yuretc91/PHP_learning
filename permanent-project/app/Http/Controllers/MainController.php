@@ -13,12 +13,8 @@ class MainController extends Controller
      */
     public function index()
     {
-        $img_src = [
-            'logo' => "asset('images/sakura.png')"
 
-        ];
-
-        return view('main', ['img_src' => $img_src]);
+        return view('index');
     }
 
 
