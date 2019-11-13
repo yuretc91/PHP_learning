@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 
 import Main from './components/MainComponent.vue';
 import Posts from './components/PostsComponent.vue';
+import CurPost from './components/CurPostComponent.vue';
 import Gallery from './components/GalleryComponent.vue';
 import Contacts from './components/ContactsComponent.vue';
 
@@ -20,6 +21,11 @@ const router = new VueRouter({
             path: '/posts',
             name: 'posts',
             component: Posts
+        },
+        {
+            path: '/posts/curpost',
+            name: 'curpost',
+            component: CurPost
         },
         {
             path: '/gallery',

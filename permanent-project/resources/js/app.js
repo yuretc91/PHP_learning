@@ -11,14 +11,11 @@ window.axios = require('axios');
 Vue.prototype.$http = window.axios;*/
 
 import Vue from 'vue';
-//import Vuetify from 'vuetify';
 
 import Routes from './routes.js';
 
-//import App from './views/App';
 import Index from './views/Index';
 
-//Vue.use(Vuetify);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -40,13 +37,6 @@ import Index from './views/Index';
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-
-/*const app = new Vue({
-    el: '#app',
-    router: Routes,
-    render: h => h(App)
-});*/
 
 
 const index = new Vue({

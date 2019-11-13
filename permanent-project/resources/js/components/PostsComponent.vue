@@ -6,7 +6,7 @@
             </article>
             <article class="article-right">
                 <p id="permanent">Перманентный макияж - отличная возможность выглядеть в любой ситуации безупречно! </p>
-                <a href="#" class="article-button">Узнать больше</a>
+                <router-link tag="a" to="/posts/curpost" class="main-paragraph-link">Открыть конкретный пост</router-link>
             </article>
         </section>
 
