@@ -91,4 +91,15 @@ class MainController extends Controller
     {
         //
     }
+
+    public function getPage()
+    {
+        $page = [
+            'id' => 1,
+            'name' => 'name'
+        ];
+        return response()->json([
+            'page'=>json_encode($page)
+        ]);
+    }
 }

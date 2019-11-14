@@ -21,10 +21,16 @@
 
 <body>
 <div id="index">
-
+    <main-component></main-component>
 </div>
 
 
 </body>
 
 </html>
+<script>
+    import MainComponent from "../../../Permanent/js/MainComponent";
+    export default {
+        components: {MainComponent}
+    }
+</script>

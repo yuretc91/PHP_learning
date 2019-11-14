@@ -2,7 +2,7 @@
     <main>
         <section class="posts-section">
             <article class="article-left">
-                <img src="images/sakura.png" alt="rrjrjr" class="img-procedure">
+                <img src="images/permanent.jpg" alt="rrjrjr" class="img-procedure">
             </article>
             <article class="article-right">
                 <p id="permanent">Тут должен быть конкретный пост из БД </p>
