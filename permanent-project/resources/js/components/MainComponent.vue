@@ -82,9 +82,20 @@
 
 <script>
     export default {
-
+        data:  function () {
+            return {
+                page: null
+            };
+        },
         mounted() {
-            console.log('Main page mounted')
+            this.getPage();
+        },
+        methods: {
+            getPage: function () {
+                axios
+                    .get('api/page')
+                    .then(response => (this.page = response));
+            }
         }
 
     }

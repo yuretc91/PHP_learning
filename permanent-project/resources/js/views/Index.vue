@@ -20,8 +20,9 @@
             </ul>
 
         </header>
+        <div>{{info}}</div>
 
-        <router-view></router-view>
+        <router-view v-bind="info"></router-view>
 
          <footer>
              <p class="seti">Мы в социальных сетях:</p>
@@ -37,7 +38,24 @@
     </div>
 </template>
 <script>
-    export default {};
+    export default {
+        data:  function () {
+            return {
+                info: null
+            };
+        },
+        mounted() {
+            this.getPage();
+        },
+        methods: {
+            getPage: function () {
+                axios
+                    .get('api/page')
+                    .then(response => (this.info = response));
+                console.log(this.info);
+            }
+        }
+    };
 </script>
 <style>
 
