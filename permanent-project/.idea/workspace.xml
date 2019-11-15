@@ -5,7 +5,6 @@
       <change afterPath="$PROJECT_DIR$/resources/js/components/CurPostComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/images/main-bg-img2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/PostsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/PostsComponent.vue" afterDir="false" />
@@ -211,7 +210,7 @@
       <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="170" />
     <option name="y" value="91" />
     <option name="width" value="1386" />
@@ -362,16 +361,15 @@
       <workItem from="1570043108677" duration="895000" />
       <workItem from="1573376484746" duration="23507000" />
       <workItem from="1573584665797" duration="578000" />
-      <workItem from="1573673283164" duration="2093000" />
+      <workItem from="1573673283164" duration="2284000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27073000" />
+    <option name="totallyTimeSpent" value="27264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="732" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2613293" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
